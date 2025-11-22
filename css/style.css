@@ -3532,3 +3532,164 @@ label {
     padding: 10px 0;
   }
 }
+/* ================================================== 
+   MODERN ENHANCEMENTS (Added to beautify the template)
+================================================== */
+
+/* 1. Modern Cards & Shadows */
+.ts-service-box, .latest-post, .quote-item, .card {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: #fff;
+    overflow: hidden;
+}
+
+.ts-service-box:hover, .latest-post:hover, .quote-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* 2. Modern Buttons */
+.btn {
+    border-radius: 50px !important; /* Pill shape */
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 3. Typography Polish */
+body {
+    line-height: 1.8; /* More breathing room */
+    color: #444; /* Softer black */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.5px; /* Tighter headings look more modern */
+    color: #1a1a1a;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* 4. Navbar Polish */
+.header-one {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+/* 5. Image Polish */
+img {
+    border-radius: 8px;
+}
+
+.banner-carousel-item {
+    /* Ensure hero images are not rounded */
+    border-radius: 0 !important; 
+}
+
+/* 6. Input Fields */
+.form-control {
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+}
+
+.form-control:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.1);
+    border-color: #ffb600;
+}
+
+
+/* ================================================== 
+   REMOVE CARD BACKGROUNDS FOR CLEANER LOOK
+================================================== */
+
+/* Remove backgrounds from accordion/card elements */
+.card, .accordion .card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 15px 0 !important;
+}
+
+.card-body {
+    background: transparent !important;
+    padding: 20px 0 !important;
+}
+
+/* Remove backgrounds from service boxes */
+.ts-service-box {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20px 0 !important;
+}
+
+/* Keep hover effects but without background */
+.ts-service-box:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translateX(5px) !important; /* Subtle slide instead of lift */
+}
+
+/* Remove backgrounds from quote items but keep structure */
+.quote-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-left: 3px solid #ffb600 !important; /* Add accent line instead */
+    padding-left: 30px !important;
+}
+
+.quote-item:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Keep news/blog post cards minimal */
+.latest-post {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.latest-post:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Ensure accordion buttons look clean */
+.accordion .btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left !important;
+    padding: 15px 0 !important;
+    font-weight: 600 !important;
+    color: #212121 !important;
+    border-bottom: 2px solid #f0f0f0 !important;
+}
+
+.accordion .btn:hover {
+    color: #ffb600 !important;
+    border-bottom-color: #ffb600 !important;
+}
+
