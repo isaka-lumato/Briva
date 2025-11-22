@@ -3532,84 +3532,99 @@ label {
     padding: 10px 0;
   }
 }
+
 /* ================================================== 
    MODERN ENHANCEMENTS (Added to beautify the template)
 ================================================== */
 
 /* 1. Modern Cards & Shadows */
-.ts-service-box, .latest-post, .quote-item, .card {
-    border-radius: 12px !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    background: #fff;
-    overflow: hidden;
+.ts-service-box,
+.latest-post,
+.quote-item,
+.card {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: #fff;
+  overflow: hidden;
 }
 
-.ts-service-box:hover, .latest-post:hover, .quote-item:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.ts-service-box:hover,
+.latest-post:hover,
+.quote-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* 2. Modern Buttons */
 .btn {
-    border-radius: 50px !important; /* Pill shape */
-    padding: 12px 30px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+  border-radius: 50px !important;
+  /* Pill shape */
+  padding: 12px 30px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* 3. Typography Polish */
 body {
-    line-height: 1.8; /* More breathing room */
-    color: #444; /* Softer black */
+  line-height: 1.8;
+  /* More breathing room */
+  color: #444;
+  /* Softer black */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.5px; /* Tighter headings look more modern */
-    color: #1a1a1a;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.5px;
+  /* Tighter headings look more modern */
+  color: #1a1a1a;
 }
 
 .section-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 /* 4. Navbar Polish */
 .header-one {
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* 5. Image Polish */
 img {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .banner-carousel-item {
-    /* Ensure hero images are not rounded */
-    border-radius: 0 !important; 
+  /* Ensure hero images are not rounded */
+  border-radius: 0 !important;
 }
 
 /* 6. Input Fields */
 .form-control {
-    border-radius: 8px;
-    padding: 15px;
-    border: 1px solid #eee;
-    background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #eee;
+  background: #f9f9f9;
 }
 
 .form-control:focus {
-    background: #fff;
-    box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.1);
-    border-color: #ffb600;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.1);
+  border-color: #ffb600;
 }
 
 
@@ -3618,78 +3633,302 @@ img {
 ================================================== */
 
 /* Remove backgrounds from accordion/card elements */
-.card, .accordion .card {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+.card,
+.accordion .card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .card-header {
-    background: transparent !important;
-    border: none !important;
-    padding: 15px 0 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 15px 0 !important;
 }
 
 .card-body {
-    background: transparent !important;
-    padding: 20px 0 !important;
+  background: transparent !important;
+  padding: 20px 0 !important;
 }
 
 /* Remove backgrounds from service boxes */
 .ts-service-box {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 20px 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 20px 0 !important;
 }
 
 /* Keep hover effects but without background */
 .ts-service-box:hover {
-    background: transparent !important;
-    box-shadow: none !important;
-    transform: translateX(5px) !important; /* Subtle slide instead of lift */
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translateX(5px) !important;
+  /* Subtle slide instead of lift */
 }
 
 /* Remove backgrounds from quote items but keep structure */
 .quote-item {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-left: 3px solid #ffb600 !important; /* Add accent line instead */
-    padding-left: 30px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-left: 3px solid #ffb600 !important;
+  /* Add accent line instead */
+  padding-left: 30px !important;
 }
 
 .quote-item:hover {
-    background: transparent !important;
-    box-shadow: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Keep news/blog post cards minimal */
 .latest-post {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .latest-post:hover {
-    background: transparent !important;
-    box-shadow: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Ensure accordion buttons look clean */
 .accordion .btn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    text-align: left !important;
-    padding: 15px 0 !important;
-    font-weight: 600 !important;
-    color: #212121 !important;
-    border-bottom: 2px solid #f0f0f0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  padding: 15px 0 !important;
+  font-weight: 600 !important;
+  color: #212121 !important;
+  border-bottom: 2px solid #f0f0f0 !important;
 }
 
 .accordion .btn:hover {
-    color: #ffb600 !important;
-    border-bottom-color: #ffb600 !important;
+  color: #ffb600 !important;
+  border-bottom-color: #ffb600 !important;
 }
 
+
+/* ================================================== 
+   SUBTLE PROFESSIONAL ANIMATIONS
+================================================== */
+
+/* 1. Fade-in on scroll animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply fade-in to sections */
+section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* 2. Smooth hover effects on service boxes */
+.ts-service-box {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.ts-service-box:hover {
+  transform: translateX(8px) !important;
+}
+
+.ts-service-box-img img {
+  transition: transform 0.4s ease;
+}
+
+.ts-service-box:hover .ts-service-box-img img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* 3. Image zoom on hover for news/projects */
+.latest-post-media {
+  overflow: hidden;
+}
+
+.latest-post-media img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.latest-post:hover .latest-post-media img {
+  transform: scale(1.08);
+}
+
+/* 4. Smooth link underline animation */
+a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.post-title a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffb600;
+  transition: width 0.3s ease;
+}
+
+.post-title a:hover::after {
+  width: 100%;
+}
+
+/* 5. Button press effect */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* 6. Icon bounce on hover */
+.ts-service-icon,
+.info-box-icon {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ts-service-box:hover .ts-service-icon,
+.info-box:hover .info-box-icon {
+  transform: translateY(-5px);
+}
+
+/* 7. Smooth accordion expansion */
+.collapse {
+  transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 8. Client logo subtle zoom */
+.clients-logo img {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.clients-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* 9. Testimonial quote fade-in */
+.quote-item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 10. Navigation link smooth effect */
+ul.navbar-nav>li>a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+ul.navbar-nav>li>a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffb600;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+ul.navbar-nav>li:hover>a::before,
+ul.navbar-nav>li.active>a::before {
+  width: 80%;
+}
+
+/* 11. Form input focus animation */
+.form-control {
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  transform: translateY(-2px);
+}
+
+/* 12. Social icon pulse on hover */
+.footer-social ul li a,
+.top-social .social-icon {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.footer-social ul li a:hover,
+.top-social a:hover .social-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* 13. Back to top button smooth appearance */
+#back-to-top {
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* 14. Stagger animation for multiple items */
+.ts-service-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.ts-service-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ts-service-box:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.ts-service-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.ts-service-box:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.ts-service-box:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.latest-post:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.latest-post:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.latest-post:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* 15. Smooth page transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
