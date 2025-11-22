@@ -36,8 +36,42 @@
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
   <!-- Colorbox -->
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-  <!-- Template styles-->
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Critical CSS - Inline for instant rendering -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fff;
+      color: #555
+    }
+
+    .header-one {
+      background: #fff
+    }
+
+    .site-navigation {
+      background: #212121
+    }
+
+    .banner-carousel {
+      min-height: 500px
+    }
+
+    .btn-primary {
+      background: #ffb600;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      border: none
+    }
+  </style>
+
+  <!-- Template styles - Load asynchronously -->
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="css/style.css">
+  </noscript>
 
 </head>
 
@@ -86,7 +120,7 @@
             <div class="row align-items-center">
               <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/logo.png" alt="Briva">
+                  <img loading="lazy" src="images/logo.png" alt="Briva" width="100" height="100">
                 </a>
               </div><!-- logo end -->
 

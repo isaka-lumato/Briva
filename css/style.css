@@ -3932,3 +3932,45 @@ ul.navbar-nav>li.active>a::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* ================================================== 
+   ADDITIONAL PERFORMANCE OPTIMIZATIONS
+================================================== */
+
+/* Reduce layout shifts by reserving space for images */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Optimize animations for performance */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Use GPU acceleration for transforms */
+.ts-service-box,
+.latest-post,
+.btn,
+.quote-item {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimize slider performance */
+.banner-carousel-item {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Prevent font flash */
+@font-face {
+    font-display: swap;
+}
+
