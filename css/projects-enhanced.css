@@ -1,0 +1,240 @@
+/* PROJECTS PAGE REDESIGN - Premium Grid System */
+
+/* 1. GRID CONTAINER - Force CSS Grid */
+.shuffle-wrapper.row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin: 0 auto !important;
+    padding: 40px 0 !important;
+    width: 100% !important;
+
+    /* CRITICAL: Override JS calculated height */
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* Hide shuffle sizer */
+.shuffle-sizer {
+    display: none !important;
+}
+
+/* 2. CARD ITEM - Reset & Style */
+.shuffle-item {
+    /* Reset positioning - Critical for Grid */
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    /* Reset dimensions */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 260px !important;
+    /* Match image height */
+
+    /* Styling */
+    background: transparent !important;
+    border-radius: 16px !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+}
+
+/* Handle Hidden Items (Filtering) */
+.shuffle-item[aria-hidden="true"],
+.shuffle-item.shuffle-item--hidden {
+    display: none !important;
+}
+
+/* 3. CARD CONTENT WRAPPER */
+.shuffle-item .project-img-container {
+    position: relative !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: #000 !important;
+    /* Dark bg for loading/gaps */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+
+    /* Fix spacing issues */
+    display: block !important;
+    line-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hover Effect: Lift & Shadow */
+.shuffle-item:hover .project-img-container {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 4. IMAGE STYLING */
+.shuffle-item .project-img-container img {
+    width: 100% !important;
+    height: 260px !important;
+    /* Fixed height for consistency */
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.6s ease !important;
+}
+
+/* Hover Effect: Zoom */
+.shuffle-item:hover .project-img-container img {
+    transform: scale(1.08) !important;
+}
+
+/* 5. OVERLAY & CONTENT */
+.shuffle-item .project-img-container::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%) !important;
+    opacity: 0.7 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 2 !important;
+}
+
+.shuffle-item:hover .project-img-container::before {
+    opacity: 0.9 !important;
+}
+
+/* Remove old overlay */
+.shuffle-item .project-img-container:after {
+    display: none !important;
+}
+
+/* 6. TEXT CONTENT */
+.shuffle-item .project-item-info {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 24px !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    /* Let clicks pass through to link if needed */
+}
+
+.shuffle-item .project-item-info-content {
+    transform: translateY(10px) !important;
+    transition: transform 0.4s ease !important;
+}
+
+.shuffle-item:hover .project-item-info-content {
+    transform: translateY(0) !important;
+}
+
+.shuffle-item .project-item-title {
+    margin: 0 0 6px 0 !important;
+    line-height: 1.2 !important;
+}
+
+.shuffle-item .project-item-title a {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    pointer-events: auto !important;
+}
+
+.shuffle-item .project-cat {
+    display: inline-block !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #fff !important;
+    background: #ffb600 !important;
+    /* Brand Color */
+    padding: 4px 12px !important;
+    border-radius: 100px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 7. GALLERY ICON */
+.shuffle-item .project-img-container .gallery-icon {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #ffb600 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    z-index: 10 !important;
+    opacity: 0 !important;
+    transform: scale(0.8) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    cursor: pointer !important;
+}
+
+.shuffle-item:hover .project-img-container .gallery-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.shuffle-item .project-img-container .gallery-icon:hover {
+    background: #ffb600 !important;
+    color: #fff !important;
+}
+
+/* 8. FILTER BUTTONS */
+.shuffle-btn-group {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 30px 0 50px !important;
+    border: none !important;
+}
+
+.shuffle-btn-group label {
+    background: #fff !important;
+    color: #555 !important;
+    border: 1px solid #eee !important;
+    border-radius: 50px !important;
+    padding: 10px 28px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shuffle-btn-group label:hover {
+    background: #fafafa !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+    color: #ffb600 !important;
+}
+
+.shuffle-btn-group label.active {
+    background: #ffb600 !important;
+    color: #fff !important;
+    border-color: #ffb600 !important;
+    box-shadow: 0 8px 20px rgba(255, 182, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 9. RESPONSIVE */
+@media (max-width: 991px) {
+    .shuffle-wrapper.row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .shuffle-wrapper.row {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
