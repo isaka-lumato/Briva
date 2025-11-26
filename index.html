@@ -687,22 +687,29 @@
                 const container = document.getElementById('recent-projects-container');
                 container.innerHTML = ''; // Clear loading spinner
 
-                // Get first 3 projects
-                const projectKeys = Object.keys(data).slice(0, 3);
+                // Handle both formats: object-based and array-based (Decap CMS)
+                let projectsList = [];
 
-                projectKeys.forEach(key => {
-                  const project = data[key];
+                if (data.projects && Array.isArray(data.projects)) {
+                  // Decap CMS format (array)
+                  projectsList = data.projects.slice(0, 3).map(p => ({ id: p.id, ...p }));
+                } else {
+                  // Old format (object)
+                  projectsList = Object.keys(data).slice(0, 3).map(key => ({ id: key, ...data[key] }));
+                }
+
+                projectsList.forEach(project => {
                   const html = `
                     <div class="col-lg-4 col-md-6 mb-4">
                       <div class="latest-post">
                         <div class="latest-post-media">
-                          <a href="projects-single.html?project=${key}" class="latest-post-img">
+                          <a href="projects-single.html?project=${project.id}" class="latest-post-img">
                             <img loading="lazy" class="img-fluid" src="${project.images[0]}" alt="${project.title}" style="height: 250px; object-fit: cover; width: 100%;">
                           </a>
                         </div>
                         <div class="post-body">
                           <h4 class="post-title">
-                            <a href="projects-single.html?project=${key}" class="d-inline-block">${project.title}</a>
+                            <a href="projects-single.html?project=${project.id}" class="d-inline-block">${project.title}</a>
                           </h4>
                           <div class="latest-post-meta">
                             <span class="post-item-date">

@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your default branch is master
+
+# Enable local development mode (optional, for testing without Git)
+local_backend: true
+
+media_folder: "images/projects" # Where uploaded images will be stored
+public_folder: "images/projects" # Public URL path for images
+
+collections:
+  - name: "projects" # Used in routes, e.g., /admin/collections/projects
+    label: "Projects" # Used in the UI
+    label_singular: "Project" # Used in the UI, for a single item
+    description: "Manage your mining and exploration projects"
+    files:
+      - name: "projects_data"
+        label: "All Projects"
+        file: "data/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.location}}"
+            fields:
+              - {label: "Project ID", name: "id", widget: "string", hint: "URL-friendly ID (e.g., gold-mining-dodoma)"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Images", name: "images", widget: "list", field: {label: "Image Path", name: "image", widget: "image"}}
+              - {label: "Client", name: "client", widget: "string"}
+              - {label: "Size", name: "size", widget: "string"}
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Categories", name: "categories", widget: "string"}
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "data/site-settings.json"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string", default: "Briva - Exploration & Mining"}
+          - {label: "Contact Email", name: "contact_email", widget: "string", default: "info@briva.co.tz"}
+          - {label: "Contact Phone", name: "contact_phone", widget: "string", default: "+255 767 413 950"}
+          - {label: "Address", name: "address", widget: "string", default: "11259 Dar Es Salaam - TZ"}
+          - {label: "Facebook URL", name: "facebook_url", widget: "string", required: false}
+          - {label: "Twitter URL", name: "twitter_url", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram_url", widget: "string", required: false}

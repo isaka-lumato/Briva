@@ -1,4 +1,4 @@
-// Project data will be loaded from JSON file
+// Project data adapter - works with both object and array formats
 let projectData = null;
 
 // Function to get URL parameter
@@ -16,7 +16,19 @@ async function loadProjectData() {
     if (!response.ok) {
       throw new Error('Failed to load project data');
     }
-    projectData = await response.json();
+    const data = await response.json();
+
+    // Convert to object format if it's an array (Decap CMS format)
+    if (data.projects && Array.isArray(data.projects)) {
+      projectData = {};
+      data.projects.forEach(project => {
+        projectData[project.id] = project;
+      });
+    } else {
+      // Already in object format
+      projectData = data;
+    }
+
     return projectData;
   } catch (error) {
     console.error('Error loading project data:', error);
