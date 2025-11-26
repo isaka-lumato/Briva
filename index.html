@@ -669,72 +669,62 @@
         </div>
         <!--/ Title row end -->
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="index.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news1.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">Gold Exploration Project in Geita</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> July 12, 2025
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 1st post col end -->
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="index.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news2.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">Copper Exploration in Katavi</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> June 20, 2025.
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 2nd post col end -->
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="index.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news3.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">Resource Modelling for Kahama Project</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> Aug 20, 2025
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 3rd post col end -->
+        <div id="recent-projects-container" class="row">
+          <!-- Projects will be loaded dynamically here -->
+          <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
         <!--/ Content row end -->
 
-        <div class="general-btn text-center mt-4">
-          <a class="btn btn-primary" href="index.html">See All Posts</a>
-        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            fetch('data/projects.json')
+              .then(response => response.json())
+              .then(data => {
+                const container = document.getElementById('recent-projects-container');
+                container.innerHTML = ''; // Clear loading spinner
+
+                // Get first 3 projects
+                const projectKeys = Object.keys(data).slice(0, 3);
+
+                projectKeys.forEach(key => {
+                  const project = data[key];
+                  const html = `
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="latest-post">
+                        <div class="latest-post-media">
+                          <a href="projects-single.html?project=${key}" class="latest-post-img">
+                            <img loading="lazy" class="img-fluid" src="${project.images[0]}" alt="${project.title}" style="height: 250px; object-fit: cover; width: 100%;">
+                          </a>
+                        </div>
+                        <div class="post-body">
+                          <h4 class="post-title">
+                            <a href="projects-single.html?project=${key}" class="d-inline-block">${project.title}</a>
+                          </h4>
+                          <div class="latest-post-meta">
+                            <span class="post-item-date">
+                              <i class="fa fa-map-marker-alt"></i> ${project.location}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  `;
+                  container.innerHTML += html;
+                });
+              })
+              .catch(error => {
+                console.error('Error loading projects:', error);
+                document.getElementById('recent-projects-container').innerHTML = '<div class="col-12 text-center">Error loading projects.</div>';
+              });
+          });
+        </script>
+        <!--/ Content row end -->
+
+
 
       </div>
       <!--/ Container end -->
