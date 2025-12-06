@@ -506,6 +506,693 @@
             font-size: 0.85rem;
             z-index: 2;
         }
+
+
+        /* ============================================
+           PRICE COUNTER ANIMATION
+        ============================================ */
+        .counter {
+            display: inline-block;
+        }
+
+        .price-tag .counter {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated gradient shimmer on price */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .price-shimmer {
+            background: linear-gradient(
+                90deg,
+                #fff 0%,
+                #ffb600 25%,
+                #fff 50%,
+                #ffb600 75%,
+                #fff 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+
+
+
+
+
+
+        /* ============================================
+           REDESIGNED PRICING SECTION
+        ============================================ */
+        .pricing-highlight {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 0, 0.2);
+        }
+
+        .pricing-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffb600, #ff9500, #ffb600);
+            background-size: 200% 100%;
+            animation: gradient-slide 3s ease infinite;
+        }
+
+        @keyframes gradient-slide {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .pricing-highlight h3 {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .price-wrapper {
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-tag sup {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffb600;
+            vertical-align: super;
+            margin-right: 5px;
+        }
+
+        .price-label {
+            color: #ffb600;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .price-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .price-sublabel strong {
+            color: #ffb600;
+        }
+
+        /* Right side - Trust badges instead of ugly logo */
+        .trust-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(255, 182, 0, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 182, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            background: rgba(255, 182, 0, 0.15);
+            transform: translateX(5px);
+            border-color: rgba(255, 182, 0, 0.4);
+        }
+
+        .trust-badge-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffb600, #ff9500);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-badge-icon i {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .trust-badge-text h5 {
+            color: #fff;
+            font-size: 1rem;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+
+        .trust-badge-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .secure-payment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .secure-payment i {
+            color: #28a745;
+            font-size: 1.2rem;
+        }
+
+        .secure-payment span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        /* ============================================
+           CTA BUTTON PULSE ANIMATION
+        ============================================ */
+        .btn-pulse {
+            position: relative;
+            animation: btn-pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes btn-pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(255, 182, 0, 0);
+            }
+        }
+
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.4);
+        }
+
+        .contact-cta .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            margin: 10px;
+        }
+
+        .contact-cta .btn-primary {
+            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            border: none;
+        }
+
+        .contact-cta .btn-dark {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 2px solid #ffb600;
+        }
+
+        .contact-cta .btn-dark:hover {
+            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            border-color: transparent;
+        }
+
+        /* ============================================
+           ENHANCED SCROLL-TO-TOP BUTTON
+        ============================================ */
+        #back-to-top {
+            position: fixed !important;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #back-to-top .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            border: none;
+            box-shadow: 0 5px 20px rgba(255, 182, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #back-to-top .btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.5);
+        }
+
+        #back-to-top .btn i {
+            font-size: 1.2rem;
+            animation: bounce-arrow 1.5s infinite;
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Progress ring around button */
+        .scroll-progress {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .scroll-progress svg {
+            transform: rotate(-90deg);
+        }
+
+        .scroll-progress circle {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+
+        .scroll-progress .bg {
+            stroke: rgba(255, 182, 0, 0.2);
+        }
+
+        .scroll-progress .progress {
+            stroke: #ffb600;
+            stroke-dasharray: 176;
+            stroke-dashoffset: 176;
+            transition: stroke-dashoffset 0.1s linear;
+        }
+
+        /* ============================================
+           STICKY NAVIGATION HEADER
+        ============================================ */
+        .header-one {
+            transition: all 0.3s ease;
+        }
+
+        .header-sticky {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease;
+        }
+
+        .header-sticky .bg-white {
+            padding: 5px 0;
+        }
+
+        .header-sticky .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Add padding to body when header is sticky */
+        body.has-sticky-header {
+            padding-top: 0;
+        }
+
+        /* Hide top bar when sticky */
+        .header-sticky + .top-bar,
+        body.has-sticky-header .top-bar {
+            display: none;
+        }
+
+        /* ============================================
+           IMAGE LIGHTBOX GALLERY
+        ============================================ */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: #ffb600;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: #ff9500;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Make thumbnails clickable */
+        .equipment-thumbnail,
+        .equipment-main-image {
+            cursor: zoom-in;
+        }
+
+        /* ============================================
+           STAGGERED LIST ANIMATIONS
+        ============================================ */
+        .stagger-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-item:nth-child(2) { transition-delay: 0.15s; }
+        .stagger-item:nth-child(3) { transition-delay: 0.2s; }
+        .stagger-item:nth-child(4) { transition-delay: 0.25s; }
+        .stagger-item:nth-child(5) { transition-delay: 0.3s; }
+        .stagger-item:nth-child(6) { transition-delay: 0.35s; }
+        .stagger-item:nth-child(7) { transition-delay: 0.4s; }
+        .stagger-item:nth-child(8) { transition-delay: 0.45s; }
+
+        /* ============================================
+           ENHANCED SPECS & FEATURES STYLING
+        ============================================ */
+        .specs-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .specs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .specs-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .specs-card h3 i {
+            color: #ffb600;
+            font-size: 1.3rem;
+        }
+
+        .spec-item {
+            position: relative;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: rgba(255, 182, 0, 0.05);
+            padding-left: 10px;
+            margin-left: -10px;
+            margin-right: -10px;
+            padding-right: 10px;
+            border-radius: 5px;
+        }
+
+        .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spec-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #ffb600, #ff9500);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: #ffb600;
+        }
+
+        /* Features list enhanced styling */
+        .features-list li {
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .features-list li:hover {
+            background: rgba(255, 182, 0, 0.08);
+            padding-left: 45px;
+            color: #212121;
+        }
+
+        .features-list li::before {
+            transition: all 0.3s ease;
+        }
+
+        .features-list li:hover::before {
+            transform: scale(1.2);
+        }
+
+        /* Icon badges for Applications section */
+        .app-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            border-radius: 8px;
+            margin-right: 12px;
+            color: #fff;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Floating animation for main product image */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .equipment-main-image {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .equipment-main-image:hover {
+            animation-play-state: paused;
+        }
+
+        /* Thumbnail glow effect */
+        .equipment-thumbnail {
+            position: relative;
+        }
+
+        .equipment-thumbnail::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: linear-gradient(135deg, rgba(255, 182, 0, 0.3), transparent);
+        }
+
+        .equipment-thumbnail:hover::after {
+            opacity: 1;
+        }
+
+        /* ============================================
+           SCROLL REVEAL ANIMATIONS
+        ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered delay classes */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
     </style>
 
 </head>
@@ -638,7 +1325,7 @@
                             scanning technology</p>
                     </div>
                     <div class="col-lg-4 text-right">
-                        <a href="#pricing" class="btn btn-primary btn-lg animated fadeInRight">View Pricing</a>
+                        <a href="#pricing" class="btn btn-primary btn-lg btn-pulse animated fadeInRight">View Pricing</a>
                     </div>
                 </div>
             </div>
@@ -651,7 +1338,7 @@
                 <!-- Image Gallery -->
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="equipment-image-gallery">
+                        <div class="equipment-image-gallery reveal-left">
                             <img id="mainImage" src="images/megascanPro.jpg" alt="Mega Scan Pro Geophysical Scanner"
                                 class="equipment-main-image">
 
@@ -673,7 +1360,7 @@
 
                         <!-- Video Section -->
                         <div class="mt-5">
-                            <h2 class="section-title-equipment">Equipment in Action</h2>
+                            <h2 class="section-title-equipment reveal">Equipment in Action</h2>
                             <a href="https://www.youtube.com/watch?v=Ask-EHSex34" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
                                 <div class="video-container">
                                     <span class="video-badge"><i class="fab fa-youtube"></i> Tutorial Video</span>
@@ -692,7 +1379,7 @@
 
                     <div class="col-lg-4">
                         <!-- Specifications Card -->
-                        <div class="specs-card">
+                        <div class="specs-card reveal-right">
                             <h3><i class="fas fa-cogs"></i> Technical Specifications</h3>
                             <div class="spec-item">
                                 <span class="spec-label">Model:</span>
@@ -748,24 +1435,52 @@
                 <!-- Pricing Section -->
                 <div class="row" id="pricing">
                     <div class="col-12">
-                        <div class="pricing-highlight">
-                            <h3>Equipment Rental & Purchase</h3>
+                        <div class="pricing-highlight reveal-scale">
+                            <h3 class="text-center"><i class="fas fa-tags" style="color: #ffb600; margin-right: 10px;"></i>Equipment Rental & Purchase</h3>
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <div class="price-tag">
-                                        <sup>TZS</sup> 450,000,000
+                                    <div class="price-wrapper">
+                                        <div class="price-tag">
+                                            <sup>TZS</sup> <span class="counter" data-target="450000000">0</span>
+                                        </div>
+                                        <p class="price-label">Purchase Price</p>
+                                        <p class="price-sublabel">or Rent from <strong>TZS 2,500,000/month</strong></p>
                                     </div>
-                                    <p style="color: #fff; font-size: 1.2rem;">Purchase Price</p>
-                                    <p style="color: rgba(255,255,255,0.8);">or Rent from <strong>TZS
-                                            2,500,000/month</strong></p>
+                                    <div class="secure-payment">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Secure payment options available</span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tanzania_Shillings.jpg/800px-Tanzania_Shillings.jpg"
-                                        alt="Tanzanian Shillings" class="currency-note"
-                                        onerror="this.src='images/brivaLogo.png'">
-                                    <p style="color: rgba(255,255,255,0.9); margin-top: 15px; font-size: 0.9rem;">
-                                        <i class="fas fa-shield-alt"></i> Secure payment options available
-                                    </p>
+                                    <div class="trust-badges">
+                                        <div class="trust-badge">
+                                            <div class="trust-badge-icon">
+                                                <i class="fas fa-certificate"></i>
+                                            </div>
+                                            <div class="trust-badge-text">
+                                                <h5>1 Year Warranty</h5>
+                                                <p>Full coverage on all components</p>
+                                            </div>
+                                        </div>
+                                        <div class="trust-badge">
+                                            <div class="trust-badge-icon">
+                                                <i class="fas fa-truck"></i>
+                                            </div>
+                                            <div class="trust-badge-text">
+                                                <h5>Free Delivery</h5>
+                                                <p>Nationwide shipping included</p>
+                                            </div>
+                                        </div>
+                                        <div class="trust-badge">
+                                            <div class="trust-badge-icon">
+                                                <i class="fas fa-headset"></i>
+                                            </div>
+                                            <div class="trust-badge-text">
+                                                <h5>24/7 Support</h5>
+                                                <p>Expert technical assistance</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -775,7 +1490,7 @@
                 <!-- Download Section -->
                 <div class="row">
                     <div class="col-12">
-                        <div class="download-section">
+                        <div class="download-section reveal">
                             <h3><i class="fas fa-file-pdf"></i> Technical Documentation</h3>
                             <p>Download the complete technical specifications, operation manual, and maintenance guide
                             </p>
@@ -793,27 +1508,27 @@
                 <!-- Additional Information -->
                 <div class="row mt-5">
                     <div class="col-lg-6">
-                        <h2 class="section-title-equipment">Applications</h2>
+                        <h2 class="section-title-equipment reveal">Applications</h2>
                         <ul class="features-list">
-                            <li>Gold and precious metal detection</li>
-                            <li>Mineral deposit exploration</li>
-                            <li>Archaeological treasure hunting</li>
-                            <li>Underground cavity detection</li>
-                            <li>Diamond and gemstone prospecting</li>
-                            <li>Subsurface geological mapping</li>
+                            <li class="stagger-item">Gold and precious metal detection</li>
+                            <li class="stagger-item">Mineral deposit exploration</li>
+                            <li class="stagger-item">Archaeological treasure hunting</li>
+                            <li class="stagger-item">Underground cavity detection</li>
+                            <li class="stagger-item">Diamond and gemstone prospecting</li>
+                            <li class="stagger-item">Subsurface geological mapping</li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="section-title-equipment">What's Included</h2>
+                        <h2 class="section-title-equipment reveal">What's Included</h2>
                         <ul class="features-list">
-                            <li>Mega Scan Pro main unit</li>
-                            <li>I.M.T.U Probe (Multi Transceiver)</li>
-                            <li>V.S.T Probe (Vertical Signal Transceiver)</li>
-                            <li>Long Range Search Antennas</li>
-                            <li>Rechargeable Li-Ion Battery Pack</li>
-                            <li>Multi Visual Analyzer App</li>
-                            <li>Waterproof Protective Hardcase</li>
-                            <li>Complete User Manual & Training</li>
+                            <li class="stagger-item">Mega Scan Pro main unit</li>
+                            <li class="stagger-item">I.M.T.U Probe (Multi Transceiver)</li>
+                            <li class="stagger-item">V.S.T Probe (Vertical Signal Transceiver)</li>
+                            <li class="stagger-item">Long Range Search Antennas</li>
+                            <li class="stagger-item">Rechargeable Li-Ion Battery Pack</li>
+                            <li class="stagger-item">Multi Visual Analyzer App</li>
+                            <li class="stagger-item">Waterproof Protective Hardcase</li>
+                            <li class="stagger-item">Complete User Manual & Training</li>
                         </ul>
                     </div>
                 </div>
@@ -822,11 +1537,11 @@
         </section>
 
         <!-- Contact CTA -->
-        <section class="contact-cta">
+        <section class="contact-cta reveal">
             <div class="container">
                 <h3>Interested in This Equipment?</h3>
                 <p>Contact our sales team for a personalized quote or to schedule a demonstration</p>
-                <a href="contact.html" class="btn btn-primary btn-lg mr-3">
+                <a href="contact.html" class="btn btn-primary btn-lg mr-3 btn-pulse">
                     <i class="fas fa-envelope"></i> Contact Sales
                 </a>
                 <a href="tel:+255767413950" class="btn btn-dark btn-lg">
@@ -908,8 +1623,14 @@
                         </div>
                     </div><!-- Row end -->
 
-                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-                        <button class="btn btn-primary" title="Back to Top">
+                    <div id="back-to-top" class="back-to-top">
+                        <div class="scroll-progress">
+                            <svg viewBox="0 0 60 60">
+                                <circle class="bg" cx="30" cy="30" r="28"></circle>
+                                <circle class="progress" id="scrollProgress" cx="30" cy="30" r="28"></circle>
+                            </svg>
+                        </div>
+                        <button class="btn btn-primary" title="Back to Top" onclick="scrollToTop()">
                             <i class="fa fa-angle-double-up"></i>
                         </button>
                     </div>
@@ -978,6 +1699,198 @@
                 }
             });
         });
+    </script>
+
+
+    
+    
+    
+    
+    
+    
+    <script>
+        // Enhanced Scroll-to-Top with Progress
+        const backToTop = document.getElementById('back-to-top');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const circumference = 2 * Math.PI * 28; // radius = 28
+
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            
+            // Show/hide button
+            if (scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+
+            // Update progress ring
+            if (scrollProgress) {
+                const offset = circumference - (scrollPercent * circumference);
+                scrollProgress.style.strokeDashoffset = offset;
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+        window.addEventListener('load', updateScrollProgress);
+    </script>
+
+    <script>
+        // Sticky Navigation Header
+        const header = document.querySelector('.header-one');
+        const headerOffset = header ? header.offsetTop : 0;
+
+        function handleStickyHeader() {
+            if (window.pageYOffset > headerOffset + 100) {
+                header.classList.add('header-sticky');
+                document.body.classList.add('has-sticky-header');
+            } else {
+                header.classList.remove('header-sticky');
+                document.body.classList.remove('has-sticky-header');
+            }
+        }
+
+        window.addEventListener('scroll', handleStickyHeader);
+    </script>
+
+    <script>
+        // Image Lightbox Gallery
+        function openLightbox(src, alt) {
+            const overlay = document.getElementById('lightboxOverlay');
+            const image = document.getElementById('lightboxImage');
+            const caption = document.getElementById('lightboxCaption');
+            
+            image.src = src;
+            caption.textContent = alt;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const overlay = document.getElementById('lightboxOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on overlay click
+        document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Make all equipment images clickable
+        document.querySelectorAll('.equipment-main-image, .equipment-thumbnail').forEach(img => {
+            img.addEventListener('click', function() {
+                openLightbox(this.src, this.alt);
+            });
+        });
+    </script>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <script>
+        // Staggered List Animation
+        function animateStaggerItems() {
+            const containers = document.querySelectorAll('.features-list');
+            
+            containers.forEach(container => {
+                const rect = container.getBoundingClientRect();
+                const items = container.querySelectorAll('.stagger-item:not(.active)');
+                
+                if (rect.top < window.innerHeight - 100) {
+                    items.forEach(item => {
+                        item.classList.add('active');
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateStaggerItems);
+        window.addEventListener('load', animateStaggerItems);
+    </script>
+
+    <script>
+        // Price Counter Animation
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                    // Add shimmer effect after counting finishes
+                    element.classList.add('price-shimmer');
+                }
+                element.textContent = formatNumber(Math.floor(current));
+            }, 16);
+        }
+
+        // Trigger counter when pricing section is visible
+        function checkCounterVisibility() {
+            const counters = document.querySelectorAll('.counter:not(.counted)');
+            counters.forEach(counter => {
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    counter.classList.add('counted');
+                    animateCounter(counter);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCounterVisibility);
+        window.addEventListener('load', checkCounterVisibility);
+    </script>
+
+    <script>
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
     </script>
 
     </div><!-- Body inner end -->
