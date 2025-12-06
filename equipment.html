@@ -249,9 +249,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
             }
+
             50% {
                 box-shadow: 0 0 0 20px rgba(255, 182, 0, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(255, 182, 0, 0);
             }
@@ -472,9 +474,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
             }
+
             50% {
                 box-shadow: 0 0 0 20px rgba(255, 182, 0, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(255, 182, 0, 0);
             }
@@ -527,20 +531,19 @@
             0% {
                 background-position: -200% 0;
             }
+
             100% {
                 background-position: 200% 0;
             }
         }
 
         .price-shimmer {
-            background: linear-gradient(
-                90deg,
-                #fff 0%,
-                #ffb600 25%,
-                #fff 50%,
-                #ffb600 75%,
-                #fff 100%
-            );
+            background: linear-gradient(90deg,
+                    #fff 0%,
+                    #ffb600 25%,
+                    #fff 50%,
+                    #ffb600 75%,
+                    #fff 100%);
             background-size: 200% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -580,8 +583,15 @@
         }
 
         @keyframes gradient-slide {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .pricing-highlight h3 {
@@ -714,9 +724,12 @@
         }
 
         @keyframes btn-pulse-glow {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
             }
+
             50% {
                 box-shadow: 0 0 0 15px rgba(255, 182, 0, 0);
             }
@@ -735,12 +748,10 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
             transition: left 0.5s ease;
         }
 
@@ -821,9 +832,12 @@
         }
 
         @keyframes bounce-arrow {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-5px);
             }
@@ -890,6 +904,7 @@
             from {
                 transform: translateY(-100%);
             }
+
             to {
                 transform: translateY(0);
             }
@@ -901,7 +916,7 @@
         }
 
         /* Hide top bar when sticky */
-        .header-sticky + .top-bar,
+        .header-sticky+.top-bar,
         body.has-sticky-header .top-bar {
             display: none;
         }
@@ -998,21 +1013,44 @@
             transform: translateX(0);
         }
 
-        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
-        .stagger-item:nth-child(2) { transition-delay: 0.15s; }
-        .stagger-item:nth-child(3) { transition-delay: 0.2s; }
-        .stagger-item:nth-child(4) { transition-delay: 0.25s; }
-        .stagger-item:nth-child(5) { transition-delay: 0.3s; }
-        .stagger-item:nth-child(6) { transition-delay: 0.35s; }
-        .stagger-item:nth-child(7) { transition-delay: 0.4s; }
-        .stagger-item:nth-child(8) { transition-delay: 0.45s; }
+        .stagger-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-item:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .stagger-item:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-item:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .stagger-item:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-item:nth-child(6) {
+            transition-delay: 0.35s;
+        }
+
+        .stagger-item:nth-child(7) {
+            transition-delay: 0.4s;
+        }
+
+        .stagger-item:nth-child(8) {
+            transition-delay: 0.45s;
+        }
 
         /* ============================================
            ENHANCED SPECS & FEATURES STYLING
         ============================================ */
         .specs-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
@@ -1105,9 +1143,12 @@
 
         /* Floating animation for main product image */
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-10px);
             }
@@ -1138,6 +1179,106 @@
 
         .equipment-thumbnail:hover::after {
             opacity: 1;
+        }
+
+
+        /* ============================================
+           RESPONSIVE PRICING FIXES
+        ============================================ */
+        @media (max-width: 991px) {
+            .pricing-highlight {
+                padding: 40px 20px;
+            }
+
+            .pricing-highlight h3 {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+
+            .price-tag {
+                font-size: 2.5rem !important;
+            }
+
+            .price-tag sup {
+                font-size: 1rem !important;
+            }
+
+            .price-label {
+                font-size: 1rem !important;
+            }
+
+            .price-sublabel {
+                font-size: 0.9rem !important;
+            }
+
+            .trust-badges {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .pricing-highlight {
+                padding: 30px 15px;
+            }
+
+            .pricing-highlight h3 {
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+            }
+
+            .price-tag {
+                font-size: 2rem !important;
+                word-break: break-all;
+            }
+
+            .price-tag sup {
+                font-size: 0.85rem !important;
+            }
+
+            .price-label {
+                font-size: 0.9rem !important;
+            }
+
+            .price-sublabel {
+                font-size: 0.8rem !important;
+            }
+
+            .trust-badge {
+                padding: 12px 15px;
+            }
+
+            .trust-badge-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .trust-badge-icon i {
+                font-size: 1.2rem;
+            }
+
+            .trust-badge-text h5 {
+                font-size: 0.9rem;
+            }
+
+            .trust-badge-text p {
+                font-size: 0.75rem;
+            }
+
+            .secure-payment {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Ensure price doesn't overflow */
+        .price-wrapper {
+            overflow: hidden;
+            padding: 0 10px;
+        }
+
+        .price-tag {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* ============================================
@@ -1188,11 +1329,25 @@
         }
 
         /* Staggered delay classes */
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
     </style>
 
 </head>
@@ -1325,7 +1480,8 @@
                             scanning technology</p>
                     </div>
                     <div class="col-lg-4 text-right">
-                        <a href="#pricing" class="btn btn-primary btn-lg btn-pulse animated fadeInRight">View Pricing</a>
+                        <a href="#pricing" class="btn btn-primary btn-lg btn-pulse animated fadeInRight">View
+                            Pricing</a>
                     </div>
                 </div>
             </div>
@@ -1361,11 +1517,13 @@
                         <!-- Video Section -->
                         <div class="mt-5">
                             <h2 class="section-title-equipment reveal">Equipment in Action</h2>
-                            <a href="https://www.youtube.com/watch?v=Ask-EHSex34" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <a href="https://www.youtube.com/watch?v=Ask-EHSex34" target="_blank"
+                                rel="noopener noreferrer" class="text-decoration-none">
                                 <div class="video-container">
                                     <span class="video-badge"><i class="fab fa-youtube"></i> Tutorial Video</span>
                                     <span class="video-duration"><i class="far fa-clock"></i> Watch Demo</span>
-                                    <img src="images/megascan-video-thumbnail.jpg" alt="Mega Scan Pro Tutorial - Garrett Pro Pointer" class="video-thumbnail">
+                                    <img src="images/megascan-video-thumbnail.jpg"
+                                        alt="Mega Scan Pro Tutorial - Garrett Pro Pointer" class="video-thumbnail">
                                     <div class="video-overlay">
                                         <div class="play-button">
                                             <i class="fas fa-play"></i>
@@ -1373,7 +1531,9 @@
                                     </div>
                                 </div>
                             </a>
-                            <p class="text-muted mt-3"><i class="fas fa-info-circle"></i> Watch the Mega Scan Pro tutorial featuring the Garrett Pro-Pointer for mineral exploration and treasure detection</p>
+                            <p class="text-muted mt-3"><i class="fas fa-info-circle"></i> Watch the Mega Scan Pro
+                                tutorial featuring the Garrett Pro-Pointer for mineral exploration and treasure
+                                detection</p>
                         </div>
                     </div>
 
@@ -1436,15 +1596,16 @@
                 <div class="row" id="pricing">
                     <div class="col-12">
                         <div class="pricing-highlight reveal-scale">
-                            <h3 class="text-center"><i class="fas fa-tags" style="color: #ffb600; margin-right: 10px;"></i>Equipment Rental & Purchase</h3>
+                            <h3 class="text-center"><i class="fas fa-tags"
+                                    style="color: #ffb600; margin-right: 10px;"></i>Equipment Rental & Purchase</h3>
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <div class="price-wrapper">
                                         <div class="price-tag">
-                                            <sup>TZS</sup> <span class="counter" data-target="450000000">0</span>
+                                            <sup>TZS</sup> <span class="counter" data-target="20000000">0</span>
                                         </div>
                                         <p class="price-label">Purchase Price</p>
-                                        <p class="price-sublabel">or Rent from <strong>TZS 2,500,000/month</strong></p>
+                                        <p class="price-sublabel">or Rent from <strong>TZS 150,000/day</strong></p>
                                     </div>
                                     <div class="secure-payment">
                                         <i class="fas fa-shield-alt"></i>
@@ -1656,242 +1817,242 @@
         <script src="plugins/shuffle/shuffle.min.js" defer></script>
 
 
-    <!-- Template custom -->
-    <script src="js/script.js"></script>
+        <!-- Template custom -->
+        <script src="js/script.js"></script>
 
-    <script>
-        // Image gallery functionality
-        function changeImage(thumbnail) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = thumbnail.src;
+        <script>
+            // Image gallery functionality
+            function changeImage(thumbnail) {
+                const mainImage = document.getElementById('mainImage');
+                mainImage.src = thumbnail.src;
 
-            // Update active state
-            document.querySelectorAll('.equipment-thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
+                // Update active state
+                document.querySelectorAll('.equipment-thumbnail').forEach(thumb => {
+                    thumb.classList.remove('active');
+                });
+                thumbnail.classList.add('active');
+            }
+
+            // PDF Download functionality
+            function downloadPDF() {
+                // Create a dynamic download link for the Mega Scan Pro PDF
+                const link = document.createElement('a');
+                link.href = 'downloads/Mega Scan Pro EN.pdf';
+                link.download = 'Mega_Scan_Pro_EN.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            // Smooth scroll to pricing section
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href !== '#!') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
             });
-            thumbnail.classList.add('active');
-        }
+        </script>
 
-        // PDF Download functionality
-        function downloadPDF() {
-            // Create a dynamic download link for the Mega Scan Pro PDF
-            const link = document.createElement('a');
-            link.href = 'downloads/Mega Scan Pro EN.pdf';
-            link.download = 'Mega_Scan_Pro_EN.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
 
-        // Smooth scroll to pricing section
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href !== '#!') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+
+
+
+
+
+
+        <script>
+            // Enhanced Scroll-to-Top with Progress
+            const backToTop = document.getElementById('back-to-top');
+            const scrollProgress = document.getElementById('scrollProgress');
+            const circumference = 2 * Math.PI * 28; // radius = 28
+
+            function updateScrollProgress() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = scrollTop / docHeight;
+
+                // Show/hide button
+                if (scrollTop > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                // Update progress ring
+                if (scrollProgress) {
+                    const offset = circumference - (scrollPercent * circumference);
+                    scrollProgress.style.strokeDashoffset = offset;
+                }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            window.addEventListener('scroll', updateScrollProgress);
+            window.addEventListener('load', updateScrollProgress);
+        </script>
+
+        <script>
+            // Sticky Navigation Header
+            const header = document.querySelector('.header-one');
+            const headerOffset = header ? header.offsetTop : 0;
+
+            function handleStickyHeader() {
+                if (window.pageYOffset > headerOffset + 100) {
+                    header.classList.add('header-sticky');
+                    document.body.classList.add('has-sticky-header');
+                } else {
+                    header.classList.remove('header-sticky');
+                    document.body.classList.remove('has-sticky-header');
+                }
+            }
+
+            window.addEventListener('scroll', handleStickyHeader);
+        </script>
+
+        <script>
+            // Image Lightbox Gallery
+            function openLightbox(src, alt) {
+                const overlay = document.getElementById('lightboxOverlay');
+                const image = document.getElementById('lightboxImage');
+                const caption = document.getElementById('lightboxCaption');
+
+                image.src = src;
+                caption.textContent = alt;
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                const overlay = document.getElementById('lightboxOverlay');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Close on overlay click
+            document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeLightbox();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+
+            // Make all equipment images clickable
+            document.querySelectorAll('.equipment-main-image, .equipment-thumbnail').forEach(img => {
+                img.addEventListener('click', function () {
+                    openLightbox(this.src, this.alt);
+                });
+            });
+        </script>
+
+        <!-- Lightbox Overlay -->
+        <div class="lightbox-overlay" id="lightboxOverlay">
+            <div class="lightbox-content">
+                <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                <p class="lightbox-caption" id="lightboxCaption"></p>
+            </div>
+        </div>
+
+        <script>
+            // Staggered List Animation
+            function animateStaggerItems() {
+                const containers = document.querySelectorAll('.features-list');
+
+                containers.forEach(container => {
+                    const rect = container.getBoundingClientRect();
+                    const items = container.querySelectorAll('.stagger-item:not(.active)');
+
+                    if (rect.top < window.innerHeight - 100) {
+                        items.forEach(item => {
+                            item.classList.add('active');
                         });
                     }
-                }
-            });
-        });
-    </script>
-
-
-    
-    
-    
-    
-    
-    
-    <script>
-        // Enhanced Scroll-to-Top with Progress
-        const backToTop = document.getElementById('back-to-top');
-        const scrollProgress = document.getElementById('scrollProgress');
-        const circumference = 2 * Math.PI * 28; // radius = 28
-
-        function updateScrollProgress() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = scrollTop / docHeight;
-            
-            // Show/hide button
-            if (scrollTop > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
+                });
             }
 
-            // Update progress ring
-            if (scrollProgress) {
-                const offset = circumference - (scrollPercent * circumference);
-                scrollProgress.style.strokeDashoffset = offset;
+            window.addEventListener('scroll', animateStaggerItems);
+            window.addEventListener('load', animateStaggerItems);
+        </script>
+
+        <script>
+            // Price Counter Animation
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
-        }
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
 
-        window.addEventListener('scroll', updateScrollProgress);
-        window.addEventListener('load', updateScrollProgress);
-    </script>
-
-    <script>
-        // Sticky Navigation Header
-        const header = document.querySelector('.header-one');
-        const headerOffset = header ? header.offsetTop : 0;
-
-        function handleStickyHeader() {
-            if (window.pageYOffset > headerOffset + 100) {
-                header.classList.add('header-sticky');
-                document.body.classList.add('has-sticky-header');
-            } else {
-                header.classList.remove('header-sticky');
-                document.body.classList.remove('has-sticky-header');
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        // Add shimmer effect after counting finishes
+                        element.classList.add('price-shimmer');
+                    }
+                    element.textContent = formatNumber(Math.floor(current));
+                }, 16);
             }
-        }
 
-        window.addEventListener('scroll', handleStickyHeader);
-    </script>
-
-    <script>
-        // Image Lightbox Gallery
-        function openLightbox(src, alt) {
-            const overlay = document.getElementById('lightboxOverlay');
-            const image = document.getElementById('lightboxImage');
-            const caption = document.getElementById('lightboxCaption');
-            
-            image.src = src;
-            caption.textContent = alt;
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const overlay = document.getElementById('lightboxOverlay');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close on overlay click
-        document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
+            // Trigger counter when pricing section is visible
+            function checkCounterVisibility() {
+                const counters = document.querySelectorAll('.counter:not(.counted)');
+                counters.forEach(counter => {
+                    const rect = counter.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        counter.classList.add('counted');
+                        animateCounter(counter);
+                    }
+                });
             }
-        });
 
-        // Close on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
+            window.addEventListener('scroll', checkCounterVisibility);
+            window.addEventListener('load', checkCounterVisibility);
+        </script>
+
+        <script>
+            // Scroll Reveal Animation
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+                reveals.forEach(element => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
             }
-        });
 
-        // Make all equipment images clickable
-        document.querySelectorAll('.equipment-main-image, .equipment-thumbnail').forEach(img => {
-            img.addEventListener('click', function() {
-                openLightbox(this.src, this.alt);
-            });
-        });
-    </script>
-
-    <!-- Lightbox Overlay -->
-    <div class="lightbox-overlay" id="lightboxOverlay">
-        <div class="lightbox-content">
-            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-            <img src="" alt="" class="lightbox-image" id="lightboxImage">
-            <p class="lightbox-caption" id="lightboxCaption"></p>
-        </div>
-    </div>
-
-    <script>
-        // Staggered List Animation
-        function animateStaggerItems() {
-            const containers = document.querySelectorAll('.features-list');
-            
-            containers.forEach(container => {
-                const rect = container.getBoundingClientRect();
-                const items = container.querySelectorAll('.stagger-item:not(.active)');
-                
-                if (rect.top < window.innerHeight - 100) {
-                    items.forEach(item => {
-                        item.classList.add('active');
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateStaggerItems);
-        window.addEventListener('load', animateStaggerItems);
-    </script>
-
-    <script>
-        // Price Counter Animation
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const step = target / (duration / 16); // 60fps
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                    // Add shimmer effect after counting finishes
-                    element.classList.add('price-shimmer');
-                }
-                element.textContent = formatNumber(Math.floor(current));
-            }, 16);
-        }
-
-        // Trigger counter when pricing section is visible
-        function checkCounterVisibility() {
-            const counters = document.querySelectorAll('.counter:not(.counted)');
-            counters.forEach(counter => {
-                const rect = counter.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    counter.classList.add('counted');
-                    animateCounter(counter);
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkCounterVisibility);
-        window.addEventListener('load', checkCounterVisibility);
-    </script>
-
-    <script>
-        // Scroll Reveal Animation
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-            
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-    </script>
+            window.addEventListener('scroll', revealOnScroll);
+            window.addEventListener('load', revealOnScroll);
+        </script>
 
     </div><!-- Body inner end -->
 </body>
