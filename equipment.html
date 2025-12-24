@@ -34,280 +34,462 @@
     <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
     <!-- Template styles-->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
-        .equipment-showcase {
-            padding: 60px 0;
+        /* ============================================
+           EQUIPMENT PAGE - MODERN CATALOG DESIGN
+        ============================================ */
+
+        :root {
+            --primary-gold: #ffb600;
+            --secondary-gold: #ff9500;
+            --dark-bg: #0a0a0a;
+            --dark-surface: #1a1a1a;
+            --dark-card: #242424;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --gradient-gold: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         }
 
-        .equipment-hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 80px 0;
-            color: #fff;
-            margin-bottom: 60px;
+        /* Hero Section */
+        .equipment-hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .equipment-hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffb600;
+        .equipment-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 182, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 149, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .equipment-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .equipment-hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 182, 0, 0.5), transparent);
         }
 
-        .equipment-image-gallery {
-            margin-bottom: 40px;
-        }
-
-        .equipment-main-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-
-        .equipment-thumbnail {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-
-        .equipment-thumbnail:hover,
-        .equipment-thumbnail.active {
-            border-color: #ffb600;
-            transform: scale(1.05);
-        }
-
-        .specs-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .specs-card h3 {
-            color: #212121;
-            margin-bottom: 20px;
-            font-weight: 700;
-            border-bottom: 3px solid #ffb600;
-            padding-bottom: 10px;
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-
-        .spec-label {
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 182, 0, 0.1);
+            border: 1px solid rgba(255, 182, 0, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #555;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .spec-value {
-            color: #212121;
+        .hero-badge i {
+            font-size: 1rem;
+        }
+
+        .equipment-hero-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .equipment-hero-section h1 span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .equipment-hero-section p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* Products Catalog Section */
+        .products-catalog {
+            background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-gold);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 991px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .product-card {
+            background: var(--dark-card);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(255, 182, 0, 0.1);
+            border-color: rgba(255, 182, 0, 0.2);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+        }
+
+        .product-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--dark-card), transparent);
+            pointer-events: none;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(255, 182, 0, 0.4);
+        }
+
+        .product-content {
+            padding: 35px;
+        }
+
+        .product-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .product-category i {
+            font-size: 0.75rem;
+        }
+
+        .product-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 182, 0, 0.1);
+            border: 1px solid rgba(255, 182, 0, 0.2);
+            color: var(--primary-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .feature-tag:hover {
+            background: rgba(255, 182, 0, 0.2);
+            border-color: rgba(255, 182, 0, 0.4);
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .product-price {
+            text-align: left;
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .price-value span {
+            color: var(--primary-gold);
+            font-size: 1rem;
             font-weight: 500;
         }
 
-        .download-section {
-            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.3);
-        }
-
-        .download-section h3 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .download-section p {
-            color: #fff;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        .btn-download {
-            background: #fff;
-            color: #ffb600;
-            padding: 15px 40px;
+        .btn-view-details {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 14px 28px;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s ease;
             border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-download:hover {
-            background: #212121;
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-download i {
-            margin-right: 10px;
-        }
-
-        .video-container {
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin: 40px 0;
-            overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
-            /* 16:9 Aspect Ratio */
-            padding-bottom: 56.25%;
-            height: 0;
         }
 
-        .video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        .btn-view-details:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(255, 182, 0, 0.4);
+            color: #000;
+            text-decoration: none;
         }
 
-        .video-thumbnail {
+        .btn-view-details i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-view-details:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            background: var(--dark-surface);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .why-choose-section::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: all 0.3s ease;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 182, 0, 0.3), transparent);
         }
 
-        .video-container:hover .video-thumbnail {
-            transform: scale(1.05);
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
         }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1;
+        @media (max-width: 991px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .video-container:hover .video-overlay {
-            background: rgba(0, 0, 0, 0.5);
+        @media (max-width: 575px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .play-button {
+        .benefit-card {
+            text-align: center;
+            padding: 40px 25px;
+            background: var(--dark-card);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 182, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
             width: 80px;
             height: 80px;
-            background: rgba(255, 182, 0, 0.95);
-            border-radius: 50%;
+            background: var(--gradient-gold);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 25px;
             transition: all 0.3s ease;
-            animation: pulse-play 2s ease-in-out infinite;
-            box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
         }
 
-        .video-container:hover .play-button {
-            transform: scale(1.1);
-            background: rgba(255, 182, 0, 1);
-            animation: none;
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        .play-button i {
-            color: #fff;
-            font-size: 32px;
-            margin-left: 5px;
+        .benefit-icon i {
+            font-size: 2rem;
+            color: #000;
         }
 
-        @keyframes pulse-play {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
-            }
-
-            50% {
-                box-shadow: 0 0 0 20px rgba(255, 182, 0, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0);
-            }
-        }
-
-        .video-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(255, 182, 0, 0.95);
-            color: #fff;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
-
-        .video-duration {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 5px;
+        .benefit-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
             font-weight: 600;
-            font-size: 0.85rem;
-            z-index: 2;
+            color: var(--text-light);
+            margin-bottom: 12px;
         }
 
-        .pricing-highlight {
-            background: linear-gradient(135deg, #212121 0%, #3d3d3d 100%);
-            padding: 50px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 40px 0;
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Contact CTA Section */
+        .contact-cta-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
 
-        .pricing-highlight::before {
+        .contact-cta-section::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -50%;
+            left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 182, 0, 0.1) 0%, transparent 70%);
-            animation: pulse 3s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 182, 0, 0.08) 0%, transparent 50%);
+            animation: pulse-bg 8s ease-in-out infinite;
         }
 
-        @keyframes pulse {
+        @keyframes pulse-bg {
 
             0%,
             100% {
@@ -319,477 +501,171 @@
             }
         }
 
-        .pricing-highlight h3 {
-            color: #ffb600;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .price-tag {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #fff;
-            margin: 20px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .price-tag sup {
-            font-size: 2rem;
-            vertical-align: super;
-        }
-
-        .currency-note {
-            max-width: 300px;
-            margin: 30px auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 1;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-
-        .features-list li {
-            padding: 12px 0;
-            color: #555;
-            font-size: 1.1rem;
-            position: relative;
-            padding-left: 35px;
-        }
-
-        .features-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #ffb600;
-            font-size: 1.2rem;
-        }
-
-        .section-title-equipment {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #212121;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title-equipment::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: #ffb600;
-        }
-
-        .contact-cta {
-            background: #f8f9fa;
-            padding: 60px 0;
+        .cta-content {
             text-align: center;
-        }
-
-        .contact-cta h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #212121;
-        }
-
-        .contact-cta p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        /* Video Thumbnail Styles */
-        .video-thumbnail {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .video-container:hover .video-thumbnail {
-            transform: scale(1.05);
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .video-container:hover .video-overlay {
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .play-button {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 182, 0, 0.95);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse-play 2s ease-in-out infinite;
-            box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
-        }
-
-        .video-container:hover .play-button {
-            transform: scale(1.1);
-            background: rgba(255, 182, 0, 1);
-            animation: none;
-        }
-
-        .play-button i {
-            color: #fff;
-            font-size: 40px;
-            margin-left: 5px;
-        }
-
-        @keyframes pulse-play {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
-            }
-
-            50% {
-                box-shadow: 0 0 0 20px rgba(255, 182, 0, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0);
-            }
-        }
-
-        .video-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 182, 0, 0.95);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
-
-        .video-duration {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            z-index: 2;
-        }
-
-
-        /* ============================================
-           PRICE COUNTER ANIMATION
-        ============================================ */
-        .counter {
-            display: inline-block;
-        }
-
-        .price-tag .counter {
-            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Animated gradient shimmer on price */
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        .price-shimmer {
-            background: linear-gradient(90deg,
-                    #fff 0%,
-                    #ffb600 25%,
-                    #fff 50%,
-                    #ffb600 75%,
-                    #fff 100%);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 3s linear infinite;
-        }
-
-
-
-
-
-
-
-        /* ============================================
-           REDESIGNED PRICING SECTION
-        ============================================ */
-        .pricing-highlight {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            padding: 60px 40px;
-            border-radius: 20px;
-            margin: 50px 0;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 182, 0, 0.2);
-        }
-
-        .pricing-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ffb600, #ff9500, #ffb600);
-            background-size: 200% 100%;
-            animation: gradient-slide 3s ease infinite;
-        }
-
-        @keyframes gradient-slide {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .pricing-highlight h3 {
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .price-wrapper {
-            text-align: center;
-        }
-
-        .price-tag {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 0;
-            line-height: 1.2;
             position: relative;
             z-index: 1;
         }
 
-        .price-tag sup {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #ffb600;
-            vertical-align: super;
-            margin-right: 5px;
+        .cta-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 20px;
         }
 
-        .price-label {
-            color: #ffb600;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 10px;
+        .cta-content p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        .price-sublabel {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        .price-sublabel strong {
-            color: #ffb600;
-        }
-
-        /* Right side - Trust badges instead of ugly logo */
-        .trust-badges {
+        .cta-buttons {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             gap: 20px;
-            padding: 20px;
+            flex-wrap: wrap;
         }
 
-        .trust-badge {
-            display: flex;
+        .btn-cta-primary {
+            display: inline-flex;
             align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            background: rgba(255, 182, 0, 0.1);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 182, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .trust-badge:hover {
-            background: rgba(255, 182, 0, 0.15);
-            transform: translateX(5px);
-            border-color: rgba(255, 182, 0, 0.4);
-        }
-
-        .trust-badge-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #ffb600, #ff9500);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .trust-badge-icon i {
-            font-size: 1.5rem;
-            color: #fff;
-        }
-
-        .trust-badge-text h5 {
-            color: #fff;
-            font-size: 1rem;
-            margin: 0 0 5px 0;
-            font-weight: 600;
-        }
-
-        .trust-badge-text p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-            margin: 0;
-        }
-
-        .secure-payment {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 10px;
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 182, 0, 0.3);
         }
 
-        .secure-payment i {
-            color: #28a745;
-            font-size: 1.2rem;
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 182, 0, 0.4);
+            color: #000;
+            text-decoration: none;
         }
 
-        .secure-payment span {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-        }
-
-        /* ============================================
-           CTA BUTTON PULSE ANIMATION
-        ============================================ */
-        .btn-pulse {
-            position: relative;
-            animation: btn-pulse-glow 2s ease-in-out infinite;
-        }
-
-        @keyframes btn-pulse-glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 182, 0, 0.7);
-            }
-
-            50% {
-                box-shadow: 0 0 0 15px rgba(255, 182, 0, 0);
-            }
-        }
-
-        .btn-primary {
-            position: relative;
-            overflow: hidden;
+        .btn-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text-light);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 767px) {
+            .equipment-hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .equipment-hero-section p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .product-image-wrapper {
+                height: 280px;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-footer {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .btn-view-details {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Sticky Header Styles */
+        .header-one {
+            transition: all 0.3s ease;
+        }
+
+        .header-sticky {
+            position: fixed !important;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.3),
-                    transparent);
-            transition: left 0.5s ease;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease;
         }
 
-        .btn-primary:hover::before {
-            left: 100%;
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.4);
-        }
-
-        .contact-cta .btn {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            margin: 10px;
-        }
-
-        .contact-cta .btn-primary {
-            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
-            border: none;
-        }
-
-        .contact-cta .btn-dark {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            border: 2px solid #ffb600;
-        }
-
-        .contact-cta .btn-dark:hover {
-            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
-            border-color: transparent;
-        }
-
-        /* ============================================
-           ENHANCED SCROLL-TO-TOP BUTTON
-        ============================================ */
+        /* Back to Top Button */
         #back-to-top {
             position: fixed !important;
             bottom: 30px;
@@ -815,35 +691,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            background: var(--gradient-gold);
             border: none;
             box-shadow: 0 5px 20px rgba(255, 182, 0, 0.4);
-            transition: all 0.3s ease;
         }
 
         #back-to-top .btn:hover {
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.5);
         }
 
-        #back-to-top .btn i {
-            font-size: 1.2rem;
-            animation: bounce-arrow 1.5s infinite;
-        }
-
-        @keyframes bounce-arrow {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Progress ring around button */
         .scroll-progress {
             position: absolute;
             top: -5px;
@@ -871,482 +727,6 @@
             stroke-dasharray: 176;
             stroke-dashoffset: 176;
             transition: stroke-dashoffset 0.1s linear;
-        }
-
-        /* ============================================
-           STICKY NAVIGATION HEADER
-        ============================================ */
-        .header-one {
-            transition: all 0.3s ease;
-        }
-
-        .header-sticky {
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: #fff;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            animation: slideDown 0.3s ease;
-        }
-
-        .header-sticky .bg-white {
-            padding: 5px 0;
-        }
-
-        .header-sticky .logo img {
-            width: 100px;
-            height: auto;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        /* Add padding to body when header is sticky */
-        body.has-sticky-header {
-            padding-top: 0;
-        }
-
-        /* Hide top bar when sticky */
-        .header-sticky+.top-bar,
-        body.has-sticky-header .top-bar {
-            display: none;
-        }
-
-        /* ============================================
-           IMAGE LIGHTBOX GALLERY
-        ============================================ */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-image {
-            max-width: 100%;
-            max-height: 85vh;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .lightbox-overlay.active .lightbox-image {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            background: #ffb600;
-            border: none;
-            border-radius: 50%;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: #ff9500;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-caption {
-            text-align: center;
-            color: #fff;
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* Make thumbnails clickable */
-        .equipment-thumbnail,
-        .equipment-main-image {
-            cursor: zoom-in;
-        }
-
-        /* ============================================
-           STAGGERED LIST ANIMATIONS
-        ============================================ */
-        .stagger-item {
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.5s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .stagger-item.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .stagger-item:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .stagger-item:nth-child(2) {
-            transition-delay: 0.15s;
-        }
-
-        .stagger-item:nth-child(3) {
-            transition-delay: 0.2s;
-        }
-
-        .stagger-item:nth-child(4) {
-            transition-delay: 0.25s;
-        }
-
-        .stagger-item:nth-child(5) {
-            transition-delay: 0.3s;
-        }
-
-        .stagger-item:nth-child(6) {
-            transition-delay: 0.35s;
-        }
-
-        .stagger-item:nth-child(7) {
-            transition-delay: 0.4s;
-        }
-
-        .stagger-item:nth-child(8) {
-            transition-delay: 0.45s;
-        }
-
-        /* ============================================
-           ENHANCED SPECS & FEATURES STYLING
-        ============================================ */
-        .specs-card {
-            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .specs-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .specs-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .specs-card h3 i {
-            color: #ffb600;
-            font-size: 1.3rem;
-        }
-
-        .spec-item {
-            position: relative;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-
-        .spec-item:hover {
-            background: rgba(255, 182, 0, 0.05);
-            padding-left: 10px;
-            margin-left: -10px;
-            margin-right: -10px;
-            padding-right: 10px;
-            border-radius: 5px;
-        }
-
-        .spec-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .spec-label::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(135deg, #ffb600, #ff9500);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .spec-value {
-            font-weight: 600;
-            color: #ffb600;
-        }
-
-        /* Features list enhanced styling */
-        .features-list li {
-            transition: all 0.3s ease;
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
-
-        .features-list li:hover {
-            background: rgba(255, 182, 0, 0.08);
-            padding-left: 45px;
-            color: #212121;
-        }
-
-        .features-list li::before {
-            transition: all 0.3s ease;
-        }
-
-        .features-list li:hover::before {
-            transform: scale(1.2);
-        }
-
-        /* Icon badges for Applications section */
-        .app-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
-            border-radius: 8px;
-            margin-right: 12px;
-            color: #fff;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        /* Floating animation for main product image */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .equipment-main-image {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .equipment-main-image:hover {
-            animation-play-state: paused;
-        }
-
-        /* Thumbnail glow effect */
-        .equipment-thumbnail {
-            position: relative;
-        }
-
-        .equipment-thumbnail::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 8px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            background: linear-gradient(135deg, rgba(255, 182, 0, 0.3), transparent);
-        }
-
-        .equipment-thumbnail:hover::after {
-            opacity: 1;
-        }
-
-
-        /* ============================================
-           RESPONSIVE PRICING FIXES
-        ============================================ */
-        @media (max-width: 991px) {
-            .pricing-highlight {
-                padding: 40px 20px;
-            }
-
-            .pricing-highlight h3 {
-                font-size: 1.2rem;
-                letter-spacing: 1px;
-            }
-
-            .price-tag {
-                font-size: 2.5rem !important;
-            }
-
-            .price-tag sup {
-                font-size: 1rem !important;
-            }
-
-            .price-label {
-                font-size: 1rem !important;
-            }
-
-            .price-sublabel {
-                font-size: 0.9rem !important;
-            }
-
-            .trust-badges {
-                margin-top: 30px;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .pricing-highlight {
-                padding: 30px 15px;
-            }
-
-            .pricing-highlight h3 {
-                font-size: 1rem;
-                letter-spacing: 0.5px;
-            }
-
-            .price-tag {
-                font-size: 2rem !important;
-                word-break: break-all;
-            }
-
-            .price-tag sup {
-                font-size: 0.85rem !important;
-            }
-
-            .price-label {
-                font-size: 0.9rem !important;
-            }
-
-            .price-sublabel {
-                font-size: 0.8rem !important;
-            }
-
-            .trust-badge {
-                padding: 12px 15px;
-            }
-
-            .trust-badge-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .trust-badge-icon i {
-                font-size: 1.2rem;
-            }
-
-            .trust-badge-text h5 {
-                font-size: 0.9rem;
-            }
-
-            .trust-badge-text p {
-                font-size: 0.75rem;
-            }
-
-            .secure-payment {
-                padding: 12px;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Ensure price doesn't overflow */
-        .price-wrapper {
-            overflow: hidden;
-            padding: 0 10px;
-        }
-
-        .price-tag {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* ============================================
-           SCROLL REVEAL ANIMATIONS
-        ============================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal-scale.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Staggered delay classes */
-        .delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        .delay-4 {
-            transition-delay: 0.4s;
-        }
-
-        .delay-5 {
-            transition-delay: 0.5s;
         }
     </style>
 
@@ -1469,245 +849,166 @@
         </header>
         <!--/ Header end -->
 
-        <!-- Equipment Hero Section -->
-        <div class="equipment-hero">
+        <!-- Hero Section -->
+        <section class="equipment-hero-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">
-                        <h1 class="animated fadeInLeft">Mega Scan Pro - Advanced Geophysical Scanner</h1>
-                        <p class="animated fadeInLeft">Multi-purpose geophysical detection system for mineral
-                            exploration, treasure hunting, and subsurface analysis with long-range locator and 3D ground
-                            scanning technology</p>
-                    </div>
-                    <div class="col-lg-4 text-right">
-                        <a href="#pricing" class="btn btn-primary btn-lg btn-pulse animated fadeInRight">View
-                            Pricing</a>
+                        <div class="hero-badge fade-up">
+                            <i class="fas fa-tools"></i>
+                            Professional Equipment
+                        </div>
+                        <h1 class="fade-up delay-1">Mining & Exploration <span>Equipment</span></h1>
+                        <p class="fade-up delay-2">Discover our premium range of geophysical detection systems and
+                            precision instruments designed for professional mineral exploration and treasure detection.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <section class="equipment-showcase">
-            <div class="container">
-
-                <!-- Image Gallery -->
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="equipment-image-gallery reveal-left">
-                            <img id="mainImage" src="images/megascanPro.jpg" alt="Mega Scan Pro Geophysical Scanner"
-                                class="equipment-main-image">
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro Main Unit"
-                                        class="equipment-thumbnail active" onclick="changeImage(this)">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro Display"
-                                        class="equipment-thumbnail" onclick="changeImage(this)">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro in Field"
-                                        class="equipment-thumbnail" onclick="changeImage(this)">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Section -->
-                        <div class="mt-5">
-                            <h2 class="section-title-equipment reveal">Equipment in Action</h2>
-                            <a href="https://www.youtube.com/watch?v=Ask-EHSex34" target="_blank"
-                                rel="noopener noreferrer" class="text-decoration-none">
-                                <div class="video-container">
-                                    <span class="video-badge"><i class="fab fa-youtube"></i> Tutorial Video</span>
-                                    <span class="video-duration"><i class="far fa-clock"></i> Watch Demo</span>
-                                    <img src="images/megascan-video-thumbnail.jpg"
-                                        alt="Mega Scan Pro Tutorial - Garrett Pro Pointer" class="video-thumbnail">
-                                    <div class="video-overlay">
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <p class="text-muted mt-3"><i class="fas fa-info-circle"></i> Watch the Mega Scan Pro
-                                tutorial featuring the Garrett Pro-Pointer for mineral exploration and treasure
-                                detection</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <!-- Specifications Card -->
-                        <div class="specs-card reveal-right">
-                            <h3><i class="fas fa-cogs"></i> Technical Specifications</h3>
-                            <div class="spec-item">
-                                <span class="spec-label">Model:</span>
-                                <span class="spec-value">Mega Scan Pro 2024</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Detection Depth:</span>
-                                <span class="spec-value">Up to 50 meters</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Scan Range:</span>
-                                <span class="spec-value">Up to 3000 meters</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Display:</span>
-                                <span class="spec-value">5" TFT Color Screen</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weight:</span>
-                                <span class="spec-value">6.3 kg (with case)</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Battery Life:</span>
-                                <span class="spec-value">Up to 15 hours</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Processor:</span>
-                                <span class="spec-value">ARM 168 MHz</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Battery:</span>
-                                <span class="spec-value">3.7V 3600mAh Li-Ion</span>
-                            </div>
-                        </div>
-
-                        <!-- Features List -->
-                        <div class="specs-card">
-                            <h3><i class="fas fa-star"></i> Key Features</h3>
-                            <ul class="features-list">
-                                <li>Long Range Locator (LRL) System</li>
-                                <li>3D Ground Scan with Visual Analyzer</li>
-                                <li>Magnetometer Super Sensor</li>
-                                <li>Ionic Scan System</li>
-                                <li>Pin Pointer Precision Detection</li>
-                                <li>Bionic Signal Capture System</li>
-                                <li>6 Versatile Search Systems</li>
-                                <li>Waterproof ABS Hardcase</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pricing Section -->
-                <div class="row" id="pricing">
-                    <div class="col-12">
-                        <div class="pricing-highlight reveal-scale">
-                            <h3 class="text-center"><i class="fas fa-tags"
-                                    style="color: #ffb600; margin-right: 10px;"></i>Equipment Rental & Purchase</h3>
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="price-wrapper">
-                                        <div class="price-tag">
-                                            <sup>TZS</sup> <span class="counter" data-target="20000000">0</span>
-                                        </div>
-                                        <p class="price-label">Purchase Price</p>
-                                        <p class="price-sublabel">or Rent from <strong>TZS 150,000/day</strong></p>
-                                    </div>
-                                    <div class="secure-payment">
-                                        <i class="fas fa-shield-alt"></i>
-                                        <span>Secure payment options available</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="trust-badges">
-                                        <div class="trust-badge">
-                                            <div class="trust-badge-icon">
-                                                <i class="fas fa-certificate"></i>
-                                            </div>
-                                            <div class="trust-badge-text">
-                                                <h5>1 Year Warranty</h5>
-                                                <p>Full coverage on all components</p>
-                                            </div>
-                                        </div>
-                                        <div class="trust-badge">
-                                            <div class="trust-badge-icon">
-                                                <i class="fas fa-truck"></i>
-                                            </div>
-                                            <div class="trust-badge-text">
-                                                <h5>Free Delivery</h5>
-                                                <p>Nationwide shipping included</p>
-                                            </div>
-                                        </div>
-                                        <div class="trust-badge">
-                                            <div class="trust-badge-icon">
-                                                <i class="fas fa-headset"></i>
-                                            </div>
-                                            <div class="trust-badge-text">
-                                                <h5>24/7 Support</h5>
-                                                <p>Expert technical assistance</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Download Section -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="download-section reveal">
-                            <h3><i class="fas fa-file-pdf"></i> Technical Documentation</h3>
-                            <p>Download the complete technical specifications, operation manual, and maintenance guide
-                            </p>
-                            <a href="#" class="btn btn-download" onclick="downloadPDF(); return false;">
-                                <i class="fas fa-download"></i> Download PDF Brochure (2.4 MB)
-                            </a>
-                            <p class="mt-3 mb-0" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
-                                Includes: Full specifications, safety guidelines, maintenance schedule, and warranty
-                                information
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Information -->
-                <div class="row mt-5">
-                    <div class="col-lg-6">
-                        <h2 class="section-title-equipment reveal">Applications</h2>
-                        <ul class="features-list">
-                            <li class="stagger-item">Gold and precious metal detection</li>
-                            <li class="stagger-item">Mineral deposit exploration</li>
-                            <li class="stagger-item">Archaeological treasure hunting</li>
-                            <li class="stagger-item">Underground cavity detection</li>
-                            <li class="stagger-item">Diamond and gemstone prospecting</li>
-                            <li class="stagger-item">Subsurface geological mapping</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <h2 class="section-title-equipment reveal">What's Included</h2>
-                        <ul class="features-list">
-                            <li class="stagger-item">Mega Scan Pro main unit</li>
-                            <li class="stagger-item">I.M.T.U Probe (Multi Transceiver)</li>
-                            <li class="stagger-item">V.S.T Probe (Vertical Signal Transceiver)</li>
-                            <li class="stagger-item">Long Range Search Antennas</li>
-                            <li class="stagger-item">Rechargeable Li-Ion Battery Pack</li>
-                            <li class="stagger-item">Multi Visual Analyzer App</li>
-                            <li class="stagger-item">Waterproof Protective Hardcase</li>
-                            <li class="stagger-item">Complete User Manual & Training</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- Contact CTA -->
-        <section class="contact-cta reveal">
+        <!-- Products Catalog Section -->
+        <section class="products-catalog">
             <div class="container">
-                <h3>Interested in This Equipment?</h3>
-                <p>Contact our sales team for a personalized quote or to schedule a demonstration</p>
-                <a href="contact.html" class="btn btn-primary btn-lg mr-3 btn-pulse">
-                    <i class="fas fa-envelope"></i> Contact Sales
-                </a>
-                <a href="tel:+255767413950" class="btn btn-dark btn-lg">
-                    <i class="fas fa-phone"></i> Call Now
-                </a>
+                <div class="section-header fade-up">
+                    <h2>Our Equipment Catalog</h2>
+                    <p>State-of-the-art tools for geological exploration and mineral detection</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Product 1: Mega Scan Pro -->
+                    <div class="product-card fade-up delay-1">
+                        <div class="product-image-wrapper">
+                            <span class="product-badge">Featured</span>
+                            <img src="images/megascanPro.jpg" alt="Mega Scan Pro" class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <div class="product-category">
+                                <i class="fas fa-gem"></i>
+                                Geophysical Scanner
+                            </div>
+                            <h3 class="product-title">Mega Scan Pro</h3>
+                            <p class="product-description">
+                                Advanced multi-purpose geophysical detection system featuring long-range locator
+                                technology and 3D ground scanning capabilities for comprehensive subsurface analysis.
+                            </p>
+                            <div class="product-features">
+                                <span class="feature-tag">3D Scanning</span>
+                                <span class="feature-tag">50m Depth</span>
+                                <span class="feature-tag">Long Range</span>
+                                <span class="feature-tag">6 Systems</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <div class="price-label">Starting from</div>
+                                    <div class="price-value"><span>TZS</span> 20,000,000</div>
+                                </div>
+                                <a href="equipment-megascan.html" class="btn-view-details">
+                                    View Details <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Gold Pin Pointer -->
+                    <div class="product-card fade-up delay-2">
+                        <div class="product-image-wrapper">
+                            <span class="product-badge">Popular</span>
+                            <img src="images/gold-pin-pointer.png" alt="Gold Pin Pointer" class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <div class="product-category">
+                                <i class="fas fa-bullseye"></i>
+                                Precision Detector
+                            </div>
+                            <h3 class="product-title">Gold Pin Pointer</h3>
+                            <p class="product-description">
+                                Professional-grade handheld metal detector designed for precise pinpointing of gold
+                                nuggets, coins, and small metallic targets with exceptional sensitivity and accuracy.
+                            </p>
+                            <div class="product-features">
+                                <span class="feature-tag">High Sensitivity</span>
+                                <span class="feature-tag">Waterproof</span>
+                                <span class="feature-tag">LED Light</span>
+                                <span class="feature-tag">Portable</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <div class="price-label">Starting from</div>
+                                    <div class="price-value"><span>TZS</span> 500,000</div>
+                                </div>
+                                <a href="equipment-pinpointer.html" class="btn-view-details">
+                                    View Details <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Why Choose Our Equipment</h2>
+                    <p>Industry-leading quality and support for all your exploration needs</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card fade-up delay-1">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>1 Year Warranty</h4>
+                        <p>Full coverage on all components and parts with hassle-free claims</p>
+                    </div>
+
+                    <div class="benefit-card fade-up delay-2">
+                        <div class="benefit-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h4>Free Delivery</h4>
+                        <p>Nationwide shipping included with secure packaging and tracking</p>
+                    </div>
+
+                    <div class="benefit-card fade-up delay-3">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Expert technical assistance available around the clock</p>
+                    </div>
+
+                    <div class="benefit-card fade-up delay-4">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Free Training</h4>
+                        <p>Comprehensive training sessions included with every purchase</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="contact-cta-section">
+            <div class="container">
+                <div class="cta-content fade-up">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact our sales team for personalized quotes, demonstrations, or rental inquiries on any of our
+                        equipment.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn-cta-primary">
+                            <i class="fas fa-envelope"></i> Contact Sales
+                        </a>
+                        <a href="tel:+255767413950" class="btn-cta-secondary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1821,91 +1122,23 @@
         <script src="js/script.js"></script>
 
         <script>
-            // Image gallery functionality
-            function changeImage(thumbnail) {
-                const mainImage = document.getElementById('mainImage');
-                mainImage.src = thumbnail.src;
+            // Fade-up animation on scroll
+            function handleScrollAnimations() {
+                const fadeElements = document.querySelectorAll('.fade-up:not(.visible)');
 
-                // Update active state
-                document.querySelectorAll('.equipment-thumbnail').forEach(thumb => {
-                    thumb.classList.remove('active');
-                });
-                thumbnail.classList.add('active');
-            }
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
 
-            // PDF Download functionality
-            function downloadPDF() {
-                // Create a dynamic download link for the Mega Scan Pro PDF
-                const link = document.createElement('a');
-                link.href = 'downloads/Mega Scan Pro EN.pdf';
-                link.download = 'Mega_Scan_Pro_EN.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-
-            // Smooth scroll to pricing section
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href !== '#!') {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
                     }
                 });
-            });
-        </script>
-
-
-
-
-
-
-
-
-        <script>
-            // Enhanced Scroll-to-Top with Progress
-            const backToTop = document.getElementById('back-to-top');
-            const scrollProgress = document.getElementById('scrollProgress');
-            const circumference = 2 * Math.PI * 28; // radius = 28
-
-            function updateScrollProgress() {
-                const scrollTop = window.pageYOffset;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = scrollTop / docHeight;
-
-                // Show/hide button
-                if (scrollTop > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-
-                // Update progress ring
-                if (scrollProgress) {
-                    const offset = circumference - (scrollPercent * circumference);
-                    scrollProgress.style.strokeDashoffset = offset;
-                }
             }
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
+            window.addEventListener('scroll', handleScrollAnimations);
+            window.addEventListener('load', handleScrollAnimations);
 
-            window.addEventListener('scroll', updateScrollProgress);
-            window.addEventListener('load', updateScrollProgress);
-        </script>
-
-        <script>
             // Sticky Navigation Header
             const header = document.querySelector('.header-one');
             const headerOffset = header ? header.offsetTop : 0;
@@ -1921,137 +1154,38 @@
             }
 
             window.addEventListener('scroll', handleStickyHeader);
-        </script>
 
-        <script>
-            // Image Lightbox Gallery
-            function openLightbox(src, alt) {
-                const overlay = document.getElementById('lightboxOverlay');
-                const image = document.getElementById('lightboxImage');
-                const caption = document.getElementById('lightboxCaption');
+            // Enhanced Scroll-to-Top with Progress
+            const backToTop = document.getElementById('back-to-top');
+            const scrollProgress = document.getElementById('scrollProgress');
+            const circumference = 2 * Math.PI * 28;
 
-                image.src = src;
-                caption.textContent = alt;
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+            function updateScrollProgress() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = scrollTop / docHeight;
 
-            function closeLightbox() {
-                const overlay = document.getElementById('lightboxOverlay');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            // Close on overlay click
-            document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
-                if (e.target === this) {
-                    closeLightbox();
+                if (scrollTop > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
                 }
-            });
 
-            // Close on escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
+                if (scrollProgress) {
+                    const offset = circumference - (scrollPercent * circumference);
+                    scrollProgress.style.strokeDashoffset = offset;
                 }
-            });
+            }
 
-            // Make all equipment images clickable
-            document.querySelectorAll('.equipment-main-image, .equipment-thumbnail').forEach(img => {
-                img.addEventListener('click', function () {
-                    openLightbox(this.src, this.alt);
-                });
-            });
-        </script>
-
-        <!-- Lightbox Overlay -->
-        <div class="lightbox-overlay" id="lightboxOverlay">
-            <div class="lightbox-content">
-                <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-                <img src="" alt="" class="lightbox-image" id="lightboxImage">
-                <p class="lightbox-caption" id="lightboxCaption"></p>
-            </div>
-        </div>
-
-        <script>
-            // Staggered List Animation
-            function animateStaggerItems() {
-                const containers = document.querySelectorAll('.features-list');
-
-                containers.forEach(container => {
-                    const rect = container.getBoundingClientRect();
-                    const items = container.querySelectorAll('.stagger-item:not(.active)');
-
-                    if (rect.top < window.innerHeight - 100) {
-                        items.forEach(item => {
-                            item.classList.add('active');
-                        });
-                    }
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             }
 
-            window.addEventListener('scroll', animateStaggerItems);
-            window.addEventListener('load', animateStaggerItems);
-        </script>
-
-        <script>
-            // Price Counter Animation
-            function formatNumber(num) {
-                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
-
-            function animateCounter(element) {
-                const target = parseInt(element.getAttribute('data-target'));
-                const duration = 2000; // 2 seconds
-                const step = target / (duration / 16); // 60fps
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                        // Add shimmer effect after counting finishes
-                        element.classList.add('price-shimmer');
-                    }
-                    element.textContent = formatNumber(Math.floor(current));
-                }, 16);
-            }
-
-            // Trigger counter when pricing section is visible
-            function checkCounterVisibility() {
-                const counters = document.querySelectorAll('.counter:not(.counted)');
-                counters.forEach(counter => {
-                    const rect = counter.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        counter.classList.add('counted');
-                        animateCounter(counter);
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', checkCounterVisibility);
-            window.addEventListener('load', checkCounterVisibility);
-        </script>
-
-        <script>
-            // Scroll Reveal Animation
-            function revealOnScroll() {
-                const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-
-                reveals.forEach(element => {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
-
-                    if (elementTop < windowHeight - elementVisible) {
-                        element.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', revealOnScroll);
-            window.addEventListener('load', revealOnScroll);
+            window.addEventListener('scroll', updateScrollProgress);
+            window.addEventListener('load', updateScrollProgress);
         </script>
 
     </div><!-- Body inner end -->
