@@ -1,0 +1,27 @@
+/* Critical CSS - Inline this in <head> for faster First Contentful Paint */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #555
+}
+
+.header-one {
+    background: #fff
+}
+
+.site-navigation {
+    background: #212121
+}
+
+.banner-carousel {
+    min-height: 500px
+}
+
+.btn-primary {
+    background: #ffb600;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none
+}

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+================================================== -->
+    <meta charset="utf-8">
+    <title>Briva - Mining Equipment & Machinery</title>
+
+    <!-- Mobile Specific Metas
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Explore our state-of-the-art mining equipment and machinery. Professional geological exploration tools and drilling equipment.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Favicon
+================================================== -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- CSS
+================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+    <!-- Animation -->
+    <link rel="stylesheet" href="plugins/animate-css/animate.css">
+    <!-- slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .equipment-showcase {
+            padding: 60px 0;
+        }
+
+        .equipment-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 0;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+
+        .equipment-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffb600;
+        }
+
+        .equipment-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .equipment-image-gallery {
+            margin-bottom: 40px;
+        }
+
+        .equipment-main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .equipment-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .equipment-thumbnail:hover,
+        .equipment-thumbnail.active {
+            border-color: #ffb600;
+            transform: scale(1.05);
+        }
+
+        .specs-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .specs-card h3 {
+            color: #212121;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 3px solid #ffb600;
+            padding-bottom: 10px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .spec-value {
+            color: #212121;
+            font-weight: 500;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #ffb600 0%, #ff9500 100%);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(255, 182, 0, 0.3);
+        }
+
+        .download-section h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .download-section p {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-download {
+            background: #fff;
+            color: #ffb600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-download:hover {
+            background: #212121;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-download i {
+            margin-right: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 40px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pricing-highlight {
+            background: linear-gradient(135deg, #212121 0%, #3d3d3d 100%);
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 182, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .pricing-highlight h3 {
+            color: #ffb600;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-tag sup {
+            font-size: 2rem;
+            vertical-align: super;
+        }
+
+        .currency-note {
+            max-width: 300px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            color: #555;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #ffb600;
+            font-size: 1.2rem;
+        }
+
+        .section-title-equipment {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #212121;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title-equipment::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #ffb600;
+        }
+
+        .contact-cta {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #212121;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="body-inner">
+
+        <div id="top-bar" class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <ul class="top-info text-center text-md-left">
+                            <li><i class="fas fa-map-marker-alt"></i>
+                                <p class="info-text">11259 Dar Es Salaam - TZ</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/ Top info end -->
+
+                    <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a title="Instagram"
+                                    href="https://www.instagram.com/briva_mining_exploration?igsh=MW0xem9xa2VpeHQ0eQ%3D%3D&utm_source=qr"
+                                    target="_blank">
+                                    <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/ Top social end -->
+                </div>
+                <!--/ Content row end -->
+            </div>
+            <!--/ Container end -->
+        </div>
+        <!--/ Topbar end -->
+        <!-- Header start -->
+        <header id="header" class="header-one">
+            <div class="bg-white">
+                <div class="container">
+                    <div class="logo-area">
+                        <div class="row align-items-center">
+                            <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+                                <a class="d-block" href="index.html">
+                                    <img loading="lazy" src="images/brivaLogo.png" alt="Briva" width="150" height="150">
+                                </a>
+                            </div><!-- logo end -->
+
+                            <div class="col-lg-9 header-right">
+                                <ul class="top-info-box">
+                                    <li>
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <p class="info-box-subtitle">+255 767 413 950</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <p class="info-box-subtitle">info@briva.co.tz</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul><!-- Ul end -->
+                            </div><!-- header right end -->
+                        </div><!-- logo area end -->
+
+                    </div><!-- Row end -->
+                </div><!-- Container end -->
+            </div>
+
+            <div class="site-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div id="navbar-collapse" class="collapse navbar-collapse">
+                                    <ul class="nav navbar-nav mr-auto">
+                                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                                        <li class="nav-item active"><a class="nav-link"
+                                                href="equipment.html">Equipment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!--/ Col end -->
+                    </div>
+                    <!--/ Row end -->
+
+                    <div class="nav-search">
+                        <span id="search"><i class="fa fa-search"></i></span>
+                    </div><!-- Search end -->
+
+                    <div class="search-block" style="display: none;">
+                        <label for="search-field" class="w-100 mb-0">
+                            <input type="text" class="form-control" id="search-field"
+                                placeholder="Type what you want and enter">
+                        </label>
+                        <span class="search-close">&times;</span>
+                    </div><!-- Site search end -->
+                </div>
+                <!--/ Container end -->
+
+            </div>
+            <!--/ Navigation end -->
+        </header>
+        <!--/ Header end -->
+
+        <!-- Equipment Hero Section -->
+        <div class="equipment-hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="animated fadeInLeft">Mega Scan Pro - Advanced Geophysical Scanner</h1>
+                        <p class="animated fadeInLeft">Multi-purpose geophysical detection system for mineral
+                            exploration, treasure hunting, and subsurface analysis with long-range locator and 3D ground
+                            scanning technology</p>
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <a href="#pricing" class="btn btn-primary btn-lg animated fadeInRight">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <section class="equipment-showcase">
+            <div class="container">
+
+                <!-- Image Gallery -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="equipment-image-gallery">
+                            <img id="mainImage" src="images/megascanPro.jpg" alt="Mega Scan Pro Geophysical Scanner"
+                                class="equipment-main-image">
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro Main Unit"
+                                        class="equipment-thumbnail active" onclick="changeImage(this)">
+                                </div>
+                                <div class="col-4">
+                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro Display"
+                                        class="equipment-thumbnail" onclick="changeImage(this)">
+                                </div>
+                                <div class="col-4">
+                                    <img src="images/megascanPro.jpg" alt="Mega Scan Pro in Field"
+                                        class="equipment-thumbnail" onclick="changeImage(this)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Video Section -->
+                        <div class="mt-5">
+                            <h2 class="section-title-equipment">Equipment in Action</h2>
+                            <div class="video-container">
+                                <!-- Replace with your actual YouTube video ID -->
+                                <iframe src="https://www.youtube.com/embed/Ask-EHSex34"
+                                    title="Mega Scan Pro Geophysical Scanner Demo"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <p class="text-muted mt-3"><i class="fas fa-info-circle"></i> Watch the Mega Scan Pro in
+                                action for mineral exploration and treasure detection</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <!-- Specifications Card -->
+                        <div class="specs-card">
+                            <h3><i class="fas fa-cogs"></i> Technical Specifications</h3>
+                            <div class="spec-item">
+                                <span class="spec-label">Model:</span>
+                                <span class="spec-value">Mega Scan Pro 2024</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Detection Depth:</span>
+                                <span class="spec-value">Up to 50 meters</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Scan Range:</span>
+                                <span class="spec-value">Up to 3000 meters</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Display:</span>
+                                <span class="spec-value">5" TFT Color Screen</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weight:</span>
+                                <span class="spec-value">6.3 kg (with case)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Battery Life:</span>
+                                <span class="spec-value">Up to 15 hours</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Processor:</span>
+                                <span class="spec-value">ARM 168 MHz</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Battery:</span>
+                                <span class="spec-value">3.7V 3600mAh Li-Ion</span>
+                            </div>
+                        </div>
+
+                        <!-- Features List -->
+                        <div class="specs-card">
+                            <h3><i class="fas fa-star"></i> Key Features</h3>
+                            <ul class="features-list">
+                                <li>Long Range Locator (LRL) System</li>
+                                <li>3D Ground Scan with Visual Analyzer</li>
+                                <li>Magnetometer Super Sensor</li>
+                                <li>Ionic Scan System</li>
+                                <li>Pin Pointer Precision Detection</li>
+                                <li>Bionic Signal Capture System</li>
+                                <li>6 Versatile Search Systems</li>
+                                <li>Waterproof ABS Hardcase</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div class="row" id="pricing">
+                    <div class="col-12">
+                        <div class="pricing-highlight">
+                            <h3>Equipment Rental & Purchase</h3>
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="price-tag">
+                                        <sup>TZS</sup> 450,000,000
+                                    </div>
+                                    <p style="color: #fff; font-size: 1.2rem;">Purchase Price</p>
+                                    <p style="color: rgba(255,255,255,0.8);">or Rent from <strong>TZS
+                                            2,500,000/month</strong></p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tanzania_Shillings.jpg/800px-Tanzania_Shillings.jpg"
+                                        alt="Tanzanian Shillings" class="currency-note"
+                                        onerror="this.src='images/brivaLogo.png'">
+                                    <p style="color: rgba(255,255,255,0.9); margin-top: 15px; font-size: 0.9rem;">
+                                        <i class="fas fa-shield-alt"></i> Secure payment options available
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="download-section">
+                            <h3><i class="fas fa-file-pdf"></i> Technical Documentation</h3>
+                            <p>Download the complete technical specifications, operation manual, and maintenance guide
+                            </p>
+                            <a href="#" class="btn btn-download" onclick="downloadPDF(); return false;">
+                                <i class="fas fa-download"></i> Download PDF Brochure (2.4 MB)
+                            </a>
+                            <p class="mt-3 mb-0" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                                Includes: Full specifications, safety guidelines, maintenance schedule, and warranty
+                                information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <h2 class="section-title-equipment">Applications</h2>
+                        <ul class="features-list">
+                            <li>Gold and precious metal detection</li>
+                            <li>Mineral deposit exploration</li>
+                            <li>Archaeological treasure hunting</li>
+                            <li>Underground cavity detection</li>
+                            <li>Diamond and gemstone prospecting</li>
+                            <li>Subsurface geological mapping</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="section-title-equipment">What's Included</h2>
+                        <ul class="features-list">
+                            <li>Mega Scan Pro main unit</li>
+                            <li>I.M.T.U Probe (Multi Transceiver)</li>
+                            <li>V.S.T Probe (Vertical Signal Transceiver)</li>
+                            <li>Long Range Search Antennas</li>
+                            <li>Rechargeable Li-Ion Battery Pack</li>
+                            <li>Multi Visual Analyzer App</li>
+                            <li>Waterproof Protective Hardcase</li>
+                            <li>Complete User Manual & Training</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h3>Interested in This Equipment?</h3>
+                <p>Contact our sales team for a personalized quote or to schedule a demonstration</p>
+                <a href="contact.html" class="btn btn-primary btn-lg mr-3">
+                    <i class="fas fa-envelope"></i> Contact Sales
+                </a>
+                <a href="tel:+255767413950" class="btn btn-dark btn-lg">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer bg-overlay">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-6 footer-widget footer-about">
+                            <h3 class="widget-title">About Us</h3>
+                            <img loading="lazy" class="footer-logo" src="images/brivaLogo.png" alt="Briva">
+                            <p>Briva is a multidisciplinary firm providing end-to-end solutions in the mining and
+                                exploration sector.
+                                With a team of seasoned geologists, engineers, analysts, and industry consultants, we
+                                are committed to
+                                delivering reliable, sustainable, and cost-effective services across the mining value
+                                chain.</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/briva_mining_exploration?igsh=MW0xem9xa2VpeHQ0eQ%3D%3D&utm_source=qr"
+                                            aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div><!-- Footer social end -->
+                        </div><!-- Col end -->
+
+                        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+                            <h3 class="widget-title">Working Hours</h3>
+                            <div class="working-hours">
+                                We work 7 days a week, every day excluding major holidays. Contact us if you have an
+                                emergency, with our
+                                Hotline and Contact form.
+                                <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
+                                <br> Saturday: <span class="text-right">12:00 - 15:00</span>
+                            </div>
+                        </div><!-- Col end -->
+
+                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+                            <h3 class="widget-title">Services</h3>
+                            <ul class="list-arrow">
+                                <li><a href="services.html">Geological and Exploration </a></li>
+                                <li><a href="services.html">Resource Estimation and Modelling</a></li>
+                                <li><a href="services.html">Technical Reporting and Compliance</a></li>
+                                <li><a href="services.html">Mining Engineering and Mine Planning</a></li>
+                                <li><a href="services.html">Financial and Economic Analysis</a></li>
+                            </ul>
+                        </div><!-- Col end -->
+                    </div><!-- Row end -->
+                </div><!-- Container end -->
+            </div><!-- Footer main end -->
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="copyright-info">
+                                <span>Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>, Designed &amp; Developed by <a href="https://briva.co.tz">Briva</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="footer-menu text-center text-md-right">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="team.html">Our people</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- Row end -->
+
+                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+                        <button class="btn btn-primary" title="Back to Top">
+                            <i class="fa fa-angle-double-up"></i>
+                        </button>
+                    </div>
+
+                </div><!-- Container end -->
+            </div><!-- Copyright end -->
+        </footer><!-- Footer end -->
+
+
+        <!-- Javascript Files
+  ================================================== -->
+
+        <!-- initialize jQuery Library -->
+        <script src="plugins/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+        <!-- Slick Carousel -->
+        <script src="plugins/slick/slick.min.js"></script>
+        <script src="plugins/slick/slick-animation.min.js"></script>
+        <!-- Color box -->
+        <script src="plugins/colorbox/jquery.colorbox.js"></script>
+        <!-- shuffle -->
+        <li>Remote monitoring capability</li>
+        <li>Low fuel consumption</li>
+        <li>Easy maintenance access</li>
+        </ul>
+    </div>
+    </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="row" id="pricing">
+        <div class="col-12">
+            <div class="pricing-highlight">
+                <h3>Equipment Rental & Purchase</h3>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="price-tag">
+                            <sup>TZS</sup> 450,000,000
+                        </div>
+                        <p style="color: #fff; font-size: 1.2rem;">Purchase Price</p>
+                        <p style="color: rgba(255,255,255,0.8);">or Rent from <strong>TZS
+                                2,500,000/month</strong></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tanzania_Shillings.jpg/800px-Tanzania_Shillings.jpg"
+                            alt="Tanzanian Shillings" class="currency-note" onerror="this.src='images/brivaLogo.png'">
+                        <p style="color: rgba(255,255,255,0.9); margin-top: 15px; font-size: 0.9rem;">
+                            <i class="fas fa-shield-alt"></i> Secure payment options available
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="download-section">
+                <h3><i class="fas fa-file-pdf"></i> Technical Documentation</h3>
+                <p>Download the complete technical specifications, operation manual, and maintenance guide
+                </p>
+                <a href="#" class="btn btn-download" onclick="downloadPDF(); return false;">
+                    <i class="fas fa-download"></i> Download PDF Brochure (2.4 MB)
+                </a>
+                <p class="mt-3 mb-0" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                    Includes: Full specifications, safety guidelines, maintenance schedule, and warranty
+                    information
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="row mt-5">
+        <div class="col-lg-6">
+            <h2 class="section-title-equipment">Applications</h2>
+            <ul class="features-list">
+                <li>Mineral exploration and sampling</li>
+                <li>Geotechnical investigations</li>
+                <li>Environmental site assessments</li>
+                <li>Water well drilling</li>
+                <li>Foundation testing</li>
+                <li>Geological research</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="section-title-equipment">What's Included</h2>
+            <ul class="features-list">
+                <li>Complete drilling rig assembly</li>
+                <li>Standard drill bit set</li>
+                <li>Hydraulic power unit</li>
+                <li>Control panel with digital display</li>
+                <li>Safety equipment package</li>
+                <li>Operation & maintenance manual</li>
+                <li>1-year warranty coverage</li>
+                <li>Training for operators (2 days)</li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h3>Interested in This Equipment?</h3>
+            <p>Contact our sales team for a personalized quote or to schedule a demonstration</p>
+            <a href="contact.html" class="btn btn-primary btn-lg mr-3">
+                <i class="fas fa-envelope"></i> Contact Sales
+            </a>
+            <a href="tel:+255767413950" class="btn btn-dark btn-lg">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer bg-overlay">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-4 col-md-6 footer-widget footer-about">
+                        <h3 class="widget-title">About Us</h3>
+                        <img loading="lazy" class="footer-logo" src="images/brivaLogo.png" alt="Briva">
+                        <p>Briva is a multidisciplinary firm providing end-to-end solutions in the mining and
+                            exploration sector.
+                            With a team of seasoned geologists, engineers, analysts, and industry consultants, we
+                            are committed to
+                            delivering reliable, sustainable, and cost-effective services across the mining value
+                            chain.</p>
+                        <div class="footer-social">
+                            <ul>
+                                <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/briva_mining_exploration?igsh=MW0xem9xa2VpeHQ0eQ%3D%3D&utm_source=qr"
+                                        aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div><!-- Footer social end -->
+                    </div><!-- Col end -->
+
+                    <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+                        <h3 class="widget-title">Working Hours</h3>
+                        <div class="working-hours">
+                            We work 7 days a week, every day excluding major holidays. Contact us if you have an
+                            emergency, with our
+                            Hotline and Contact form.
+                            <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
+                            <br> Saturday: <span class="text-right">12:00 - 15:00</span>
+                        </div>
+                    </div><!-- Col end -->
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+                        <h3 class="widget-title">Services</h3>
+                        <ul class="list-arrow">
+                            <li><a href="services.html">Geological and Exploration </a></li>
+                            <li><a href="services.html">Resource Estimation and Modelling</a></li>
+                            <li><a href="services.html">Technical Reporting and Compliance</a></li>
+                            <li><a href="services.html">Mining Engineering and Mine Planning</a></li>
+                            <li><a href="services.html">Financial and Economic Analysis</a></li>
+                        </ul>
+                    </div><!-- Col end -->
+                </div><!-- Row end -->
+            </div><!-- Container end -->
+        </div><!-- Footer main end -->
+
+        <div class="copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright-info">
+                            <span>Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>, Designed &amp; Developed by <a href="https://briva.co.tz">Briva</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="footer-menu text-center text-md-right">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="team.html">Our people</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- Row end -->
+
+                <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+                    <button class="btn btn-primary" title="Back to Top">
+                        <i class="fa fa-angle-double-up"></i>
+                    </button>
+                </div>
+
+            </div><!-- Container end -->
+        </div><!-- Copyright end -->
+    </footer><!-- Footer end -->
+
+
+    <!-- Javascript Files
+  ================================================== -->
+
+    <!-- initialize jQuery Library -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+    <!-- Color box -->
+    <script src="plugins/colorbox/jquery.colorbox.js"></script>
+    <!-- shuffle -->
+    <script src="plugins/shuffle/shuffle.min.js" defer></script>
+
+    <!-- Template custom -->
+    <script src="js/script.js"></script>
+
+    <script>
+        // Image gallery functionality
+        function changeImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = thumbnail.src;
+
+            // Update active state
+            document.querySelectorAll('.equipment-thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+        }
+
+        // PDF Download functionality
+        function downloadPDF() {
+            // Create a dynamic download link for the Mega Scan Pro PDF
+            const link = document.createElement('a');
+            link.href = 'downloads/Mega Scan Pro EN.pdf';
+            link.download = 'Mega_Scan_Pro_EN.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Smooth scroll to pricing section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#!') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+    </div><!-- Body inner end -->
+</body>
+
+</html>

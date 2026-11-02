@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Project Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #ffb600;
+            padding-bottom: 10px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #ffb600;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .project-card a:hover {
+            background: #e6a500;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔍 Test All Project Links</h1>
+    <p>Click on any project below to test if the dynamic loading works correctly. Each project should show its own
+        unique details.</p>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Artisanal Gold Miners</h3>
+            <p>Location: Tabora</p>
+            <a href="projects-single.html?project=artisanal-gold-tabora">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Artisanal Miners</h3>
+            <p>Location: Morogoro</p>
+            <a href="projects-single.html?project=artisanal-miners-morogoro">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Beryllium</h3>
+            <p>Location: Namtumbo</p>
+            <a href="projects-single.html?project=beryllium-namtumbo">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Beryllium Prospecting</h3>
+            <p>Location: Namtumbo</p>
+            <a href="projects-single.html?project=beryllium-prospecting-namtumbo">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Coal Outcrop Mapping</h3>
+            <p>Location: Liweta</p>
+            <a href="projects-single.html?project=coal-mapping-liweta">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Core Drilling</h3>
+            <p>Location: Various Locations</p>
+            <a href="projects-single.html?project=core-drilling">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Cu-Zn Exploration</h3>
+            <p>Location: Mpanda</p>
+            <a href="projects-single.html?project=cu-zn-mpanda">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Dolomite Prospecting</h3>
+            <p>Location: Dodoma</p>
+            <a href="projects-single.html?project=dolomite-dodoma">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Face Mapping in Coal Mine</h3>
+            <p>Location: Coal Mining Area</p>
+            <a href="projects-single.html?project=face-mapping-coal">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Gold Mineralization</h3>
+            <p>Location: Mazizi, Morogoro</p>
+            <a href="projects-single.html?project=gold-mazizi-morogoro">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Graphite Kyanite Gneiss Stockpile</h3>
+            <p>Location: Merelani</p>
+            <a href="projects-single.html?project=graphite-stockpile-merelani">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Graphite Kyanite Gneiss</h3>
+            <p>Location: Merelani</p>
+            <a href="projects-single.html?project=graphite-merelani">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Pegmatite Lithium Exploration</h3>
+            <p>Location: Dodoma</p>
+            <a href="projects-single.html?project=lithium-dodoma">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Quartz Prospecting</h3>
+            <p>Location: Morogoro</p>
+            <a href="projects-single.html?project=quartz-morogoro">View Project →</a>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: white; border-radius: 8px;">
+        <h2>✅ Testing Checklist</h2>
+        <ul>
+            <li>Click on each project link above</li>
+            <li>Verify the page title changes to match the project name</li>
+            <li>Check that the banner title shows the correct project name</li>
+            <li>Confirm the project description is unique to that project</li>
+            <li>Verify the location, client, size, and year are correct</li>
+            <li>Check that the project image(s) match the project</li>
+        </ul>
+        <p><a href="projects.html" style="color: #ffb600;">← Back to Projects Page</a></p>
+    </div>
+</body>
+
+</html>

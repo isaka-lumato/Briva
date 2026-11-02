@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+================================================== -->
+  <meta charset="utf-8">
+  <title>Briva - Our Team</title>
+
+  <!-- Mobile Specific Metas
+================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- Favicon
+================================================== -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- CSS
+================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Modern Team Styling */
+    body {
+      background: #fdfdfd;
+    }
+
+    .team-modern-area {
+      background: #fdfdfd;
+      background-image: radial-gradient(rgba(233, 116, 81, 0.15) 1px, transparent 1px);
+      background-size: 30px 30px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .team-modern-area .container {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .modern-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-bottom: 20px;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modern-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(233, 116, 81, 0.12);
+      border-color: rgba(233, 116, 81, 0.2);
+    }
+
+    .modern-card .img-box {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modern-card .img-box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .modern-card:hover .img-box::after {
+      opacity: 1;
+    }
+
+    .modern-card .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+      transition: transform 0.6s ease;
+      filter: grayscale(10%);
+      background: #f7f9fa;
+    }
+
+    .modern-card:hover .img-box img {
+      transform: scale(1.08);
+      filter: grayscale(0%);
+    }
+
+    .modern-card .info-box {
+      padding: 25px 20px 20px;
+      text-align: center;
+      background: #fff;
+      position: relative;
+      z-index: 2;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: -15px;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .modern-card.leader-card .img-box {
+      height: 260px;
+    }
+
+    .modern-card .name {
+      font-size: 18px;
+      font-weight: 800;
+      color: #23282d;
+      margin-bottom: 4px;
+      transition: color 0.3s;
+    }
+
+    .modern-card:hover .name {
+      color: #e97451;
+    }
+
+    .modern-card .role {
+      font-size: 11px;
+      font-weight: 700;
+      color: #e97451;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(233, 116, 81, 0.1);
+      border-radius: 30px;
+    }
+
+    .modern-card .desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .modern-card .socials {
+      margin-top: auto;
+    }
+
+    .modern-card .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: #f8f9fa;
+      color: #777;
+      border-radius: 50%;
+      margin: 0 4px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 14px;
+    }
+
+    .modern-card .socials a:hover {
+      background: #e97451;
+      color: #fff;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(233, 116, 81, 0.3);
+    }
+
+    .badge-modern {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: rgba(233, 116, 81, 0.1);
+      color: #e97451;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title-modern {
+      font-size: 36px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .role-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #e97451;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(233, 116, 81, 0.4);
+      text-transform: uppercase;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="body-inner">
+
+    <div id="top-bar" class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <ul class="top-info text-center text-md-left">
+              <li><i class="fas fa-map-marker-alt"></i>
+                <p class="info-text">11259 Dar Es Salaam - TZ</p>
+              </li>
+            </ul>
+          </div>
+          <!--/ Top info end -->
+
+          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+            <ul class="list-unstyled">
+              <li>
+                <a title="Instagram"
+                  href="https://www.instagram.com/briva_mining_exploration?igsh=MW0xem9xa2VpeHQ0eQ%3D%3D&utm_source=qr"
+                  target="_blank">
+                  <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--/ Top social end -->
+        </div>
+        <!--/ Content row end -->
+      </div>
+      <!--/ Container end -->
+    </div>
+    <!--/ Topbar end -->
+    <!-- Header start -->
+    <header id="header" class="header-one">
+      <div class="bg-white">
+        <div class="container">
+          <div class="logo-area">
+            <div class="row align-items-center">
+              <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
+                <a class="d-block" href="index.html">
+                  <img loading="lazy" src="images/brivaLogo.png" alt="Briva">
+                </a>
+              </div><!-- logo end -->
+
+              <div class="col-lg-9 header-right">
+                <ul class="top-info-box">
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                        <p class="info-box-subtitle">+255 767 413 950</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-box">
+                      <div class="info-box-content">
+                        <p class="info-box-subtitle">info@briva.co.tz</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header-get-a-quote">
+                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
+                  </li>
+                </ul><!-- Ul end -->
+              </div><!-- header right end -->
+            </div><!-- logo area end -->
+
+          </div><!-- Row end -->
+        </div><!-- Container end -->
+      </div>
+
+      <div class="site-navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <!--/ Col end -->
+          </div>
+          <!--/ Row end -->
+
+          <div class="nav-search">
+            <span id="search"><i class="fa fa-search"></i></span>
+          </div><!-- Search end -->
+
+          <div class="search-block" style="display: none;">
+            <label for="search-field" class="w-100 mb-0">
+              <input type="text" class="form-control" id="search-field" placeholder="Type what you want and enter">
+            </label>
+            <span class="search-close">&times;</span>
+          </div><!-- Site search end -->
+        </div>
+        <!--/ Container end -->
+
+      </div>
+      <!--/ Navigation end -->
+    </header>
+    <!--/ Header end -->
+    <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+      <div class="banner-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">Our Team</h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">company</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Our Team</li>
+                  </ol>
+                </nav>
+              </div>
+            </div><!-- Col end -->
+          </div><!-- Row end -->
+        </div><!-- Container end -->
+      </div><!-- Banner text end -->
+    </div><!-- Banner area end -->
+
+
+    <section id="main-container" class="main-container pb-4 team-modern-area">
+      <div class="container pb-5 pt-5">
+        <div class="row text-center mb-5">
+          <div class="col-lg-12">
+            <span class="badge-modern">Meet The Experts</span>
+            <h2 class="section-title-modern">Our Leadership & Team</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px; line-height: 1.8;">
+              Briva is powered by a multidisciplinary team of seasoned experts committed to delivering reliable,
+              sustainable, and cost-effective solutions in the mining and mineral exploration sector.
+            </p>
+          </div>
+        </div>
+        <!--/ Title row end -->
+
+        <!-- Executive Leadership -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-lg-5 col-md-6 mb-5">
+            <div class="modern-card leader-card">
+              <span class="role-badge"><i class="fas fa-star mr-1"></i> Executive</span>
+              <div class="img-box">
+                <img loading="lazy" src="images/team/Alex S Bashire.jpg" alt="Alex S. Bashire">
+              </div>
+              <div class="info-box">
+                <h3 class="name">Alex S. Bashire</h3>
+                <span class="role">Chief Executive Officer</span>
+                <p class="desc">Dynamic and results-driven CEO with over 23 years of leadership experience in the mining
+                  and mineral exploration industry.</p>
+                <div class="socials">
+                  <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 mb-5">
+            <div class="modern-card leader-card">
+              <span class="role-badge"><i class="fas fa-star mr-1"></i> Executive</span>
+              <div class="img-box">
+                <img loading="lazy" src="images/team/K. Sridhar Reddy.png" alt="K. Sridhar Reddy">
+              </div>
+              <div class="info-box">
+                <h3 class="name">K. Sridhar Reddy</h3>
+                <span class="role">Non-Executive Director</span>
+                <p class="desc">Seasoned mining professional with over 25 years of experience in mining operations,
+                  project management, and business leadership.</p>
+                <div class="socials">
+                  <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Team -->
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="modern-card">
+              <div class="img-box">
+                <img loading="lazy" src="images/team/Vashty J Nyembera.jpg" alt="Vashty J. Nyembera">
+              </div>
+              <div class="info-box">
+                <h3 class="name">Vashty J. Nyembera</h3>
+                <span class="role">HR and Finance Consultant</span>
+                <p class="desc">Results-driven Human Resource and Finance Consultant with extensive experience in HR
+                  strategy and financial planning.</p>
+                <div class="socials">
+                  <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="modern-card">
+              <div class="img-box">
+                <img loading="lazy" src="images/team/Dr. Kolipaka Venu.jpg" alt="Dr. Kolipaka Venu">
+              </div>
+              <div class="info-box">
+                <h3 class="name">Dr. Kolipaka Venu</h3>
+                <span class="role">Geophysics Consultant</span>
+                <p class="desc">Accomplished geophysicist with over 12 years of experience in mineral exploration across
+                  India and West Africa.</p>
+                <div class="socials">
+                  <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="modern-card">
+              <div class="img-box">
+                <img loading="lazy" src="images/team/SRIRAMA GOPAL YELLAPRAGADA.jpg" alt="Srirama Gopal Yellapragada">
+              </div>
+              <div class="info-box">
+                <h3 class="name">Srirama G. Yellapragada</h3>
+                <span class="role">Engineering Consultant</span>
+                <p class="desc">Highly accomplished Mines Manager specializing in open-pit mine planning, project
+                  development, and operational leadership.</p>
+                <div class="socials">
+                  <a target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-5">
+            <div class="modern-card">
+              <div class="img-box">
+                <img loading="lazy" src="images/team/JACKLINE SAYI KIDENDEI.jpg" alt="Jackline Sayi Kidendei">
+              </div>
+              <div class="info-box">
+                <h3 class="name">Jackline S. Kidendei</h3>
+                <span class="role">Geologist & Marketing Manager</span>
+                <p class="desc">Dynamic Marketing Manager with a solid background in Geology and extensive experience in
+                  the Exploration and Mining industry.</p>
+                <div class="socials">
+                  <a target="_blank" href="https://www.linkedin.com/in/jackline-kidendei-8a8789371"><i
+                      class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- Content row end -->
+
+      </div><!-- Container end -->
+    </section><!-- Main container end -->
+
+    <footer id="footer" class="footer bg-overlay">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title">About Us</h3>
+              <img loading="lazy" class="footer-logo" src="images/brivaLogo.png" alt="Briva">
+              <p>Briva is a multidisciplinary firm providing end-to-end solutions in the mining and exploration sector.
+                With a team of seasoned geologists, engineers, analysts, and industry consultants, we are committed to
+                delivering reliable, sustainable, and cost-effective services across the mining value chain.</p>
+              <div class="footer-social">
+                <ul>
+                  <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div><!-- Footer social end -->
+            </div><!-- Col end -->
+
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title">Working Hours</h3>
+              <div class="working-hours">
+                We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
+                Hotline and Contact form.
+                <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
+                <br> Saturday: <span class="text-right">12:00 - 15:00</span>
+              </div>
+            </div><!-- Col end -->
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+              <h3 class="widget-title">Services</h3>
+              <ul class="list-arrow">
+                <li><a href="services.html">Geological and Exploration </a></li>
+                <li><a href="services.html">Resource Estimation and Modelling</a></li>
+                <li><a href="services.html">Technical Reporting and Compliance</a></li>
+                <li><a href="services.html">Mining Engineering and Mine Planning</a></li>
+                <li><a href="services.html">Financial and Economic Analysis</a></li>
+              </ul>
+            </div><!-- Col end -->
+          </div><!-- Row end -->
+        </div><!-- Container end -->
+      </div><!-- Footer main end -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span>Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear())
+                  </script>, Designed &amp; Developed by <a href="https://briva.co.tz">Briva</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div><!-- Row end -->
+
+        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+          <button class="btn btn-primary" title="Back to Top">
+            <i class="fa fa-angle-double-up"></i>
+          </button>
+        </div>
+
+      </div><!-- Container end -->
+    </footer><!-- Footer end -->
+
+
+    <!-- Javascript Files
+  ================================================== -->
+
+    <!-- initialize jQuery Library -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+    <!-- Color box -->
+    <script src="plugins/colorbox/jquery.colorbox.js"></script>
+    <!-- shuffle -->
+    <script src="plugins/shuffle/shuffle.min.js" defer></script>
+
+
+    <!-- Google Map API Key-->
+
+    <!-- Google Map Plugin-->
+
+
+    <!-- Template custom -->
+    <script src="js/script.js"></script>
+
+  </div><!-- Body inner end -->
+</body>
+
+</html>
