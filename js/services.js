@@ -1,0 +1,469 @@
+/* ==========================================================================
+   BRIVA EXPLORATION & MINING — DISCIPLINE DETAIL ENGINE
+   Drives: service-single.html?service=<slug>
+   Source of truth: data/services.json
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  const FALLBACK_DATA = {
+  "services": [
+    {
+      "slug": "geological-exploration",
+      "num": "01",
+      "title": "Geological & Exploration Services",
+      "shortTitle": "Geological & Exploration",
+      "subtitle": "Systematic grassroots to brownfields mineral discovery, structural mapping, and geochemical sampling across East Africa.",
+      "summary": "Comprehensive field reconnaissance, litho-structural mapping, geochemical sampling, and geophysical target generation across greenfield and brownfield licences.",
+      "highlights": [
+        "Lithological & structural geological mapping",
+        "Soil, stream sediment, rock-chip & trench sampling",
+        "Geophysical survey design & target generation"
+      ],
+      "image": "images/projects/Cu_zn Exploration_Mpanda.jpg",
+      "overview": [
+        "Briva delivers disciplined, data-driven mineral exploration programmes designed to de-risk prospecting licences and advance high-priority targets toward resource definition. Our geologists combine deep knowledge of East African greenstone belts, pegmatite fields, coal basins, and metamorphic terrains with rigorous QA/QC protocols.",
+        "From desktop GIS compilation and remote-sensing interpretation through systematic grid sampling, trenching, and drill target prioritization, every campaign is structured to generate defensible geological datasets ready for investor review."
+      ],
+      "deliverables": [
+        "Desktop geological review & historical data compilation",
+        "1:5,000 to 1:25,000 litho-structural outcrop & regolith maps",
+        "Soil, stream sediment, rock-chip & channel sampling with QA/QC",
+        "Ground geophysical survey planning & anomaly interpretation",
+        "Drill-ready target ranking & phased exploration budgets",
+        "Statutory technical exploration reports for licensing compliance"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Desktop Synthesis & Target Framing",
+          "text": "Integration of regional aeromagnetics, satellite imagery, and historical tenure data to prioritize prospective corridors."
+        },
+        {
+          "step": "02",
+          "title": "Systematic Field Mapping & Geochemistry",
+          "text": "Traversing, structural logging, trenching, and multi-element sampling governed by strict certified reference material (CRM) insertion."
+        },
+        {
+          "step": "03",
+          "title": "Anomaly Integration & Drill Targeting",
+          "text": "3D structural synthesis of surface geochemistry and geophysics to site high-confidence scout and infill drill collars."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Which mineral commodities has Briva explored in Tanzania?",
+          "a": "Our field teams have executed exploration and prospecting programmes for gold, lithium-bearing pegmatites, beryllium, flake graphite, copper-zinc base metals, coal, dolomite, and industrial quartz across Dodoma, Morogoro, Mpanda, Merelani, Tabora, and Namtumbo."
+        },
+        {
+          "q": "How do you ensure geochemical sample integrity and QA/QC?",
+          "a": "Every sampling batch incorporates chain-of-custody documentation, field duplicates, blanks, and certified reference standards prior to submission to accredited laboratories."
+        },
+        {
+          "q": "Can Briva evaluate an early-stage Prospecting Licence (PL) before acquisition?",
+          "a": "Yes. We conduct rapid technical due-diligence site visits, verification sampling, and geological prospectivity assessments for investors evaluating Tanzanian mineral tenures."
+        }
+      ]
+    },
+    {
+      "slug": "resource-estimation",
+      "num": "02",
+      "title": "Resource Estimation & 3D Modelling",
+      "shortTitle": "Resource Estimation & Modelling",
+      "subtitle": "Geological wireframing, geostatistical domain modelling, and defensible mineral tonnage-grade estimation.",
+      "summary": "3D lithological and mineralization wireframing, geostatistical variography, block modelling, and resource classification.",
+      "highlights": [
+        "3D geological, fault & orebody wireframing",
+        "Drillhole database validation & compositing",
+        "Block modelling & tonnage-grade reporting"
+      ],
+      "image": "images/resouceEst1.jpeg",
+      "overview": [
+        "Accurate mineral resource models form the foundation of mine valuation, project financing, and extraction planning. Briva transforms raw drillhole, trench, and underground face-mapping datasets into coherent 3D geological and mineralization models.",
+        "We apply rigorous database validation, geological domaining, top-cut analysis, and geostatistical interpolation so stakeholders clearly understand grade continuity, geological confidence, and upside expansion vectors."
+      ],
+      "deliverables": [
+        "Validated relational drillhole & trench assay databases",
+        "3D lithological, alteration, and structural wireframe models",
+        "Statistical capping, compositing & variogram modelling",
+        "Constrained 3D block models (Kriging / Inverse Distance)",
+        "Grade-tonnage curves across multiple cut-off scenarios",
+        "Infill drilling recommendations to upgrade resource confidence"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Database Audit & QA/QC Verification",
+          "text": "Collar, downhole survey, lithology, specific gravity, and assay validation to eliminate spatial or analytical errors."
+        },
+        {
+          "step": "02",
+          "title": "Geological Domaining & Wireframing",
+          "text": "Construction of geologically realistic 3D structural and mineralized envelopes honouring outcrop and core logging."
+        },
+        {
+          "step": "03",
+          "title": "Block Estimation & Model Validation",
+          "text": "Geostatistical grade interpolation validated via swath plots, visual cross-section checks, and global bias comparison."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What inputs are required to begin a resource estimation study?",
+          "a": "At minimum, surveyed collar coordinates, downhole azimuth/dip surveys, geological logs, bulk density measurements, and laboratory assay certificates accompanied by QA/QC records."
+        },
+        {
+          "q": "Do you model stratified deposits such as coal seams as well as vein gold?",
+          "a": "Yes. Our modelling specialists handle tabular coal seams, shear-hosted gold lodes, zoned lithium pegmatites, and industrial mineral horizons."
+        },
+        {
+          "q": "Can you audit or update an existing historical resource model?",
+          "a": "We regularly review legacy models, incorporate newly drilled infill holes, and recalibrate geological domains and cut-off assumptions."
+        }
+      ]
+    },
+    {
+      "slug": "mine-planning",
+      "num": "03",
+      "title": "Mining Engineering, Planning & Compliance",
+      "shortTitle": "Mining Engineering & Planning",
+      "subtitle": "Practical open-pit and underground mine design, production scheduling, and statutory technical reporting.",
+      "summary": "Open-pit and underground mine design, haulage and production scheduling, equipment fleet sizing, and regulatory compliance.",
+      "highlights": [
+        "Open-pit & underground mine layout design",
+        "Short- and long-term production scheduling",
+        "Technical compliance & statutory reporting"
+      ],
+      "image": "images/projects/Face mapping in a coal mine.jpg",
+      "overview": [
+        "Bridging geological resources and profitable extraction requires disciplined mine engineering. Briva supports mine owners and operators with practical pit optimization, stage-pushback design, underground stope/heading layouts, and realistic production schedules.",
+        "Alongside engineering design, our consultants prepare clear technical and operational documentation aligned with Tanzanian Mining Commission requirements, environmental stewardship, and site safety standards."
+      ],
+      "deliverables": [
+        "Pit shell optimization & ultimate pit / phase designs",
+        "Haul road, waste dump, and ROM pad engineering layouts",
+        "Life-of-Mine (LoM) and quarterly production schedules",
+        "Drilling, blasting, loading & haulage fleet sizing",
+        "Grade-control & stockpile blending procedures",
+        "Regulatory compliance & technical feasibility documentation"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Geotechnical & Economic Parameter Setup",
+          "text": "Definition of slope angles, mining dilution, ore recovery factors, processing recoveries, and operating unit costs."
+        },
+        {
+          "step": "02",
+          "title": "Pit / Underground Design & Sequencing",
+          "text": "Practical 3D engineering of benches, ramps, waste dumps, and extraction panels tailored to fleet geometry."
+        },
+        {
+          "step": "03",
+          "title": "Schedule Optimization & Operational Handover",
+          "text": "Balancing stripping ratios, ore grade targets, and equipment utilization into an executable mine plan."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Do you support active mines with short-term grade control and face mapping?",
+          "a": "Yes. Our geologists and mining engineers deploy directly to operating open-pit and underground sites to establish face mapping, stockpile QA/QC, and short-range scheduling."
+        },
+        {
+          "q": "Can Briva assist in transitioning an artisanal or small operation into a mechanized mine?",
+          "a": "That is one of our core strengths—designing right-sized benching, haulage, and crushing workflows that match realistic capital budgets."
+        },
+        {
+          "q": "Do you prepare technical reports for Tanzanian Mining Licence applications?",
+          "a": "Yes. We author technical mine plans, resource summaries, and operational programmes required for Primary Mining Licences (PML), Mining Licences (ML), and project financing."
+        }
+      ]
+    },
+    {
+      "slug": "drilling-supervision",
+      "num": "04",
+      "title": "Drilling Supervision & Project Management",
+      "shortTitle": "Drilling Supervision",
+      "subtitle": "End-to-end diamond core, RC, and RAB drilling planning, contractor oversight, and core-shed logging.",
+      "summary": "Turnkey planning, rig supervision, core orientation and logging, recovery tracking, and contractor management.",
+      "highlights": [
+        "Diamond (DD) & Reverse Circulation (RC) supervision",
+        "Core orientation, RQD geotechnical & litho logging",
+        "Drilling contractor tender & cost control"
+      ],
+      "image": "images/projects/Core drilling.jpg",
+      "overview": [
+        "Drilling represents the largest capital expenditure in most exploration budgets. Poor core recovery, downhole survey drift, or inconsistent logging can compromise millions in drilling spend. Briva provides seasoned rig-site geologists and project managers to safeguard every metre drilled.",
+        "We manage contractor selection, pad preparation, rig alignment, shift-by-shift recovery monitoring, geotechnical RQD measurement, core photography, and half-core diamond saw sampling from first collar to final rehabilitation."
+      ],
+      "deliverables": [
+        "Drill programme design, collar layout & metreage budgeting",
+        "Drilling contractor tender evaluation & contract oversight",
+        "24/7 rig-side supervision, rig alignment & depth verification",
+        "Core orientation, RQD geotechnical & detailed lithological logging",
+        "High-resolution wet/dry core tray photography & archiving",
+        "Daily drilling progress, cost-per-metre & safety KPI reporting"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Pre-Drill Readiness & Contractor Mobilization",
+          "text": "Pad access verification, collar pegging, safety induction, and core-shed workflow setup prior to spudding."
+        },
+        {
+          "step": "02",
+          "title": "Rig-Side Quality & Recovery Control",
+          "text": "Continuous monitoring of core recovery, downhole surveys, and sample splitter cleanliness on every shift."
+        },
+        {
+          "step": "03",
+          "title": "Core Logging, Sampling & Dispatch",
+          "text": "Standardized digital logging, interval selection, diamond sawing, QA/QC insertion, and secure laboratory dispatch."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Which drilling methods does Briva supervise?",
+          "a": "We supervise Diamond Core (HQ/NQ/PQ), Reverse Circulation (RC), Rotary Air Blast (RAB), aircore, and auger drilling campaigns."
+        },
+        {
+          "q": "Can Briva supply the full field crew including logging geologists and technicians?",
+          "a": "Yes. We deploy turnkey exploration teams comprising senior supervising geologists, logging geologists, and trained core-shed technicians."
+        },
+        {
+          "q": "How do you report drilling progress to off-site investors or boards?",
+          "a": "Clients receive structured daily shift reports tracking metres drilled, recovery percentages, consumables, preliminary visual intercepts, and cumulative budget burn."
+        }
+      ]
+    },
+    {
+      "slug": "asm-support",
+      "num": "05",
+      "title": "Artisanal & Small-Scale Mining (ASM) Support",
+      "shortTitle": "Small-Scale & ASM Support",
+      "subtitle": "Practical geological guidance, safety formalization, and recovery optimization for Primary Mining Licence holders and cooperatives.",
+      "summary": "Technical assistance, geological targeting, safety upgrades, and licensing formalization for small-scale miners and cooperatives.",
+      "highlights": [
+        "Geological vein tracking & shaft siting",
+        "PML formalization & regulatory guidance",
+        "Safe extraction, crushing & recovery improvement"
+      ],
+      "image": "images/projects/Artisanal gold miners In Tabora.jpg",
+      "overview": [
+        "Artisanal and small-scale miners are vital contributors to Tanzania's mineral economy, yet frequently operate without subsurface geological data—leading to blind shaft sinking, safety hazards, and low ore recovery. Briva works alongside PML holders, mining cooperatives, and development programmes to professionalize small-scale operations.",
+        "Our field teams provide practical outcrop and underground mapping, structural ore-shoot projection, mine safety assessments, and processing advice tailored to local realities in Tabora, Morogoro, Geita, and beyond."
+      ],
+      "deliverables": [
+        "Rapid geological assessment & mineralized vein mapping",
+        "Practical shaft, trench & pit placement recommendations",
+        "Workplace health, ground-support & ventilation safety audits",
+        "Ore crushing, milling & gravity recovery optimization advice",
+        "Primary Mining Licence (PML) formalization & compliance support",
+        "Hands-on field training for cooperative leaders & operators"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Site Diagnostic & Geological Walkover",
+          "text": "Inspection of active workings, waste dumps, and exposed structures to map ore controls and immediate safety risks."
+        },
+        {
+          "step": "02",
+          "title": "Targeted Extraction & Processing Plan",
+          "text": "Clear, visual guidance on where mineralization extends and how to improve comminution and recovery safely."
+        },
+        {
+          "step": "03",
+          "title": "Operator Training & Formalization",
+          "text": "Capacity building on safe mining practices, environmental care, record keeping, and statutory compliance."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Does Briva work with registered mining cooperatives as well as individual PML holders?",
+          "a": "Yes. We partner with individual Primary Mining Licence owners, regional mining cooperatives, NGOs, and institutional programmes supporting formalized ASM."
+        },
+        {
+          "q": "Can you help small-scale miners attract joint-venture capital?",
+          "a": "By documenting verified geological structures, grab/channel grades, and tenure status in a professional technical brief, we help credible licence holders engage structured investors."
+        },
+        {
+          "q": "Do you also supply handheld detection and prospecting tools for small-scale operators?",
+          "a": "Yes. Through our Equipment division we supply and train operators on field pinpointers and geophysical scanners with full local warranty support."
+        }
+      ]
+    },
+    {
+      "slug": "ma-advisory",
+      "num": "06",
+      "title": "M&A, Joint Ventures & Economic Advisory",
+      "shortTitle": "M&A, JVs & Economic Analysis",
+      "subtitle": "Technical due diligence, project valuation, investor matching, and joint-venture structuring across East African mineral assets.",
+      "summary": "Independent technical due diligence, economic cash-flow modelling, investor matching, and joint-venture transaction support.",
+      "highlights": [
+        "Independent technical & tenure due diligence",
+        "Project economic & cash-flow modelling",
+        "Investor matching & JV structuring"
+      ],
+      "image": "images/projects/Pegmatite, lithium exploration In Dodoma.jpg",
+      "overview": [
+        "Successful mineral transactions require clear alignment between geological reality and commercial structure. Briva advises international investors, private equity groups, and Tanzanian licence holders on asset screening, independent technical due diligence, and joint-venture structuring.",
+        "Combining boots-on-the-ground geological verification with pragmatic financial and operational analysis, we identify fatal flaws early and structure equitable, bankable partnerships across gold, battery metals, coal, and industrial mineral projects."
+      ],
+      "deliverables": [
+        "Independent Technical Due Diligence (ITDD) reports",
+        " Mineral tenure verification & regulatory risk review",
+        "Scoping-level CAPEX/OPEX & discounted cash-flow (DCF) models",
+        "Asset packaging & technical data-room preparation",
+        "Qualified investor / licence-holder matching & introductions",
+        "Earn-in & Joint Venture technical milestone structuring"
+      ],
+      "methodology": [
+        {
+          "step": "01",
+          "title": "Asset Screening & Tenure Verification",
+          "text": "Verification of licence standing, historical exploration records, environmental obligations, and surface access."
+        },
+        {
+          "step": "02",
+          "title": "Field Verification & Economic Stress-Testing",
+          "text": "On-site geological check sampling paired with realistic sensitivity analysis on grade, recovery, CAPEX, and logistics."
+        },
+        {
+          "step": "03",
+          "title": "Commercial Structuring & Deal Support",
+          "text": "Definition of phased exploration/production milestones and technical governance terms for sustainable JVs."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can Briva represent foreign investors looking for vetted mineral projects in Tanzania?",
+          "a": "Yes. We screen opportunities across gold, lithium, copper, graphite, and coal, conducting independent site verification before investors commit acquisition capital."
+        },
+        {
+          "q": "What is included in a pre-acquisition technical due diligence visit?",
+          "a": "Outcrop and workings inspection, independent check sampling, review of historical drill cores/logs, infrastructure assessment, and a frank summary of geological upside and technical risks."
+        },
+        {
+          "q": "How do licence holders submit a project for JV consideration?",
+          "a": "Contact our advisory team via our consultation form with your licence coordinates, commodity, and any existing geological reports to schedule a confidential review."
+        }
+      ]
+    }
+  ]
+};
+
+  function esc(str) {
+    return String(str == null ? '' : str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  async function getServices() {
+    try {
+      const res = await fetch('data/services.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      return (data && data.services) || [];
+    } catch (_e) {
+      return FALLBACK_DATA.services || [];
+    }
+  }
+
+  async function init() {
+    const contentEl = document.getElementById('service-detail-content');
+    const navEl = document.getElementById('service-sidebar-nav');
+    if (!contentEl) return;
+
+    const services = await getServices();
+    if (!services.length) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const reqSlug = params.get('service');
+    const current = services.find((s) => s.slug === reqSlug) || services[0];
+
+    document.title = current.title + ' | Briva Exploration & Mining';
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && current.subtitle) metaDesc.setAttribute('content', current.subtitle);
+
+    const heroTitle = document.getElementById('service-hero-title');
+    const heroLead = document.getElementById('service-hero-lead');
+    const crumb = document.getElementById('service-breadcrumb-current');
+    const ctaBtn = document.getElementById('service-sidebar-cta-btn');
+
+    if (heroTitle) heroTitle.textContent = current.title;
+    if (heroLead) heroLead.textContent = current.subtitle;
+    if (crumb) crumb.textContent = current.shortTitle || current.title;
+    if (ctaBtn) ctaBtn.href = 'contact.html?service=' + encodeURIComponent(current.slug);
+
+    if (navEl) {
+      navEl.innerHTML = services
+        .map((s) => {
+          const active = s.slug === current.slug ? ' is-active' : '';
+          const aria = s.slug === current.slug ? ' aria-current="page"' : '';
+          return (
+            '<li><a class="sidebar-nav__link' + active + '"' + aria +
+            ' href="service-single.html?service=' + esc(s.slug) + '">' +
+            '<span>' + esc(s.shortTitle || s.title) + '</span>' +
+            '<span class="sidebar-nav__num">' + esc(s.num) + '</span>' +
+            '</a></li>'
+          );
+        })
+        .join('');
+    }
+
+    const checkSvg =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+      '<path d="M20 6L9 17l-5-5"/></svg>';
+
+    const paragraphs = (current.overview || [])
+      .map((p) => '<p>' + esc(p) + '</p>')
+      .join('');
+
+    const deliverables = (current.deliverables || [])
+      .map((d) => '<div class="deliverable-item">' + checkSvg + '<span>' + esc(d) + '</span></div>')
+      .join('');
+
+    const steps = (current.methodology || [])
+      .map(
+        (m) =>
+          '<div class="process-step">' +
+            '<span class="process-step__num">STEP ' + esc(m.step) + '</span>' +
+            '<h3>' + esc(m.title) + '</h3>' +
+            '<p>' + esc(m.text) + '</p>' +
+          '</div>'
+      )
+      .join('');
+
+    const faqs = (current.faqs || [])
+      .map(
+        (f, idx) =>
+          '<details class="faq-item"' + (idx === 0 ? ' open' : '') + '>' +
+            '<summary>' + esc(f.q) + '</summary>' +
+            '<div class="faq-item__body"><p>' + esc(f.a) + '</p></div>' +
+          '</details>'
+      )
+      .join('');
+
+    contentEl.innerHTML =
+      '<img class="detail-hero-img" src="' + esc(current.image) + '" alt="' + esc(current.title) + '">' +
+      '<span class="eyebrow">Discipline ' + esc(current.num) + '</span>' +
+      '<h2>Overview &amp; Technical Scope</h2>' +
+      '<div class="prose-overview">' + paragraphs + '</div>' +
+      '<h3>Key Technical Deliverables</h3>' +
+      '<div class="deliverables-grid mb-10">' + deliverables + '</div>' +
+      '<h3>Execution Methodology</h3>' +
+      '<div class="grid grid--3 mb-10">' + steps + '</div>' +
+      '<h3>Frequently Asked Questions</h3>' +
+      '<div class="faq-list">' + faqs + '</div>';
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

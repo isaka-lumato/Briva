@@ -2,870 +2,487 @@
 <html lang="en">
 
 <head>
-
-  <!-- Basic Page Needs
-================================================== -->
   <meta charset="utf-8">
-  <title>Briva - Exploration & Mining</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mineral Exploration, Mining Engineering & Geophysical Equipment | Briva Exploration &amp; Mining</title>
+  <meta name="description" content="Briva Exploration & Mining is a Dar es Salaam consultancy providing geological exploration, 3D resource estimation, mine planning, drilling supervision, ASM support, and geophysical scanners across East Africa.">
+  <meta name="theme-color" content="#0F1A24">
 
-  <!-- Mobile Specific Metas
-================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- Favicons (Authentic Briva Emblem) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <!-- Performance Optimizations -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Briva Exploration &amp; Mining">
+  <meta property="og:title" content="Mineral Exploration, Mining Engineering & Geophysical Equipment | Briva Exploration &amp; Mining">
+  <meta property="og:description" content="Briva Exploration & Mining is a Dar es Salaam consultancy providing geological exploration, 3D resource estimation, mine planning, drilling supervision, ASM support, and geophysical scanners across East Africa.">
+  <meta property="og:image" content="images/brand/og-image.jpg">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-  <!-- Favicon
-================================================== -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-  <!-- CSS
-================================================== -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
-  <!-- Animation -->
-  <link rel="stylesheet" href="plugins/animate-css/animate.css">
-  <!-- slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  <!-- Colorbox -->
-  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-
-  <!-- Critical CSS - Inline for instant rendering -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: #fff;
-      color: #555
-    }
-
-    .header-one {
-      background: #fff
-    }
-
-    .site-navigation {
-      background: #212121
-    }
-
-    .banner-carousel {
-      min-height: 500px
-    }
-
-    .btn-primary {
-      background: #ffb600;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 50px;
-      border: none
-    }
-  </style>
-
-  <!-- Template styles - Load asynchronously -->
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="css/style.css">
-  </noscript>
-
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Auto-redirect to admin after login -->
+  <!-- Modular Design System -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function (user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function () {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    });
   </script>
-
 </head>
 
 <body>
-  <div class="body-inner">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <div id="top-bar" class="top-bar">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8">
-            <ul class="top-info text-center text-md-left">
-              <li><i class="fas fa-map-marker-alt"></i>
-                <p class="info-text">11259 Dar Es Salaam - TZ</p>
-              </li>
-            </ul>
-          </div>
-          <!--/ Top info end -->
-
-          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
-            <ul class="list-unstyled">
-              <li>
-                <a title="Instagram"
-                  href="https://www.instagram.com/briva_mining_exploration?igsh=MW0xem9xa2VpeHQ0eQ%3D%3D&utm_source=qr"
-                  target="_blank">
-                  <span class="social-icon"><i class="fab fa-instagram"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!--/ Top social end -->
-        </div>
-        <!--/ Content row end -->
+  <!-- PARTIAL:HEADER:START -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span class="topbar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 11259 Dar es Salaam, Tanzania</span>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <span class="topbar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Mon–Fri 10:00–16:00 &middot; Sat 12:00–15:00</span>
       </div>
-      <!--/ Container end -->
-    </div>
-    <!--/ Topbar end -->
-    <!-- Header start -->
-    <header id="header" class="header-one">
-      <div class="bg-white">
-        <div class="container">
-          <div class="logo-area">
-            <div class="row align-items-center">
-              <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                <a class="d-block" href="index.html">
-                  <img loading="lazy" src="images/brivaLogo.png" alt="Briva" width="150" height="150">
-                </a>
-              </div><!-- logo end -->
-
-              <div class="col-lg-9 header-right">
-                <ul class="top-info-box">
-                  <li>
-                    <div class="info-box">
-                      <div class="info-box-content">
-                        <p class="info-box-subtitle">+255 767 413 950</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="info-box">
-                      <div class="info-box-content">
-                        <p class="info-box-subtitle">info@briva.co.tz</p>
-                      </div>
-                    </div>
-                  </li>
-                </ul><!-- Ul end -->
-              </div><!-- header right end -->
-            </div><!-- logo area end -->
-
-          </div><!-- Row end -->
-        </div><!-- Container end -->
-      </div>
-
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <!--/ Col end -->
-          </div>
-          <!--/ Row end -->
-
-          <div class="nav-search">
-            <span id="search"><i class="fa fa-search"></i></span>
-          </div><!-- Search end -->
-
-          <div class="search-block" style="display: none;">
-            <label for="search-field" class="w-100 mb-0">
-              <input type="text" class="form-control" id="search-field" placeholder="Type what you want and enter">
-            </label>
-            <span class="search-close">&times;</span>
-          </div><!-- Site search end -->
-        </div>
-        <!--/ Container end -->
-
-      </div>
-      <!--/ Navigation end -->
-    </header>
-    <!--/ Header end -->
-
-    <div class="banner-carousel banner-carousel-1 mb-0">
-      <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-        <div class="slider-content">
-          <div class="container h-100">
-            <div class="row align-items-center h-100">
-              <div class="col-md-12 text-center">
-                <h2 class="slide-title" data-animation-in="slideInLeft">Over 5 Years of excellence in</h2>
-                <h3 class="slide-sub-title" data-animation-in="slideInRight">Exploration & Mining</h3>
-                <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                  <a href="about.html" class="slider btn btn-primary">About Us</a>
-                  <a href="contact.html" class="slider btn btn-primary border">Contact Now</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg2.jpg)">
-        <div class="slider-content text-left">
-          <div class="container h-100">
-            <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                <h2 class="slide-title-box" data-animation-in="slideInDown">World Class Service</h2>
-                <h3 class="slide-title" data-animation-in="fadeIn">Geological and Exploration Services</h3>
-                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Your Choice is Simple</h3>
-                <p data-animation-in="slideInRight">
-                  <a href="about.html" class="slider btn btn-primary border">About Us</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="banner-carousel-item" style="position: relative; overflow: hidden;">
-        <!-- Creative Split Background Collage -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
-          <!-- Left/Top Image with Diagonal Cut -->
-          <div style="position: absolute; top: 0; left: 0; width: 65%; height: 100%; 
-                      background-image: url(images/resouceEst1.jpeg); 
-                      background-size: cover; background-position: center; 
-                      clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);">
-          </div>
-
-          <!-- Right/Bottom Image -->
-          <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; 
-                      background-image: url(images/resourceEst2.jpeg); 
-                      background-size: cover; background-position: center;">
-          </div>
-
-          <!-- Unifying Overlay for Text Readability -->
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);">
-          </div>
-        </div>
-
-        <div class="slider-content text-right" style="position: relative; z-index: 1;">
-          <div class="container h-100">
-            <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Team</h2>
-                <h3 class="slide-sub-title" data-animation-in="fadeIn">Resource Estimation and Modelling</h3>
-                <p class="slider-description lead" data-animation-in="slideInRight">We help you overcome challenges to
-                  achieve success.</p>
-                <div data-animation-in="slideInLeft">
-                  <a href="projects.html" class="slider btn btn-primary border" aria-label="learn-more-about-us">Learn
-                    more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="topbar__group">
+        <a class="topbar__item" href="tel:+255767413950"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +255 767 413 950</a>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <a class="topbar__item" href="mailto:info@briva.co.tz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@briva.co.tz</a>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <a class="topbar__item" href="https://www.instagram.com/briva_mining_exploration" target="_blank" rel="noopener noreferrer" aria-label="Briva on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
       </div>
     </div>
+  </div>
 
-    <section class="call-to-action-box no-padding">
-      <div class="container">
-        <div class="action-style-box">
-          <div class="row align-items-center">
-            <div class="col-md-8 text-center text-md-left">
-              <div class="call-to-action-text">
-                <h3 class="action-title">We understand your needs on Mining</h3>
-              </div>
-            </div><!-- Col end -->
-            <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-              <div class="call-to-action-btn">
-                <a class="btn btn-dark" href="contact.html">Send Message</a>
-              </div>
-            </div><!-- col end -->
-          </div><!-- row end -->
-        </div><!-- Action style box -->
-      </div><!-- Container end -->
-    </section><!-- Action end -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-brand" href="index.html" aria-label="Briva Exploration &amp; Mining — Home">
+        <img src="images/brand/briva-logo.png" alt="Briva Exploration &amp; Mining" width="148" height="76">
+      </a>
 
-    <section id="ts-features" class="ts-features">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="ts-intro">
-              <h2 class="into-title">About Us</h2>
-              <h3 class="into-sub-title">We deliver landmark projects</h3>
-              <p>Briva is a multidisciplinary firm providing end-to-end solutions in the mining and exploration sector.
-                With a team of seasoned geologists, engineers, analysts, and industry consultants, we are committed to
-                delivering reliable, sustainable, and cost-effective services across the mining value chain.</p>
-            </div><!-- Intro box end -->
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="site-nav__link is-active" href="index.html" aria-current="page">Home</a> <a class="site-nav__link" href="about.html">About</a> <a class="site-nav__link" href="services.html">Services</a> <a class="site-nav__link" href="projects.html">Projects</a> <a class="site-nav__link" href="equipment.html">Equipment</a> <a class="site-nav__link" href="team.html">Team</a>
+      </nav>
 
-            <div class="gap-20"></div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                  <span class="ts-service-icon">
-                    <i class="fas fa-trophy"></i>
-                  </span>
-                  <div class="ts-service-box-content">
-                    <h3 class="service-box-title">We've a Reputation for Excellence</h3>
-                  </div>
-                </div><!-- Service 1 end -->
-              </div><!-- col end -->
-
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                  <span class="ts-service-icon">
-                    <i class="fas fa-sliders-h"></i>
-                  </span>
-                  <div class="ts-service-box-content">
-                    <h3 class="service-box-title">We Build Partnerships</h3>
-                  </div>
-                </div><!-- Service 2 end -->
-              </div><!-- col end -->
-            </div><!-- Content row 1 end -->
-
-            <div class="row">
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                  <span class="ts-service-icon">
-                    <i class="fas fa-thumbs-up"></i>
-                  </span>
-                  <div class="ts-service-box-content">
-                    <h3 class="service-box-title">Guided by Commitment</h3>
-                  </div>
-                </div><!-- Service 1 end -->
-              </div><!-- col end -->
-
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                  <span class="ts-service-icon">
-                    <i class="fas fa-users"></i>
-                  </span>
-                  <div class="ts-service-box-content">
-                    <h3 class="service-box-title">A Team of Professionals</h3>
-                  </div>
-                </div><!-- Service 2 end -->
-              </div><!-- col end -->
-            </div><!-- Content row 1 end -->
-          </div><!-- Col end -->
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <h3 class="into-sub-title">Why Choose Briva?</h3>
-            <p>Experience & Expertise: A team with local and international experience in diverse geological settings.
-            </p>
-
-            <div class="accordion accordion-group" id="our-values-accordion">
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingOne">
-                  <h2 class="mb-0">
-                    <button class="btn btn-block text-left" type="button" data-toggle="collapse"
-                      data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Our Vision
-                    </button>
-                  </h2>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                  data-parent="#our-values-accordion">
-                  <div class="card-body">
-                    <ul>
-                      <li>"To be the leading mining and exploration solutions provider in Africa, recognized for
-                        innovation, sustainability, and uncompromising integrity."</li>
-                    </ul>
-
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingTwo">
-                  <h2 class="mb-0">
-                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Our Mission
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
-                  <div class="card-body">
-                    <ul>
-                      <li>"To deliver end-to-end, reliable, and cost-effective mining and exploration services through
-                        technical excellence, environmental stewardship, and strong community engagement."</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingThree">
-                  <h2 class="mb-0">
-                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Core Values
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                  data-parent="#our-values-accordion">
-                  <div class="card-body">
-                    <ul>
-                      <li><b>Integrity:</b> We operate with transparency, honesty, and accountability in all our
-                        actions.</li>
-                      <li><b>Excellence:</b> We strive for world-class quality and precision in every project.</li>
-                      <li><b>Innovation:</b> We embrace technology and continuous improvement to deliver cutting-edge
-                        solutions.</li>
-                      <li><b>Sustainability:</b> We prioritize environmental protection and community well-being in all
-                        our operations.</li>
-                      <li><b>Collaboration:</b> We build strong partnerships with clients, stakeholders, and communities
-                        for shared success.</li>
-                      <li><b>Safety:</b> We are committed to the highest health and safety standards for our people and
-                        the environment.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--/ Accordion end -->
-
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-      </div><!-- Container end -->
-    </section><!-- Feature are end -->
-
-    <section id="ts-service-area" class="ts-service-area pb-0">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h2 class="section-title">Our Services</h2>
-            <h3 class="section-sub-title">What We Do</h3>
-          </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon1.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Geological and Exploration Services</a></h3>
-                <p>Mineral resource identification | Sampling (soil, rock, stream sediment, trench, drill core)</p>
-              </div>
-            </div><!-- Service 1 end -->
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon2.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Resource Estimation and Modelling</a></h3>
-                <p>Mineral resource estimation | 3D geological modelling</p>
-              </div>
-            </div><!-- Service 2 end -->
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon3.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Mining Engineering and Mine Planning</a></h3>
-                <p>Mine design (open-pit and underground) | Operational scheduling and optimization
-                </p>
-              </div>
-            </div><!-- Service 3 end -->
-
-          </div><!-- Col end -->
-
-          <div class="col-lg-4 text-center">
-            <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="service-avater-image">
-          </div><!-- Col end -->
-
-          <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon4.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Drilling Supervision and Project Management</a></h3>
-                <p>Drilling program planning and supervision | Contract management</p>
-              </div>
-            </div><!-- Service 4 end -->
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon5.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Support for Small Scale and Artisanal Mining (ASM)</a></h3>
-                <p>Technical assistance for ASM | Legalization and formalization support</p>
-              </div>
-            </div><!-- Service 5 end -->
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon6.png" alt="service-icon">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Mergers, Acquisitions & Joint Ventures</a></h3>
-                <p>Investor engagement and matching | JV structuring and negotiation</p>
-              </div>
-            </div><!-- Service 6 end -->
-          </div><!-- Col end -->
-        </div><!-- Content row end -->
-
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--sm site-header__cta" href="contact.html">Contact Us</a>
+        <button type="button" class="nav-toggle" data-nav-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
-      <!--/ Container end -->
-    </section><!-- Service end -->
+    </div>
+  </header>
 
-    <section class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="column-title">Testimonials</h3>
-
-            <div id="testimonial-slide" class="testimonial-slide">
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    <i>"Briva has been a trusted partner in our exploration projects. Their team combines technical
-                      expertise with professionalism,
-                      delivering accurate geological data that has been crucial to our success."</i>
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/brivaLogo.png" alt="Briva">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author">Edward M.</h3>
-                      <span class="quote-subtext">Mine Manager</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 1 end -->
-
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    "From resource modeling to compliance reporting, Briva exceeded our expectations. Their attention to
-                    detail and commitment to
-                    sustainability make them stand out in the industry."
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/brivaLogo.png" alt="Briva">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author">Joel M.</h3>
-                      <span class="quote-subtext">CFO, AIL</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 2 end -->
-
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    "Briva’s comprehensive services and strong regulatory knowledge gave us the confidence to invest in
-                    new mining ventures.
-                    They truly understand the mining lifecycle."
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/brivaLogo.png" alt="Briva">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author">Pendo M.</h3>
-                      <span class="quote-subtext">HR, Jitegemee</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 3 end -->
-
-            </div>
-            <!--/ Testimonial carousel end-->
-          </div><!-- Col end -->
-
-          <div class="col-lg-6 mt-5 mt-lg-0">
-
-            <h3 class="column-title">Happy Clients</h3>
-
-            <div class="row all-clients">
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client1.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 1 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client2.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 2 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client3.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 3 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client4.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 4 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client5.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 5 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client6.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 6 end -->
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo text-center">
-                  <a href="https://www.stamico.co.tz/" target="_blank" rel="noopener noreferrer"><img loading="lazy"
-                      class="img-fluid" src="images/clients/stamicoLogo.png" alt="Stamico" /></a>
-                  <figcaption class="mt-2" style="font-weight: 600; color: #555;">Stamico</figcaption>
-                </figure>
-              </div><!-- Client 7 end -->
-
-
-            </div><!-- Clients row end -->
-
-          </div><!-- Col end -->
-
-        </div>
-        <!--/ Content row end -->
-      </div>
-      <!--/ Container end -->
-    </section><!-- Content end -->
-
-    <section class="subscribe no-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="subscribe-call-to-acton">
-              <h3>Can We Help?</h3>
-              <h4>+255 767 413 950</h4>
-            </div>
-          </div><!-- Col end -->
-
-          <div class="col-lg-8">
-            <div class="ts-newsletter row align-items-center">
-              <div class="col-md-5 newsletter-introtext">
-                <h4 class="text-white mb-0">Newsletter Sign-up</h4>
-                <p class="text-white">Latest updates and news</p>
-              </div>
-
-              <div class="col-md-7 newsletter-form">
-                <form action="#" method="post">
-                  <div class="form-group">
-                    <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
-                    <input type="email" name="email" id="newsletter-email" class="form-control form-control-lg"
-                      placeholder="Your email and hit enter" autocomplete="off">
-                  </div>
-                </form>
-              </div>
-            </div><!-- Newsletter end -->
-          </div><!-- Col end -->
-
-        </div><!-- Content row end -->
-      </div>
-      <!--/ Container end -->
-    </section>
-
-    <!--/ subscribe end -->
-
-    <section id="news" class="news">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h2 class="section-title">Work of Excellence</h2>
-            <h3 class="section-sub-title">Recent Projects</h3>
-          </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div id="recent-projects-container" class="row">
-          <!-- Projects will be loaded dynamically here -->
-          <div class="col-12 text-center">
-            <div class="spinner-border text-primary" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
-        </div>
-        <!--/ Content row end -->
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            fetch('data/projects.json')
-              .then(response => response.json())
-              .then(data => {
-                const container = document.getElementById('recent-projects-container');
-                container.innerHTML = ''; // Clear loading spinner
-
-                // Handle both formats: object-based and array-based (Decap CMS)
-                let projectsList = [];
-
-                if (data.projects && Array.isArray(data.projects)) {
-                  // Decap CMS format (array)
-                  projectsList = data.projects.slice(0, 3).map(p => ({ id: p.id, ...p }));
-                } else {
-                  // Old format (object)
-                  projectsList = Object.keys(data).slice(0, 3).map(key => ({ id: key, ...data[key] }));
-                }
-
-                projectsList.forEach(project => {
-                  const html = `
-                    <div class="col-lg-4 col-md-6 mb-4">
-                      <div class="latest-post">
-                        <div class="latest-post-media">
-                          <a href="projects-single.html?project=${project.id}" class="latest-post-img">
-                            <img loading="lazy" class="img-fluid" src="${project.images[0]}" alt="${project.title}" style="height: 250px; object-fit: cover; width: 100%;">
-                          </a>
-                        </div>
-                        <div class="post-body">
-                          <h4 class="post-title">
-                            <a href="projects-single.html?project=${project.id}" class="d-inline-block">${project.title}</a>
-                          </h4>
-                          <div class="latest-post-meta">
-                            <span class="post-item-date">
-                              <i class="fa fa-map-marker-alt"></i> ${project.location}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  `;
-                  container.innerHTML += html;
-                });
-              })
-              .catch(error => {
-                console.error('Error loading projects:', error);
-                document.getElementById('recent-projects-container').innerHTML = '<div class="col-12 text-center">Error loading projects.</div>';
-              });
-          });
-        </script>
-        <!--/ Content row end -->
-
-
-
-      </div>
-      <!--/ Container end -->
-    </section>
-    <!--/ News end -->
-
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/brivaLogo.png" alt="Briva">
-              <p>Briva is a multidisciplinary firm providing end-to-end solutions in the mining and exploration sector.
-                With a team of seasoned geologists, engineers, analysts, and industry consultants, we are committed to
-                delivering reliable, sustainable, and cost-effective services across the mining value chain.</p>
-              <div class="footer-social">
-                <ul>
-                  <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-              </div><!-- Footer social end -->
-            </div><!-- Col end -->
-
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Working Hours</h3>
-              <div class="working-hours">
-                We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
-                Hotline and Contact form.
-                <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
-                <br> Saturday: <span class="text-right">12:00 - 15:00</span>
-              </div>
-            </div><!-- Col end -->
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Services</h3>
-              <ul class="list-arrow">
-                <li><a href="services.html">Geological and Exploration </a></li>
-                <li><a href="services.html">Resource Estimation and Modelling</a></li>
-                <li><a href="services.html">Technical Reporting and Compliance</a></li>
-                <li><a href="services.html">Mining Engineering and Mine Planning</a></li>
-                <li><a href="services.html">Financial and Economic Analysis</a></li>
-              </ul>
-            </div><!-- Col end -->
-          </div><!-- Row end -->
-        </div><!-- Container end -->
-      </div><!-- Footer main end -->
-
-      <div class="copyright">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12">
-              <div class="copyright-info text-center">
-                <span>Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear())
-                  </script>, Designed &amp; Developed by <a href="https://briva.co.tz">Briva</a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div><!-- Row end -->
-
-        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-          <button class="btn btn-primary" title="Back to Top">
-            <i class="fa fa-angle-double-up"></i>
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer__backdrop" data-nav-close></div>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+      <div>
+        <div class="mobile-drawer__head">
+          <img src="images/brand/briva-logo.png" alt="Briva Exploration &amp; Mining" width="128" height="66">
+          <button type="button" class="nav-toggle" data-nav-close aria-label="Close navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
+        <nav class="mobile-drawer__nav" aria-label="Mobile navigation">
+          <a class="mobile-drawer__link is-active" href="index.html" aria-current="page"><span>Home</span></a> <a class="mobile-drawer__link" href="about.html"><span>About</span></a> <a class="mobile-drawer__link" href="services.html"><span>Services</span></a> <a class="mobile-drawer__link" href="projects.html"><span>Projects</span></a> <a class="mobile-drawer__link" href="equipment.html"><span>Equipment</span></a> <a class="mobile-drawer__link" href="team.html"><span>Team</span></a> <a class="mobile-drawer__link" href="contact.html"><span>Contact</span></a>
+        </nav>
+      </div>
+      <div class="mobile-drawer__foot">
+        <div class="mobile-drawer__contact">
+          <a href="tel:+255767413950">+255 767 413 950</a>
+          <a href="mailto:info@briva.co.tz">info@briva.co.tz</a>
+          <span>11259 Dar es Salaam, Tanzania</span>
+        </div>
+        <a class="btn btn--primary w-full" href="contact.html">Request a Consultation</a>
+      </div>
+    </div>
+  </div>
+  <!-- PARTIAL:HEADER:END -->
 
-      </div><!-- Container end -->
-  </div><!-- Copyright end -->
-  </footer><!-- Footer end -->
+  <main id="main-content">
 
+    <section class="home-hero">
+      <div class="container">
+        <div class="home-hero__body">
+          <span class="eyebrow eyebrow--light">Mineral Exploration &amp; Mining Consultancy &middot; Tanzania</span>
+          <h1>Technical Precision Across the Mining Value Chain</h1>
+          <p class="home-hero__lead">
+            Briva partners with mining houses, mineral investors, and cooperatives across East Africa—delivering geological exploration, 3D resource modelling, mine engineering, drilling supervision, and certified geophysical detection systems.
+          </p>
+          <div class="home-hero__actions">
+            <a class="btn btn--primary btn--lg" href="services.html">Explore Our Services <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light btn--lg" href="projects.html">View Field Portfolio</a>
+          </div>
+        </div>
+      </div>
+      <div class="capability-strip">
+        <div class="container capability-strip__grid">
+          <div class="capability-item">
+            <span class="capability-item__val tabular">6 Core Disciplines</span>
+            <span class="capability-item__label">Grassroots Exploration to M&amp;A Advisory</span>
+          </div>
+          <div class="capability-item">
+            <span class="capability-item__val tabular">14+ Field Programmes</span>
+            <span class="capability-item__label">Executed Across Key Tanzanian Mineral Belts</span>
+          </div>
+          <div class="capability-item">
+            <span class="capability-item__val">Multi-Commodity</span>
+            <span class="capability-item__label">Gold, Lithium, Graphite, Coal &amp; Base Metals</span>
+          </div>
+          <div class="capability-item">
+            <span class="capability-item__val">Field Instrumentation</span>
+            <span class="capability-item__label">Geophysical Scanners — Sales &amp; Field Rental</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Javascript Files
-  ================================================== -->
+    <section class="section">
+      <div class="container split-layout">
+        <div data-reveal>
+          <span class="eyebrow">About Briva</span>
+          <h2>End-to-End Geological &amp; Mining Solutions Built on Field Rigour</h2>
+          <p>
+            Briva is a multidisciplinary mining and mineral exploration firm headquartered in Dar es Salaam. Backed by seasoned geologists, geophysicists, mining engineers, and financial analysts with over two decades of regional and international leadership, we de-risk mineral assets at every stage of development.
+          </p>
+          <p>
+            Whether advancing a greenfield lithium pegmatite licence in Dodoma, supervising diamond core rigs, or optimizing an active coal face, our work is anchored in verifiable field data and strict regulatory compliance.
+          </p>
+          <div class="check-grid">
+            <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Local &amp; international geological leadership</span></div>
+            <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>QA/QC-governed sampling &amp; core logging</span></div>
+            <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Practical open-pit &amp; underground engineering</span></div>
+            <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Environmental &amp; safety-first site governance</span></div>
+          </div>
+          <a class="btn btn--outline" href="about.html">Learn More About Briva <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
 
-  <!-- initialize jQuery Library -->
-  <script src="plugins/jQuery/jquery.min.js"></script>
-  <!-- Bootstrap jQuery -->
-  <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
-  <!-- Slick Carousel -->
-  <script src="plugins/slick/slick.min.js" defer></script>
-  <script src="plugins/slick/slick-animation.min.js" defer></script>
-  <!-- Color box -->
-  <script src="plugins/colorbox/jquery.colorbox.js" defer></script>
-  <!-- shuffle -->
-  <script src="plugins/shuffle/shuffle.min.js" defer></script>
+        <div class="pillar-stack" data-reveal>
+          <div class="pillar-box">
+            <h3>Our Vision</h3>
+            <p>To be the leading mining and exploration solutions provider in Africa, recognized for technical innovation, environmental sustainability, and uncompromising integrity.</p>
+          </div>
+          <div class="pillar-box">
+            <h3>Our Mission</h3>
+            <p>To deliver end-to-end, reliable, and cost-effective mining and exploration services through technical excellence, environmental stewardship, and strong community engagement.</p>
+          </div>
+          <div class="pillar-box">
+            <h3>Core Governance</h3>
+            <p>Every field programme is governed by six non-negotiable standards: Integrity, Technical Excellence, Innovation, Sustainability, Stakeholder Collaboration, and Zero-Harm Safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Technical Capabilities</span>
+            <h2>Comprehensive Services Across the Mining Lifecycle</h2>
+            <p class="section-lead">Integrated geological, geophysical, engineering, and transaction advisory capabilities tailored to East African mineral tenures.</p>
+          </div>
+          <a class="btn btn--outline" href="services.html">All 6 Disciplines <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+              <span class="service-card__num">01</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=geological-exploration">Geological & Exploration Services</a></h3>
+            <p class="service-card__desc">Comprehensive field reconnaissance, litho-structural mapping, geochemical sampling, and geophysical target generation across greenfield and brownfield licences.</p>
+            <ul class="service-card__list"><li>Lithological & structural geological mapping</li><li>Soil, stream sediment, rock-chip & trench sampling</li><li>Geophysical survey design & target generation</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=geological-exploration">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
 
-  <!-- Template custom -->
-  <script src="js/script.js" defer></script>
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+              <span class="service-card__num">02</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=resource-estimation">Resource Estimation & 3D Modelling</a></h3>
+            <p class="service-card__desc">3D lithological and mineralization wireframing, geostatistical variography, block modelling, and resource classification.</p>
+            <ul class="service-card__list"><li>3D geological, fault & orebody wireframing</li><li>Drillhole database validation & compositing</li><li>Block modelling & tonnage-grade reporting</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=resource-estimation">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
 
-  </div><!-- Body inner end -->
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+              <span class="service-card__num">03</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=mine-planning">Mining Engineering, Planning & Compliance</a></h3>
+            <p class="service-card__desc">Open-pit and underground mine design, haulage and production scheduling, equipment fleet sizing, and regulatory compliance.</p>
+            <ul class="service-card__list"><li>Open-pit & underground mine layout design</li><li>Short- and long-term production scheduling</li><li>Technical compliance & statutory reporting</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=mine-planning">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2v20M8 6l4 4 4-4M8 12l4 4 4-4"/><circle cx="12" cy="20" r="1.5"/></svg></span>
+              <span class="service-card__num">04</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=drilling-supervision">Drilling Supervision & Project Management</a></h3>
+            <p class="service-card__desc">Turnkey planning, rig supervision, core orientation and logging, recovery tracking, and contractor management.</p>
+            <ul class="service-card__list"><li>Diamond (DD) & Reverse Circulation (RC) supervision</li><li>Core orientation, RQD geotechnical & litho logging</li><li>Drilling contractor tender & cost control</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=drilling-supervision">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              <span class="service-card__num">05</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=asm-support">Artisanal & Small-Scale Mining (ASM) Support</a></h3>
+            <p class="service-card__desc">Technical assistance, geological targeting, safety upgrades, and licensing formalization for small-scale miners and cooperatives.</p>
+            <ul class="service-card__list"><li>Geological vein tracking & shaft siting</li><li>PML formalization & regulatory guidance</li><li>Safe extraction, crushing & recovery improvement</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=asm-support">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="card card--interactive service-card" data-reveal>
+          <div>
+            <div class="service-card__top">
+              <span class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+              <span class="service-card__num">06</span>
+            </div>
+            <h3 class="service-card__title"><a href="service-single.html?service=ma-advisory">M&A, Joint Ventures & Economic Advisory</a></h3>
+            <p class="service-card__desc">Independent technical due diligence, economic cash-flow modelling, investor matching, and joint-venture transaction support.</p>
+            <ul class="service-card__list"><li>Independent technical & tenure due diligence</li><li>Project economic & cash-flow modelling</li><li>Investor matching & JV structuring</li></ul>
+          </div>
+          <a class="link-arrow" href="service-single.html?service=ma-advisory">Technical Scope <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Field Track Record</span>
+            <h2>Selected Exploration &amp; Mining Projects</h2>
+            <p class="section-lead">Representative geological mapping, geochemical prospecting, core drilling, and mine support programmes delivered across Tanzania.</p>
+          </div>
+          <a class="btn btn--outline" href="projects.html">View All 14 Projects <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div id="featured-projects-grid" class="grid grid--3"></div>
+      </div>
+    </section>
+
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="equipment-feature" data-reveal>
+          <div>
+            <span class="eyebrow">Exploration Instrumentation</span>
+            <h2>Certified Geophysical Scanners &amp; Precision Detectors</h2>
+            <p>
+              Alongside consulting, Briva supplies and supports professional subsurface detection instruments for prospecting teams, cooperatives, and field geologists—complete with operator training, nationwide delivery, and a 1-year warranty.
+            </p>
+            <div class="check-grid">
+              <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Available for purchase or short-term rental</span></div>
+              <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Hands-on operator training included</span></div>
+            </div>
+            <a class="btn btn--primary" href="equipment.html">Browse Equipment Catalog <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="equipment-feature__preview">
+            <a class="equipment-mini-card card--interactive" href="equipment-megascan.html">
+              <img loading="lazy" src="images/equipment/mega-scan-pro.jpg" alt="Mega Scan Pro Geophysical Scanner">
+              <h4>Mega Scan Pro</h4>
+              <span class="tabular">TZS 20,000,000 &middot; 50m Depth</span>
+            </a>
+            <a class="equipment-mini-card card--interactive" href="equipment-pinpointer.html">
+              <img loading="lazy" src="images/equipment/gold-pin-pointer.jpg" alt="Gold Pin Pointer Detector">
+              <h4>Gold Pin Pointer</h4>
+              <span class="tabular">TZS 500,000 &middot; Waterproof</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Client Endorsements</span>
+          <h2>Trusted by Mining Operators &amp; Institutional Partners</h2>
+        </div>
+
+        <div class="grid grid--3 mb-10">
+          <article class="card testimonial-card" data-reveal>
+            <p class="testimonial-card__quote">
+              &ldquo;Briva has been a trusted partner in our exploration projects. Their team combines technical expertise with professionalism, delivering accurate geological data that has been crucial to our success.&rdquo;
+            </p>
+            <div class="testimonial-card__author">
+              <span class="avatar-monogram" aria-hidden="true">EM</span>
+              <div>
+                <span class="testimonial-card__name">Edward M.</span>
+                <span class="testimonial-card__role">Mine Manager</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card" data-reveal>
+            <p class="testimonial-card__quote">
+              &ldquo;From resource modelling to compliance reporting, Briva exceeded our expectations. Their attention to detail and commitment to sustainability make them stand out in the industry.&rdquo;
+            </p>
+            <div class="testimonial-card__author">
+              <span class="avatar-monogram" aria-hidden="true">JM</span>
+              <div>
+                <span class="testimonial-card__name">Joel M.</span>
+                <span class="testimonial-card__role">Chief Financial Officer, AIL</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial-card" data-reveal>
+            <p class="testimonial-card__quote">
+              &ldquo;Briva’s comprehensive services and strong regulatory knowledge gave us the confidence to invest in new mining ventures. They truly understand the mining lifecycle.&rdquo;
+            </p>
+            <div class="testimonial-card__author">
+              <span class="avatar-monogram" aria-hidden="true">PM</span>
+              <div>
+                <span class="testimonial-card__name">Pendo M.</span>
+                <span class="testimonial-card__role">Human Resources, Jitegemee Holdings</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="clients-strip" aria-label="Selected client organizations">
+          <a class="client-box" href="https://www.stamico.co.tz/" target="_blank" rel="noopener noreferrer" title="STAMICO — State Mining Corporation">
+            <img loading="lazy" src="images/clients/stamicoLogo.png" alt="STAMICO — State Mining Corporation">
+          </a>
+          <div class="client-box"><img loading="lazy" src="images/clients/client1.png" alt="Jitegemee Holdings Co. Ltd"></div>
+          <div class="client-box"><img loading="lazy" src="images/clients/client2.png" alt="Client Partner"></div>
+          <div class="client-box"><img loading="lazy" src="images/clients/client3.png" alt="Shaz Ventures Co. Ltd"></div>
+          <div class="client-box"><img loading="lazy" src="images/clients/client4.png" alt="Client Partner"></div>
+          <div class="client-box"><img loading="lazy" src="images/clients/client5.png" alt="Client Partner"></div>
+          <div class="client-box"><img loading="lazy" src="images/clients/client6.png" alt="Client Partner"></div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <div>
+          <span class="eyebrow eyebrow--light">Advisory &amp; Field Operations</span>
+          <h2>Planning an Exploration Programme or Resource Study?</h2>
+          <p>Speak directly with our senior geologists and mining engineers in Dar es Salaam for technical scoping, licence due diligence, or equipment quotations.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary btn--lg" href="contact.html">Schedule a Consultation <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--outline-light btn--lg" href="tel:+255767413950"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +255 767 413 950</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PARTIAL:FOOTER:START -->
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <div>
+        <a href="index.html" aria-label="Briva Exploration &amp; Mining">
+          <img class="site-footer__logo" loading="lazy" src="images/brand/briva-logo-light.png" alt="Briva Exploration &amp; Mining" width="156" height="80">
+        </a>
+        <p class="site-footer__summary">
+          Multidisciplinary mineral exploration, 3D resource modelling, mine planning, drilling supervision, and certified geophysical equipment serving East Africa.
+        </p>
+        <a class="site-footer__social" href="https://www.instagram.com/briva_mining_exploration" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> @briva_mining_exploration
+        </a>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Core Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="service-single.html?service=geological-exploration">Geological &amp; Exploration</a></li>
+          <li><a href="service-single.html?service=resource-estimation">Resource Estimation &amp; Modelling</a></li>
+          <li><a href="service-single.html?service=mine-planning">Mining Engineering &amp; Planning</a></li>
+          <li><a href="service-single.html?service=drilling-supervision">Drilling Supervision</a></li>
+          <li><a href="service-single.html?service=asm-support">Small-Scale &amp; ASM Support</a></li>
+          <li><a href="service-single.html?service=ma-advisory">M&amp;A and Joint Ventures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Company</h3>
+        <ul class="site-footer__links">
+          <li><a href="about.html">About Briva</a></li>
+          <li><a href="projects.html">Field Projects</a></li>
+          <li><a href="equipment.html">Equipment Catalog</a></li>
+          <li><a href="equipment-megascan.html">Mega Scan Pro</a></li>
+          <li><a href="equipment-pinpointer.html">Gold Pin Pointer</a></li>
+          <li><a href="team.html">Leadership &amp; Team</a></li>
+          <li><a href="contact.html">Contact Office</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Dar es Salaam Office</h3>
+        <ul class="site-footer__contact-list">
+          <li class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>P.O. Box 11259<br>Dar es Salaam, Tanzania</span>
+          </li>
+          <li class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+255767413950">+255 767 413 950</a>
+          </li>
+          <li class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:info@briva.co.tz">info@briva.co.tz</a>
+          </li>
+          <li class="site-footer__contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Mon–Fri: 10:00 – 16:00<br>Saturday: 12:00 – 15:00</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="container site-footer__bottom-inner">
+        <p class="site-footer__copyright">
+          &copy; <span data-year>2026</span> Briva Exploration &amp; Mining. All rights reserved.
+        </p>
+        <p class="site-footer__credit">
+          Designed &amp; Developed by <a href="https://lumatotech.netlify.app" target="_blank" rel="noopener noreferrer">Lumato Tech</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- PARTIAL:FOOTER:END -->
+
+  <script src="js/main.js" defer></script>
+  <script src="js/projects.js" defer></script>
 </body>
 
 </html>

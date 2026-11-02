@@ -1,186 +1,200 @@
 {
   "projects": [
     {
-      "size": "15 sq km",
-      "client": "Local Mining Cooperative",
-      "location": "Tabora",
-      "title": "Artisanal Gold Miners",
-      "images": [
-        "images/projects/Artisanal gold miners In Tabora.jpg"
-      ],
-      "id": "artisanal-gold-tabora",
-      "categories": "Mining, Assessment",
-      "description": "Comprehensive assessment and support for artisanal gold mining operations in Tabora region. Our team provided geological guidance, safety assessments, and resource evaluation to help small-scale miners optimize their operations.",
-      "year": "2024"
-    },
-    {
-      "size": "12 sq km",
-      "client": "Mining Community",
-      "location": "Morogoro",
-      "title": "Artisanal Miners",
-      "images": [
-        "images/projects/Artisanal miners_Morogoro.jpg"
-      ],
-      "id": "artisanal-miners-morogoro",
-      "categories": "Mining, Training",
-      "description": "Technical support and geological assessment for artisanal mining operations in Morogoro. Provided training on sustainable mining practices and resource management.",
-      "year": "2024"
-    },
-    {
-      "size": "25 sq km",
-      "client": "Private Investor",
-      "location": "Namtumbo",
-      "title": "Beryllium",
-      "images": [
-        "images/projects/Beryllium Namtumbo.jpg"
-      ],
-      "id": "beryllium-namtumbo",
-      "categories": "Exploration, Geology",
-      "description": "Beryllium exploration and assessment project in Namtumbo district. Conducted detailed geological surveys and sampling programs to evaluate the beryllium potential of the area.",
-      "year": "2023"
-    },
-    {
-      "size": "30 sq km",
-      "client": "Exploration Company",
-      "location": "Namtumbo",
-      "title": "Beryllium Prospecting",
-      "images": [
-        "images/projects/Beryllium prospecting_ Namtumbo.jpg"
-      ],
-      "id": "beryllium-prospecting-namtumbo",
-      "categories": "Exploration, Prospecting",
-      "description": "Advanced beryllium prospecting program utilizing modern exploration techniques including geochemical sampling, geological mapping, and geophysical surveys.",
-      "year": "2023"
-    },
-    {
-      "size": "8 sq km",
-      "client": "Coal Mining Company",
-      "location": "Liweta",
-      "title": "Coal Outcrop Mapping",
-      "images": [
-        "images/projects/Coal outcro mapping_Liweta.jpg"
-      ],
-      "id": "coal-mapping-liweta",
-      "categories": "Mapping, Coal",
-      "description": "Detailed geological mapping of coal outcrops in Liweta area in Tanzania. Comprehensive structural analysis and coal seam characterization to support resource estimation.",
-      "year": "2024"
-    },
-    {
-      "size": "Various",
-      "client": "Multiple Clients",
-      "location": "Various Locations",
-      "title": "Core Drilling",
-      "images": [
-        "images/projects/Core drilling.jpg"
-      ],
-      "id": "core-drilling",
-      "categories": "Exploration, Mining",
-      "description": "Professional core drilling services for mineral exploration and resource definition. Our experienced team ensures high-quality core recovery and accurate geological logging across various mineral exploration projects.",
-      "year": "2024"
-    },
-    {
-      "size": "40 sq km",
-      "client": "Mining Corporation",
-      "location": "Mpanda",
-      "title": "Cu-Zn Exploration",
-      "images": [
-        "images/projects/Cu_zn Exploration_Mpanda.jpg"
-      ],
-      "id": "cu-zn-mpanda",
-      "categories": "Exploration, Base Metals",
-      "description": "Copper-zinc exploration program in Mpanda district. Comprehensive exploration including soil sampling, trenching, and geophysical surveys to identify mineralized zones.",
-      "year": "2023"
-    },
-    {
-      "size": "20 sq km",
-      "client": "Industrial Minerals Company",
+      "id": "lithium-dodoma",
+      "title": "Pegmatite Lithium Exploration",
       "location": "Dodoma",
-      "title": "Dolomite Prospecting",
-      "images": [
-        "images/projects/Dolomite prospecting Dodoma.jpg"
-      ],
-      "id": "dolomite-dodoma",
-      "categories": "Exploration, Industrial Minerals",
-      "description": "Dolomite prospecting and resource assessment in Dodoma region. Detailed geological mapping and sampling to evaluate the quality and quantity of dolomite deposits.",
-      "year": "2024"
-    },
-    {
-      "size": "Underground Operations",
-      "client": "Coal Mining Company",
-      "location": "Coal Mining Area",
-      "title": "Face Mapping in Coal Mine",
-      "images": [
-        "images/projects/Face mapping in a coal mine.jpg"
-      ],
-      "id": "face-mapping-coal",
-      "categories": "Mapping, Mining",
-      "description": "Underground face mapping services for active coal mining operations. Detailed structural and stratigraphic mapping to optimize mining operations and ensure safety.",
-      "year": "2024"
-    },
-    {
-      "size": "35 sq km",
-      "client": "Gold Exploration Company",
-      "location": "Mazizi, Morogoro",
-      "title": "Gold Mineralization",
-      "images": [
-        "images/projects/Gold Mineralization_Mazizi Morogoro.jpg"
-      ],
-      "id": "gold-mazizi-morogoro",
-      "categories": "Exploration, Gold",
-      "description": "Gold exploration and mineralization study in Mazizi area, Morogoro region. Comprehensive geological investigation including mapping, sampling, and resource potential assessment.",
-      "year": "2023"
-    },
-    {
-      "size": "Stockpile Assessment",
-      "client": "Mining Company",
-      "location": "Merelani",
-      "title": "Graphite Kyanite Gneiss Stockpile",
-      "images": [
-        "images/projects/Graphite kyanite gneiss stockpile in Merelani.jpg"
-      ],
-      "id": "graphite-stockpile-merelani",
-      "categories": "Mining, Quality Control",
-      "description": "Stockpile assessment and quality control for graphite-kyanite-gneiss material in Merelani. Detailed sampling and analysis to determine commercial viability.",
-      "year": "2024"
-    },
-    {
-      "size": "18 sq km",
-      "client": "Mineral Exploration Company",
-      "location": "Merelani",
-      "title": "Graphite Kyanite Gneiss",
-      "images": [
-        "images/projects/Graphite kyanite gneiss_Merelani.jpg"
-      ],
-      "id": "graphite-merelani",
-      "categories": "Exploration, Industrial Minerals",
-      "description": "Geological assessment of graphite-kyanite-gneiss deposits in Merelani area. Detailed mineralogical studies and resource evaluation.",
-      "year": "2023"
-    },
-    {
       "size": "45 sq km",
       "client": "Battery Metals Company",
-      "location": "Dodoma",
-      "title": "Pegmatite Lithium Exploration",
+      "year": "2024",
+      "categories": "Exploration, Battery Metals",
+      "featured": true,
       "images": [
         "images/projects/Pegmatite, lithium exploration In Dodoma.jpg"
       ],
-      "id": "lithium-dodoma",
-      "categories": "Exploration, Battery Metals",
-      "description": "Lithium exploration in pegmatite deposits around Dodoma region. Comprehensive exploration program including geological mapping, geochemical sampling, and resource assessment.",
-      "year": "2024"
+      "description": "Lithium exploration across zoned pegmatite corridors in the Dodoma region, integrating detailed litho-structural mapping, systematic geochemical sampling, and mineralogical prospectivity evaluation."
     },
     {
+      "id": "cu-zn-mpanda",
+      "title": "Cu-Zn Base Metals Exploration",
+      "location": "Mpanda",
+      "size": "40 sq km",
+      "client": "Mining Corporation",
+      "year": "2023",
+      "categories": "Exploration, Base Metals",
+      "featured": true,
+      "images": [
+        "images/projects/Cu_zn Exploration_Mpanda.jpg"
+      ],
+      "description": "Comprehensive copper-zinc polymetallic exploration programme in Mpanda district comprising grid soil geochemistry, bedrock trenching, and ground geophysical surveys to delineate mineralized shear zones."
+    },
+    {
+      "id": "coal-mapping-liweta",
+      "title": "Coal Outcrop Structural Mapping",
+      "location": "Liweta",
+      "size": "8 sq km",
+      "client": "Coal Mining Company",
+      "year": "2024",
+      "categories": "Mapping, Coal",
+      "featured": true,
+      "images": [
+        "images/projects/Coal outcro mapping_Liweta.jpg"
+      ],
+      "description": "High-resolution geological and stratigraphic mapping of coal seam outcrops in Liweta, Tanzania, delivering seam correlation, structural fault analysis, and coal quality sampling for resource modelling."
+    },
+    {
+      "id": "core-drilling",
+      "title": "Diamond Core Drilling Supervision",
+      "location": "Multiple Tenures, Tanzania",
+      "size": "Multi-Rig Campaigns",
+      "client": "Exploration & Mining Clients",
+      "year": "2024",
+      "categories": "Exploration, Mining",
+      "featured": false,
+      "images": [
+        "images/projects/Core drilling.jpg"
+      ],
+      "description": "Turnkey diamond core drilling supervision for resource definition and scout exploration, ensuring high core recovery, oriented structural logging, RQD geotechnical recording, and strict QA/QC sampling."
+    },
+    {
+      "id": "gold-mazizi-morogoro",
+      "title": "Mazizi Gold Mineralization Study",
+      "location": "Mazizi, Morogoro",
+      "size": "35 sq km",
+      "client": "Gold Exploration Company",
+      "year": "2023",
+      "categories": "Exploration, Gold",
+      "featured": false,
+      "images": [
+        "images/projects/Gold Mineralization_Mazizi Morogoro.jpg"
+      ],
+      "description": "Geological investigation of structurally controlled gold mineralization at Mazizi in Morogoro region, encompassing outcrop mapping, channel sampling, and drill target prioritization."
+    },
+    {
+      "id": "face-mapping-coal",
+      "title": "Active Coal Mine Face Mapping",
+      "location": "Southern Tanzania",
+      "size": "Active Mine Operations",
+      "client": "Coal Mining Company",
+      "year": "2024",
+      "categories": "Mapping, Mining",
+      "featured": false,
+      "images": [
+        "images/projects/Face mapping in a coal mine.jpg"
+      ],
+      "description": "Production face mapping and stratigraphic seam control within active coal mining operations, supporting short-term mine scheduling, roof/wall stability, and ROM coal quality consistency."
+    },
+    {
+      "id": "graphite-merelani",
+      "title": "Graphite-Kyanite Gneiss Evaluation",
+      "location": "Merelani",
+      "size": "18 sq km",
+      "client": "Mineral Exploration Company",
+      "year": "2023",
+      "categories": "Exploration, Industrial Minerals",
+      "featured": false,
+      "images": [
+        "images/projects/Graphite kyanite gneiss_Merelani.jpg"
+      ],
+      "description": "Geological and mineralogical evaluation of flake graphite and kyanite-bearing gneiss horizons in Merelani, establishing strike continuity and grade distribution."
+    },
+    {
+      "id": "graphite-stockpile-merelani",
+      "title": "Graphite Gneiss Stockpile QA/QC",
+      "location": "Merelani",
+      "size": "Stockpile Assessment",
+      "client": "Mining Company",
+      "year": "2024",
+      "categories": "Mining, Quality Control",
+      "featured": false,
+      "images": [
+        "images/projects/Graphite kyanite gneiss stockpile in Merelani.jpg"
+      ],
+      "description": "Systematic stockpile volumetric survey, representative sampling, and grade quality verification for graphite-kyanite-gneiss ROM material in Merelani to determine commercial processing viability."
+    },
+    {
+      "id": "beryllium-prospecting-namtumbo",
+      "title": "Beryllium Geochemical Prospecting",
+      "location": "Namtumbo",
+      "size": "30 sq km",
+      "client": "Exploration Company",
+      "year": "2023",
+      "categories": "Exploration, Prospecting",
+      "featured": false,
+      "images": [
+        "images/projects/Beryllium prospecting_ Namtumbo.jpg"
+      ],
+      "description": "Multi-disciplinary beryllium prospecting campaign in Namtumbo integrating geological traversing, pegmatite zonation mapping, and geochemical sampling."
+    },
+    {
+      "id": "beryllium-namtumbo",
+      "title": "Namtumbo Beryllium Assessment",
+      "location": "Namtumbo",
+      "size": "25 sq km",
+      "client": "Private Investor",
+      "year": "2023",
+      "categories": "Exploration, Geology",
+      "featured": false,
+      "images": [
+        "images/projects/Beryllium Namtumbo.jpg"
+      ],
+      "description": "Targeted geological assessment and verification sampling of beryllium-bearing occurrences in Namtumbo district to establish licence prospectivity for private investment."
+    },
+    {
+      "id": "dolomite-dodoma",
+      "title": "Industrial Dolomite Prospecting",
+      "location": "Dodoma",
+      "size": "20 sq km",
+      "client": "Industrial Minerals Company",
+      "year": "2024",
+      "categories": "Exploration, Industrial Minerals",
+      "featured": false,
+      "images": [
+        "images/projects/Dolomite prospecting Dodoma.jpg"
+      ],
+      "description": "Carbonate mapping and chemical purity sampling across dolomite horizons in Dodoma region to evaluate industrial, agricultural, and construction-grade resource potential."
+    },
+    {
+      "id": "quartz-morogoro",
+      "title": "High-Purity Quartz Prospecting",
+      "location": "Morogoro",
       "size": "22 sq km",
       "client": "Industrial Minerals Company",
-      "location": "Morogoro",
-      "title": "Quartz Prospecting",
+      "year": "2024",
+      "categories": "Exploration, Industrial Minerals",
+      "featured": false,
       "images": [
         "images/projects/Quartz prospecting_Morogoro.jpg"
       ],
-      "id": "quartz-morogoro",
-      "categories": "Exploration, Industrial Minerals",
-      "description": "Quartz prospecting and quality assessment in Morogoro region. Evaluation of quartz deposits for industrial and commercial applications.",
-      "year": "2024"
+      "description": "Field prospecting, vein geometry mapping, and purity assessment of quartz deposits in the Morogoro region for commercial and industrial mineral supply."
+    },
+    {
+      "id": "artisanal-gold-tabora",
+      "title": "Artisanal Gold Mining Technical Support",
+      "location": "Tabora",
+      "size": "15 sq km",
+      "client": "Local Mining Cooperative",
+      "year": "2024",
+      "categories": "Mining, Assessment",
+      "featured": false,
+      "images": [
+        "images/projects/Artisanal gold miners In Tabora.jpg"
+      ],
+      "description": "Field geological advisory, vein structural tracking, workplace safety assessment, and ore recovery guidance for artisanal gold mining cooperatives in Tabora region."
+    },
+    {
+      "id": "artisanal-miners-morogoro",
+      "title": "Small-Scale Mining Advisory & Training",
+      "location": "Morogoro",
+      "size": "12 sq km",
+      "client": "Mining Community",
+      "year": "2024",
+      "categories": "Mining, Training",
+      "featured": false,
+      "images": [
+        "images/projects/Artisanal miners_Morogoro.jpg"
+      ],
+      "description": "Technical site assessment and practical operator training for small-scale miners in Morogoro focused on safe benching, geological ore control, and environmental stewardship."
     }
   ]
 }
