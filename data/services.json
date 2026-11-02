@@ -5,8 +5,8 @@
       "num": "01",
       "title": "Geological & Exploration Services",
       "shortTitle": "Geological & Exploration",
-      "subtitle": "Systematic grassroots to brownfields mineral discovery, structural mapping, and geochemical sampling across East Africa.",
-      "summary": "Comprehensive field reconnaissance, litho-structural mapping, geochemical sampling, and geophysical target generation across greenfield and brownfield licences.",
+      "subtitle": "Grassroots discovery, structural mapping, and QA/QC geochemical sampling across East Africa.",
+      "summary": "Litho-structural mapping, geochemical sampling, and geophysical target generation across greenfield and brownfield licences.",
       "highlights": [
         "Lithological & structural geological mapping",
         "Soil, stream sediment, rock-chip & trench sampling",
@@ -62,8 +62,8 @@
       "num": "02",
       "title": "Resource Estimation & 3D Modelling",
       "shortTitle": "Resource Estimation & Modelling",
-      "subtitle": "Geological wireframing, geostatistical domain modelling, and defensible mineral tonnage-grade estimation.",
-      "summary": "3D lithological and mineralization wireframing, geostatistical variography, block modelling, and resource classification.",
+      "subtitle": "3D geological wireframing, geostatistical domaining, and defensible tonnage-grade estimation.",
+      "summary": "Geological wireframing, drillhole database validation, geostatistical variography, and 3D block modelling.",
       "highlights": [
         "3D geological, fault & orebody wireframing",
         "Drillhole database validation & compositing",
@@ -117,10 +117,10 @@
     {
       "slug": "mine-planning",
       "num": "03",
-      "title": "Mining Engineering, Planning & Compliance",
+      "title": "Mining Engineering & Planning",
       "shortTitle": "Mining Engineering & Planning",
-      "subtitle": "Practical open-pit and underground mine design, production scheduling, and statutory technical reporting.",
-      "summary": "Open-pit and underground mine design, haulage and production scheduling, equipment fleet sizing, and regulatory compliance.",
+      "subtitle": "Open-pit and underground design, fleet scheduling, and statutory compliance.",
+      "summary": "Pit and underground layout engineering, production scheduling, fleet sizing, and regulatory reporting.",
       "highlights": [
         "Open-pit & underground mine layout design",
         "Short- and long-term production scheduling",
@@ -174,10 +174,10 @@
     {
       "slug": "drilling-supervision",
       "num": "04",
-      "title": "Drilling Supervision & Project Management",
+      "title": "Drilling Supervision",
       "shortTitle": "Drilling Supervision",
-      "subtitle": "End-to-end diamond core, RC, and RAB drilling planning, contractor oversight, and core-shed logging.",
-      "summary": "Turnkey planning, rig supervision, core orientation and logging, recovery tracking, and contractor management.",
+      "subtitle": "Turnkey diamond core, RC, and RAB rig oversight and geotechnical logging.",
+      "summary": "End-to-end drill planning, shift rig supervision, oriented core logging, and QA/QC dispatch.",
       "highlights": [
         "Diamond (DD) & Reverse Circulation (RC) supervision",
         "Core orientation, RQD geotechnical & litho logging",
@@ -231,10 +231,10 @@
     {
       "slug": "asm-support",
       "num": "05",
-      "title": "Artisanal & Small-Scale Mining (ASM) Support",
+      "title": "Small-Scale & ASM Support",
       "shortTitle": "Small-Scale & ASM Support",
-      "subtitle": "Practical geological guidance, safety formalization, and recovery optimization for Primary Mining Licence holders and cooperatives.",
-      "summary": "Technical assistance, geological targeting, safety upgrades, and licensing formalization for small-scale miners and cooperatives.",
+      "subtitle": "Geological vein targeting, safety upgrades, and formalization for PML cooperatives.",
+      "summary": "Vein mapping, safe shaft siting, recovery optimization, and licensing support for small-scale operators.",
       "highlights": [
         "Geological vein tracking & shaft siting",
         "PML formalization & regulatory guidance",
@@ -288,10 +288,10 @@
     {
       "slug": "ma-advisory",
       "num": "06",
-      "title": "M&A, Joint Ventures & Economic Advisory",
-      "shortTitle": "M&A, JVs & Economic Analysis",
-      "subtitle": "Technical due diligence, project valuation, investor matching, and joint-venture structuring across East African mineral assets.",
-      "summary": "Independent technical due diligence, economic cash-flow modelling, investor matching, and joint-venture transaction support.",
+      "title": "M&A & Joint Venture Advisory",
+      "shortTitle": "M&A & Joint Ventures",
+      "subtitle": "Independent technical due diligence, DCF valuation, and joint-venture structuring.",
+      "summary": "Pre-acquisition technical due diligence, economic modelling, and structured investor partnerships.",
       "highlights": [
         "Independent technical & tenure due diligence",
         "Project economic & cash-flow modelling",

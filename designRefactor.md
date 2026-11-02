@@ -36,7 +36,7 @@ Today, the website suffers from severe visual fragmentation, leftover constructi
 | :--- | :--- | :--- | :--- |
 | **Dialect A: Legacy Construction Template** | `index.html`, `about.html`, `services.html`, `service-single.html`, `projects.html`, `projects-single.html`, `contact.html`, `404.html`, `thank-you.html` | 2017 *Constra* Bootstrap 4 theme (`css/style.css`, 66 KB) | Heavy uppercase `Montserrat` headings, `Open Sans` 15px body, `#ffb600` construction yellow clashing with `#e97451` terracotta (`74` rules in `style.css`), 3-tier header consuming ~240px vertical height, dead search bar (`#search`). |
 | **Dialect B: Dark Neon Gadget Store** | `equipment.html`, `equipment-megascan.html`, `equipment-pinpointer.html` | Custom inline `<style>` blocks (350–700 lines per HTML file!) | Pure black `#0a0a0a`/`#1a1a1a` backgrounds, `#ffb600 -> #ff9500` neon gold gradients, `Outfit` font, `24px` glowing cards, `50px` pill buttons, pulsing radial gradients. Product detail pages **omit the top-bar, mobile hamburger button (breaking mobile navigation completely), and full footer**. |
-| **Dialect C: Hybrid Inline Patch** | `team.html` | *Constra* shell + 240-line inline `<style>` (`.team-modern-area`) | Different card radii, shadows, and badges from both Dialect A and Dialect B; omits 7th team member (`Raju Badugu`, Head of Geology) whose headshot exists in `images/team/RAJU BADUGU.jpg`. |
+| **Dialect C: Hybrid Inline Patch** | `team.html` | *Constra* shell + 240-line inline `<style>` (`.team-modern-area`) | Different card radii, shadows, and badges from both Dialect A and Dialect B; oversized portrait boxes exposing low-resolution passport scans and CamScanner watermarks. |
 
 ### 2.2 Brand, Logo & Favicon Defects
 - **Wrong Browser Tab Icon:** All pages link `<link rel="icon" type="image/png" href="images/favicon.png">`, which is a `1,199`-byte low-resolution blue-and-gold triangle unrelated to Briva's actual logo (`images/brivaLogo.png`).
@@ -572,19 +572,17 @@ Replace the 3-slide Slick carousel (and its diagonal `clip-path` collage) with a
     - On `equipment-megascan.html`, surface a clean secondary link to download the technical manual (`downloads/Mega Scan Pro EN.pdf`) labeled clearly with file type/size (`Download Manufacturer Manual (PDF)`).
   - **Accessible Tabbed Details (`Detection Systems / Features` & `Standard Kit Contents`)** + **Structured Engineering Specification Table** (`.spec-table` with alternating `--bg-subtle` rows and `tabular-nums`).
 
-### 6.6 `team.html` — Leadership & Consultants
-- **Include All 7 Team Members:** Restore **Raju Badugu (`Head of Geology`, `images/team/RAJU BADUGU.jpg`)**, who was documented in `.progress-summary.md` and exists in `/images/team/` but was accidentally omitted from `team.html`!
-- **Two-Tier Architectural Hierarchy:**
-  - **Section 1 — Executive Leadership (2-Column Horizontal Executive Cards):**
-    - `Alex S. Bashire` — Chief Executive Officer *(23+ years in mining & mineral exploration)*
-    - `K. Sridhar Reddy` — Non-Executive Director *(25+ years in mining operations & project management)*
-    - *Image Resolution Guardrail:* Because `Alex S Bashire.jpg` and `K. Sridhar Reddy.png` are `147×147` px, use a horizontal executive card layout with a crisp `112×112` px portrait frame (`border-radius: var(--radius-md); object-fit: cover`) beside their name, title, and bio—preventing ugly pixelation!
-  - **Section 2 — Technical & Corporate Consultants (3-Column Grid, 5 Specialists):**
-    - `Raju Badugu` — Head of Geology (`images/team/RAJU BADUGU.jpg`, `275×318`)
-    - `Dr. Kolipaka Venu` — Geophysics Consultant (`images/team/Dr. Kolipaka Venu.jpg`, `444×590`)
-    - `Srirama Gopal Yellapragada` — Engineering Consultant (`images/team/SRIRAMA GOPAL YELLAPRAGADA.jpg`, `410×464`)
-    - `Jackline Sayi Kidendei` — Geologist & Marketing Manager (`images/team/JACKLINE SAYI KIDENDEI.jpg`, `454×569`, LinkedIn: `https://www.linkedin.com/in/jackline-kidendei-8a8789371`)
-    - `Vashty J. Nyembera` — HR & Finance Consultant (`images/team/Vashty J Nyembera.jpg`, `436×519`)
+### 6.6 `team.html` — Leadership & Specialists
+- **Symmetrical 6-Member Executive & Practice Architecture:**
+  - **Section 1 — Board & Executive Leadership (2-Column Symmetrical `.profile-card` Grid):**
+    - `Alex S. Bashire` — Chief Executive Officer *(23+ years in mining & mineral exploration, `images/team/alex-bashire.jpg`)*
+    - `K. Sridhar Reddy` — Non-Executive Director *(25+ years in mining operations & project management, architectural monogram crest `KR`)*
+  - **Section 2 — Senior Consultants & Advisors (2×2 Symmetrical `.profile-card` Grid):**
+    - `Dr. Kolipaka Venu` — Geophysics Consultant (`images/team/kolipaka-venu.jpg`)
+    - `Srirama Gopal Yellapragada` — Engineering Consultant (`images/team/srirama-yellapragada.jpg`)
+    - `Jackline Sayi Kidendei` — Geologist & Commercial Lead (`images/team/jackline-kidendei.jpg`, LinkedIn: `https://www.linkedin.com/in/jackline-kidendei-8a8789371`)
+    - `Vashty J. Nyembera` — HR & Finance Consultant (`images/team/vashty-nyembera.jpg`)
+  - **Editorial Portrait Treatment:** Clean `88×88` px cropped portraits with cohesive grayscale/platinum-slate toning (`filter: grayscale(100%) contrast(1.06)`), zero scanner borders, and zero watermarks.
 - **Zero Dead Social Icons:** Only render a LinkedIn icon when a verified URL exists (Jackline Kidendei); do **not** render `<a href="#">` dead links on executive cards.
 
 ### 6.7 `contact.html`, `thank-you.html`, `404.html`
@@ -637,7 +635,7 @@ Execute the refactor in **7 sequential phases**, verifying each phase before pro
   4. Enrich `data/projects.json` (`featured` flags) and update `admin/config.yml` + `admin/index.html` favicon.
 - **Phase 3 — Canonical Shell & Core Corporate Pages:**
   1. Build canonical `<head>`, Header (`PARTIAL:HEADER`), and Lumato Tech Footer (`PARTIAL:FOOTER`).
-  2. Refactor `index.html` (preserving Netlify Identity redirect script), `about.html`, `team.html` (all 7 members including Raju Badugu), `contact.html`, `thank-you.html`, and `404.html`.
+  2. Refactor `index.html` (preserving Netlify Identity redirect script), `about.html`, `team.html` (6-member executive & specialist layout), `contact.html`, `thank-you.html`, and `404.html`.
 - **Phase 4 — Services & Portfolio Pages:**
   1. Refactor `services.html` and `service-single.html` (powered by `data/services.json`, zero Lorem Ipsum).
   2. Refactor `projects.html` and `projects-single.html` (powered by `data/projects.json`).
@@ -724,10 +722,6 @@ for page in PAGES:
             continue
         if not os.path.exists(attr_val):
             errors.append(f"{page}: broken local link/asset '{attr_val}'")
-
-# Verify Raju Badugu is restored on team.html
-if os.path.exists("team.html") and "Raju Badugu" not in open("team.html", encoding="utf-8").read():
-    errors.append("team.html: missing 7th team member 'Raju Badugu'")
 
 if errors:
     print(f"QA FAILED ({len(errors)} issues):")

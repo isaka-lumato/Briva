@@ -46,6 +46,9 @@ for required_asset in [
     "images/brand/favicon-32x32.png", "images/brand/apple-touch-icon.png",
     "images/brand/og-image.jpg",
     "images/equipment/mega-scan-pro.jpg", "images/equipment/gold-pin-pointer.jpg",
+    "images/team/alex-bashire.jpg", "images/team/kolipaka-venu.jpg",
+    "images/team/srirama-yellapragada.jpg", "images/team/jackline-kidendei.jpg",
+    "images/team/vashty-nyembera.jpg",
     "data/projects.json", "data/services.json",
 ]:
     if not os.path.exists(required_asset):
@@ -90,9 +93,18 @@ if len(header_hashes) != 1:
 if len(footer_hashes) != 1:
     errors.append(f"Footer partial drift detected across pages ({len(footer_hashes)} variants)")
 
-# Verify Raju Badugu is restored on team.html
-if os.path.exists("team.html") and "Raju Badugu" not in open("team.html", encoding="utf-8").read():
-    errors.append("team.html: missing 7th team member 'Raju Badugu'")
+# Verify team directory contains only the 5 approved clean portraits and team.html has 6 profile cards
+expected_team_imgs = {
+    "alex-bashire.jpg", "kolipaka-venu.jpg", "srirama-yellapragada.jpg",
+    "jackline-kidendei.jpg", "vashty-nyembera.jpg",
+}
+actual_team_imgs = set(os.listdir("images/team"))
+if actual_team_imgs != expected_team_imgs:
+    errors.append(f"images/team mismatch: {actual_team_imgs ^ expected_team_imgs}")
+if os.path.exists("team.html"):
+    card_count = len(re.findall(r'class="card profile-card"', open("team.html", encoding="utf-8").read()))
+    if card_count != 6:
+        errors.append(f"team.html: expected 6 profile cards, found {card_count}")
 
 if errors:
     print(f"QA FAILED ({len(errors)} issues):")
